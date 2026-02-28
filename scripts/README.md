@@ -50,6 +50,23 @@ python scripts/fetch_data.py
 
 结果写入 `report-data.json` 的 `assembly.cn` / `assembly.intl`，[创业汇编页](chapters/99-AI创业机会全行业汇编.html) 实时展示。
 
+### 行业/数据补充（自动化）
+
+`config.yaml` 中 `sources.supplement` 配置具体内容搜索，自动抓取行业、市场、数据类资料：
+
+| 主题 | 搜索关键词 |
+|------|-----------|
+| 金融AI | 金融AI 市场规模 2026 银行 保险 |
+| 医疗AI | 医疗AI 影像 慢病管理 2026 市场规模 |
+| 制造业AI | 制造业AI 质检 视觉检测 落地 2026 |
+| 零售AI | 零售 数字人直播 智能客服 AI 2026 |
+| 教育AI | 教育AI K12 职教 2026 政策 |
+| Agent智能体 | AI Agent 智能体 2026 企业应用 |
+| RAG应用 | RAG 检索增强 企业知识库 应用 |
+| AI市场数据 | 中国AI产业规模 2026 信通院 艾瑞 |
+
+结果写入 `report-data.json` 的 `supplements`，创业汇编页「数据来源与方法」下展示。可在 `config.yaml` 中增减 `supplement.queries`。
+
 ## 播客专业 TTS（非原文朗读）
 
 右上角「转为播客」+「播放」支持**专业语音**：AI 改写 + 微软 Edge TTS，说话自然好听。

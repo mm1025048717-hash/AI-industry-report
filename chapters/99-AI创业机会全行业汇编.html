@@ -40,7 +40,7 @@
             <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
             <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
         </aside>
-        <main class="main">
+        <main class="main" id="main-content">
             <div class="cover">
                 <h1>AI创业机会全行业汇编</h1>
                 <p class="subtitle">全网评论·社交媒体·报告提取 · 30万字+</p>
@@ -56,8 +56,9 @@
                 <p><strong>社交媒体</strong>：知乎AI创业话题、小红书经营趋势、生财有术航海案例、微博话题、B站UP主分享。</p>
                 <p><strong>行业报告</strong>：德勤《技术趋势2026》、新质生产力产业数据联盟《2026年中国"人工智能+"应用趋势报告》、洞隐科技《物流与供应链AI应用研究》、腾讯《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》等。</p>
                 <p><strong>新闻与调研</strong>：36氪、虎嗅、混沌学园、新浪科技、澎湃新闻等。</p>
-                <p><strong>爬取机制</strong>：配置 <code>SERPER_API_KEY</code> 后，每周自动爬取<strong>国内</strong>（中国AI创业、垂直行业、失败案例、一人公司）与<strong>国外</strong>（AI startup opportunities、failure、indie hacker）关键词，结果写入 <code>report-data.json</code>，页内实时展示。</p>
+                <p><strong>爬取机制</strong>：配置 <code>SERPER_API_KEY</code> 后，每周自动爬取<strong>国内</strong>（中国AI创业、垂直行业、失败案例、一人公司）与<strong>国外</strong>（AI startup opportunities、failure、indie hacker）关键词；同时补充<strong>行业具体数据</strong>（金融、医疗、制造、零售、教育、Agent、RAG、市场数据），结果写入 <code>report-data.json</code>，页内实时展示。</p>
                 <div id="assembly-feed" class="viz-container" style="margin-top:12px"></div>
+                <div id="supplements-feed" class="viz-container" style="margin-top:16px"></div>
             </div>
 
             <!-- 执行摘要 -->
@@ -255,17 +256,31 @@
       var path=document.querySelector('script[src*="script.js"]');var base=path?path.src.replace(/[^/]+$/,''):'../';
       fetch(base+'data/report-data.json').then(function(r){return r.ok?r.json():null;}).then(function(data){
         var d=document.getElementById('assembly-feed');
-        if(!d)return;
-        var c=(data&&data.assembly&&data.assembly.cn)||[],i=(data&&data.assembly&&data.assembly.intl)||[],fd=(data&&data.assembly&&data.assembly.fetch_date)||'';
-        var h='<div class="viz-title">最新爬取摘要（国内+国外 · 每周自动更新）</div>';
-        if(c.length||i.length){
-          if(fd)h+='<p class="meta" style="margin-bottom:8px">更新：'+fd+'</p>';
-          if(c.length){h+='<p><strong>国内</strong></p><ul>';c.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
-          if(i.length){h+='<p><strong>国外</strong></p><ul>';i.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
-        }else{
-          h+='<p class="tip-box">暂无爬取数据。在 GitHub Secrets 配置 <code>SERPER_API_KEY</code> 后，每周一 08:00 自动抓取，页内实时展示。</p>';
+        if(d){
+          var c=(data&&data.assembly&&data.assembly.cn)||[],i=(data&&data.assembly&&data.assembly.intl)||[],fd=(data&&data.assembly&&data.assembly.fetch_date)||'';
+          var h='<div class="viz-title">最新爬取摘要（国内+国外 · 每周自动更新）</div>';
+          if(c.length||i.length){
+            if(fd)h+='<p class="meta" style="margin-bottom:8px">更新：'+fd+'</p>';
+            if(c.length){h+='<p><strong>国内</strong></p><ul>';c.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
+            if(i.length){h+='<p><strong>国外</strong></p><ul>';i.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
+          }else{
+            h+='<p class="tip-box">暂无爬取数据。在 GitHub Secrets 配置 <code>SERPER_API_KEY</code> 后，每周一 08:00 自动抓取，页内实时展示。</p>';
+          }
+          d.innerHTML=h;
         }
-        d.innerHTML=h;
+        var sd=document.getElementById('supplements-feed');
+        if(sd&&data&&data.supplements){
+          var supp=data.supplements;var sh='<div class="viz-title">行业/数据补充（自动搜索 · 每周更新）</div><div class="supplements-grid">';
+          Object.keys(supp).forEach(function(k){var s=supp[k];if(!s||!s.items||!s.items.length)return;
+            sh+='<div class="supplement-card"><div class="supplement-topic">'+s.topic+'</div><ul>';
+            (s.items||[]).slice(0,3).forEach(function(x){var esc=function(z){return (z||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');};
+              sh+='<li>'+(x.link?'<a href="'+esc(x.link)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+'</li>';
+            });
+            sh+='</ul></div>';
+          });
+          sh+='</div>';
+          sd.innerHTML=sh;
+        }
       }).catch(function(){});
     })();
     </script>

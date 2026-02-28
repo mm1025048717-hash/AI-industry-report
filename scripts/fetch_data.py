@@ -102,6 +102,7 @@ def main():
     # 2. Serper 搜索（可选）- 国内+国外数据爬取
     serper_cfg = config.get("sources", {}).get("serper", {})
     api_key = os.environ.get("SERPER_API_KEY", "")
+
     if serper_cfg.get("enabled") and api_key:
         assembly = {"cn": [], "intl": [], "fetch_date": datetime.now().isoformat()[:10]}
         queries_cn = serper_cfg.get("queries_cn", serper_cfg.get("queries", ["中国AI创业 2026"]))[:4]
@@ -117,6 +118,38 @@ def main():
         if assembly["cn"] or assembly["intl"]:
             data["assembly"] = assembly
             print(f"  国内抓取: {len(assembly['cn'])} 条 | 国外抓取: {len(assembly['intl'])} 条")
+
+    # 3. 具体内容补充（行业/市场/数据）
+    supp_cfg = config.get("sources", {}).get("supplement", {})
+    if supp_cfg.get("enabled") and api_key:
+        queries = supp_cfg.get("queries", [])
+        supplements = {}
+        labels = {
+            "finance_ai": "金融AI",
+            "medical_ai": "医疗AI",
+            "mfg_ai": "制造业AI",
+            "retail_ai": "零售AI",
+            "edu_ai": "教育AI",
+            "agent_trend": "Agent智能体",
+            "rag_app": "RAG应用",
+            "ai_market_data": "AI市场数据",
+        }
+        for item in queries[:8]:
+            key = item.get("key", "") if isinstance(item, dict) else ""
+            q = item.get("q", "") if isinstance(item, dict) else ""
+            if not key or not q:
+                continue
+            results = fetch_serper(q, api_key)
+            if results:
+                supplements[key] = {
+                    "topic": labels.get(key, key),
+                    "query": q,
+                    "items": results,
+                    "fetch_date": datetime.now().isoformat()[:10],
+                }
+        if supplements:
+            data["supplements"] = supplements
+            print(f"  补充搜索: {len(supplements)} 个主题")
 
     save_data(data)
     print("数据抓取完成:", data["_meta"]["last_updated"])

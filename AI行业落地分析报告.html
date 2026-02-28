@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI+行业落地从0到1实战教程：金融、医疗、教育、制造、零售等15+行业落地打法，RAG、Agent、大模型实战指南">
     <title>AI+行业落地从0到1实战教程（2026）</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
@@ -123,11 +125,15 @@
             <a href="#app-intl" class="toc-item level2">附录G 中美欧对标</a>
         </aside>
 
-        <main class="main">
+        <main class="main" id="main-content">
             <div class="cover">
                 <h1>AI+行业落地从0到1实战教程</h1>
                 <p class="subtitle">创业者 · 从业者 · 小白都能看懂的AI机会指南</p>
                 <p class="meta">通俗讲：告诉你在哪个行业、用什么产品、怎么找机会 · 2026年2月更新</p>
+                <div class="cover-thought">
+                    <strong>【思考】</strong> 我是00后。按理说，我这年纪应该跟大家一样——搞超级个体、做一人公司、冲Agent、追流量。但我没有。我投简历去了传统行业：房地产、旅游、证券、医疗、制造、政务服务……做AI产品经理，和「老登」老板们一起把技术带进他们干了十几二十年的行业里。很多人问：你图啥？我说：<strong>因为没人跟我抢啊。</strong> 大家往一人公司挤的时候——做APP、做内容、做短剧、搞自媒体——观众的注意力是有限的，流量就那么多，你要跟所有人抢。我选的是：大家不想上班，我就去上班；大家不想跟传统企业打交道，我就去打交道。老板懂业务，我懂AI，<strong>互补</strong>。把技术带到行业里去，不必跟Minimax、Kimi卷Agent。这条路有个头疼的问题：<strong>AI成果很难量化</strong>——目标模糊、需求不明确是中国企业的通病。但难量化不代表没价值。一人公司是流量生意；传统行业是<strong>你先做业务，再用AI深化</strong>。扎得越深，别人越难替代你。所以我说：<strong>虽然慢，但是长。</strong> 这条路人少、孤独，但没人跟你挤。
+                    <span class="cover-thought-byline">——一个扎进传统行业做AI的00后</span>
+                </div>
                 <p class="cover-box">👋 <strong>写给谁看</strong>：想入行AI的创业者、想转型的从业者、零基础小白。一句话：<strong>帮你从"不懂"到"会用"、从"观望"到"动手"</strong>。</p>
                 <div class="cover-box">
                     <strong>📖 教材怎么用</strong>：每个行业都按<strong>「先学行业、再学AI落地」</strong>来写。<br>
@@ -155,7 +161,7 @@
             <!-- AI知识总览（主报告开头全文梳理·大白话版） -->
             <div class="chapter" id="ai-knowledge">
                 <h2>📌 AI知识总览（小白必读）</h2>
-                <p class="tip-box"><strong>为啥放这儿？</strong>好多零基础读者后面看到"RAG""Agent"直接懵。这里先把本报告里会出现的<strong>所有AI名词</strong>用大白话讲一遍，看完再往下读，啥都能对上号。</p>
+                <p class="tip-box"><strong>说人话</strong>：好多零基础读者后面看到"RAG""Agent"直接懵。这里先把本报告里会出现的<strong>所有AI名词</strong>用大白话讲一遍，看完再往下读，啥都能对上号。</p>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/18069158/pexels-photo-18069158.png?auto=compress&cs=tinysrgb&w=800" alt="大模型与AI智能体" class="report-img" loading="lazy">
                     <p class="report-img-cap">图：从大模型到智能体——AI正在从"能聊"走向"能干" · 来源：Pexels</p>
@@ -514,7 +520,7 @@ flowchart TB
             <!-- 第三篇 行业应用 - 细分结构 -->
             <div class="chapter" id="ch3">
                 <h2 id="zero2one-link">第三篇 行业机会：你该盯哪个？</h2>
-                <p class="tip-box"><strong>🎯 创业者/从业者怎么用这一篇</strong>：每个行业都按<strong>「①行业知识→②AI落地」</strong>写——先搞懂行业干啥、痛点在哪，再看AI怎么帮、机会在哪。按你背景选1～2个深耕。</p>
+                <p class="tip-box"><strong>说人话</strong>：每个行业都按<strong>「①行业知识→②AI落地」</strong>写——先搞懂行业干啥、痛点在哪，再看AI怎么帮、机会在哪。按你背景选1～2个深耕。</p>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/8294551/pexels-photo-8294551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="各行业AI落地" class="report-img" loading="lazy">
                     <p class="report-img-cap">图：金融、制造、医疗、零售等15+行业均有成熟AI场景 · 来源：Pexels</p>
@@ -888,7 +894,7 @@ flowchart LR
                 <p><strong>技术文档</strong>：智谱GLM-5、阿里Qwen、Kimi、DeepSeek API发布稿，OpenCLAW GitHub，国资委央企AI+行动。</p>
                 <p><strong>媒体与综述</strong>：新华社、InfoQ、36氪、虎嗅、澎湃、MIT Technology Review等。数据截止2026年2月，建议定期检索获取最新动态。</p>
                 <h3 id="app-4">附录D 行业应用场景速查表</h3>
-                <table>
+                <table class="comp-table">
                     <tr><th>行业</th><th>核心场景</th><th>典型成效</th></tr>
                     <tr><td>金融</td><td>风控、信贷、反欺诈、客服</td><td>风控↑60%、定损↑40%</td></tr>
                     <tr><td>医疗</td><td>影像、诊疗、健康管理</td><td>准确率90%+</td></tr>

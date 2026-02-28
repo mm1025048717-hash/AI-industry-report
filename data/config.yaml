@@ -30,6 +30,27 @@ sources:
       - "AI startup failure"
       - "indie hacker AI"
 
+  # 具体内容补充：行业/市场/数据类关键词，自动搜索并写入 supplements
+  supplement:
+    enabled: true
+    queries:
+      - key: finance_ai
+        q: "金融AI 市场规模 2026 银行 保险"
+      - key: medical_ai
+        q: "医疗AI 影像 慢病管理 2026 市场规模"
+      - key: mfg_ai
+        q: "制造业AI 质检 视觉检测 落地 2026"
+      - key: retail_ai
+        q: "零售 数字人直播 智能客服 AI 2026"
+      - key: edu_ai
+        q: "教育AI K12 职教 2026 政策"
+      - key: agent_trend
+        q: "AI Agent 智能体 2026 企业应用"
+      - key: rag_app
+        q: "RAG 检索增强 企业知识库 应用"
+      - key: ai_market_data
+        q: "中国AI产业规模 2026 信通院 艾瑞"
+
 # RSS 信息源（可选，用于动态摘要）
 rss:
   enabled: false

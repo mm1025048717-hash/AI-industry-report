@@ -1,29 +1,91 @@
 // AI+行业落地分析报告 - 交互脚本
 
-// 自动加载 data/report-data.json 并填充 [data-update] 元素
+// 可访问性：跳转主内容链接（键盘导航）
+(function initSkipLink() {
+    if (document.getElementById('skip-to-main')) return;
+    var a = document.createElement('a');
+    a.href = '#main-content';
+    a.className = 'skip-link';
+    a.id = 'skip-to-main';
+    a.textContent = '跳转到主内容';
+    a.setAttribute('aria-label', '跳过导航，跳转到主内容');
+    document.body.insertBefore(a, document.body.firstChild);
+    var main = document.querySelector('.main') || document.querySelector('main');
+    if (main && !main.id) main.id = 'main-content';
+})();
+
+// 自动加载 data/report-data.json 并填充 [data-update] 元素（含缓存与错误提示）
 (function loadReportData() {
   var base = (document.currentScript && document.currentScript.src) ? document.currentScript.src.replace(/[^/]+$/, '') : '';
   var dataPath = base + 'data/report-data.json';
   var el = document.querySelector('[data-update]');
   if (!el) return;
+  var CACHE_KEY = 'ai-report-data';
+  var CACHE_HOURS = 24;
+
+  function get(obj, path) {
+    var keys = path.split('.');
+    for (var i = 0; i < keys.length; i++) obj = obj && obj[keys[i]];
+    return obj;
+  }
+  function applyData(data) {
+    if (!data) return;
+    document.querySelectorAll('[data-update]').forEach(function(node) {
+      var path = node.getAttribute('data-update');
+      var val = get(data, path);
+      if (val != null) node.textContent = val;
+    });
+  }
+  function showError() {
+    var el = document.querySelector('[data-update]');
+    if (el && !el.dataset.errorShown) {
+      el.dataset.errorShown = '1';
+      var tip = document.createElement('small');
+      tip.style.cssText = 'display:block;color:#b45309;margin-top:8px;font-size:0.85em';
+      tip.textContent = '数据加载失败，请检查网络或稍后刷新';
+      var parent = el.closest('.viz-container, .cover, .chapter');
+      if (parent) parent.appendChild(tip);
+    }
+  }
+  function saveCache(data) {
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data }));
+    } catch (e) {}
+  }
+  function loadCache() {
+    try {
+      var raw = localStorage.getItem(CACHE_KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      if (!o || !o.d || (Date.now() - o.t) > CACHE_HOURS * 3600000) return null;
+      return o.d;
+    } catch (e) { return null; }
+  }
+
+  var cached = loadCache();
+  if (cached) applyData(cached);
+
   fetch(dataPath)
-    .then(r => r.ok ? r.json() : null)
+    .then(function(r) { return r.ok ? r.json() : null; })
     .then(function(data) {
       if (!data) return;
-      function get(obj, path) {
-        const keys = path.split('.');
-        for (let i = 0; i < keys.length; i++) {
-          obj = obj && obj[keys[i]];
-        }
-        return obj;
-      }
-      document.querySelectorAll('[data-update]').forEach(function(node) {
-        const path = node.getAttribute('data-update');
-        const val = get(data, path);
-        if (val != null) node.textContent = val;
-      });
+      saveCache(data);
+      applyData(data);
     })
-    .catch(function() {});
+    .catch(function() {
+      if (!loadCache()) showError();
+    });
+})();
+
+// 表格响应式：自动包裹 table 以支持横向滚动
+(function wrapTables() {
+  document.querySelectorAll('table').forEach(function(t) {
+    if (t.parentElement && t.parentElement.classList.contains('table-wrap')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'table-wrap';
+    t.parentNode.insertBefore(wrap, t);
+    wrap.appendChild(t);
+  });
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -197,14 +259,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // 注入右上角控件
         var ctrl = document.createElement('div');
         ctrl.className = 'top-right-ctrl';
-        ctrl.innerHTML = '<button class="btn-podcast" type="button">转为播客</button>' +
-            '<button class="btn-play" type="button"><span class="icon">▶</span>播放</button>';
+        ctrl.innerHTML = '<button class="btn-podcast" type="button" aria-label="打开播客模式">转为播客</button>' +
+            '<button class="btn-play" type="button" aria-label="播放本页朗读"><span class="icon">▶</span>播放</button>';
         document.body.appendChild(ctrl);
 
         // 注入播客播放面板
         var panel = document.createElement('div');
         panel.className = 'podcast-panel';
         panel.innerHTML = '<div class="podcast-title">播客模式 · 本页朗读</div>' +
+            '<div class="podcast-status-wrap"><span class="podcast-status-label">状态：</span><span class="podcast-status" id="podcast-status">准备就绪</span></div>' +
+            '<div class="podcast-tips" id="podcast-tips"><button type="button" class="podcast-test-btn" id="podcast-test-btn">🔊 测试音量</button><button type="button" class="podcast-fallback-btn" id="podcast-fallback-btn">📖 改用浏览器朗读</button> 听不见专业TTS？可试浏览器朗读</div>' +
             '<div class="podcast-episode">章节列表</div>' +
             '<div class="progress-wrap">' +
             '<div class="progress-bar" title="点击跳转"><div class="progress-fill"></div></div>' +
@@ -214,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var btnPodcast = ctrl.querySelector('.btn-podcast');
         var btnPlay = ctrl.querySelector('.btn-play');
+        var statusEl = panel.querySelector('#podcast-status') || panel.querySelector('.podcast-status');
         var progressBar = panel.querySelector('.progress-bar');
         var progressFill = panel.querySelector('.progress-fill');
         var progressTime = panel.querySelector('.progress-time');
@@ -270,6 +335,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         var PODCAST_API = (typeof window !== 'undefined' && window.PODCAST_API_URL) || 'http://127.0.0.1:5010';
+        var forceBrowserTTS = false;
         var synth = window.speechSynthesis;
         var voices = [];
         var curAudio = null;
@@ -293,7 +359,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return voices[0] || null;
         }
 
+        function setStatus(msg, type) {
+            if (statusEl) {
+                statusEl.textContent = msg;
+                statusEl.className = 'podcast-status' + (type ? ' status-' + type : '');
+                statusEl.parentElement.classList.toggle('status-active', type === 'loading' || type === 'playing');
+            }
+        }
+
         function fallbackSpeak(text, onEnd) {
+            setStatus('播放中 · 浏览器朗读', 'fallback');
             synth.cancel();
             var u = new SpeechSynthesisUtterance(text);
             u.lang = 'zh-CN';
@@ -310,6 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
             else {
                 isPlaying = false;
                 btnPlay.innerHTML = '<span class="icon">▶</span>播放';
+                setStatus('播放完成', 'done');
             }
             updateUI();
         }
@@ -329,7 +405,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             var raw = (s.title || '') + '。' + (s.text || '').substring(0, 3000);
 
+            if (forceBrowserTTS) {
+                setStatus('播放中 · 浏览器朗读', 'fallback');
+                fallbackSpeak(raw, playNextOrStop);
+                return;
+            }
+
+            setStatus('正在调用 AI 改写...', 'loading');
+
             function doPlay(text) {
+                setStatus('正在合成语音...', 'loading');
                 fetch(PODCAST_API + '/api/tts', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -338,15 +423,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!r.ok) throw new Error('TTS 失败');
                     return r.blob();
                 }).then(function(blob) {
+                    setStatus('播放中 · 专业 TTS（Edge 语音） · 若听不见请检查系统音量或标签页是否静音', 'playing');
                     var url = URL.createObjectURL(blob);
                     curAudio = new Audio(url);
+                    curAudio.volume = 1;
                     curAudio.onended = function() {
                         URL.revokeObjectURL(url);
                         playNextOrStop();
                     };
                     curAudio.onerror = function() { playNextOrStop(); };
-                    curAudio.play();
+                    var p = curAudio.play();
+                    if (p && p.catch) p.catch(function() { fallbackSpeak(text, playNextOrStop); });
                 }).catch(function() {
+                    setStatus('语音服务连接失败，使用浏览器朗读', 'warn');
                     fallbackSpeak(text, playNextOrStop);
                 });
             }
@@ -357,8 +446,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify({ title: s.title, text: (s.text || '').substring(0, 6000) })
             }).then(function(r) { return r.ok ? r.json() : null; }).then(function(data) {
                 var script = (data && data.ok && data.script) ? data.script : (data && data.fallback) ? data.fallback : raw;
+                var usedAI = !!(data && data.ok && data.script);
+                if (!usedAI) setStatus('播客服务未响应，使用原文朗读', 'warn');
                 doPlay(script);
             }).catch(function() {
+                setStatus('播客服务未启动，使用浏览器朗读。请运行: python scripts/podcast_server.py', 'warn');
                 doPlay(raw);
             });
         }
@@ -385,45 +477,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function updateUI() {
-            panel.querySelector('.podcast-episode').textContent = (curIdx + 1) + '/' + sections.length + ' · ' + (sections[curIdx] ? sections[curIdx].title : '');
+            var cap = Math.min(curIdx, sections.length - 1);
+            if (cap < 0) cap = 0;
+            panel.querySelector('.podcast-episode').textContent = (cap + 1) + '/' + sections.length + (sections[cap] ? ' · ' + sections[cap].title : '');
             buildEpisodeList();
             var total = 0;
             sections.forEach(function(s) { total += (s.text || '').length; });
             var done = 0;
-            for (var i = 0; i < curIdx; i++) done += (sections[i].text || '').length;
-            var curLen = (sections[curIdx] && sections[curIdx].text) ? sections[curIdx].text.length : 0;
+            for (var i = 0; i < cap; i++) done += (sections[i].text || '').length;
+            var curLen = (sections[cap] && sections[cap].text) ? sections[cap].text.length : 0;
             var pct = total > 0 ? ((done + curLen * 0.5) / total) * 100 : 0;
+            if (curIdx >= sections.length) pct = 100;
             progressFill.style.width = pct + '%';
-            progressTime.textContent = (curIdx + 1) + '/' + sections.length;
-        }
-
-        function speakCurrent() {
-            synth.cancel();
-            if (!sections[curIdx]) {
-                isPlaying = false;
-                btnPlay.innerHTML = '<span class="icon">▶</span>播放';
-                return;
-            }
-            var s = sections[curIdx];
-            if (s.id) {
-                var elTarget = document.getElementById(s.id);
-                if (elTarget) elTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-            curUtterance = new SpeechSynthesisUtterance(s.title + '。' + (s.text || '').substring(0, 3000));
-            curUtterance.lang = 'zh-CN';
-            curUtterance.rate = 0.95;
-            var v = pickVoice();
-            if (v) curUtterance.voice = v;
-            curUtterance.onend = function() {
-                curIdx++;
-                if (curIdx < sections.length) speakCurrent();
-                else {
-                    isPlaying = false;
-                    btnPlay.innerHTML = '<span class="icon">▶</span>播放';
-                }
-                updateUI();
-            };
-            synth.speak(curUtterance);
+            progressTime.textContent = Math.min(curIdx + 1, sections.length) + '/' + sections.length;
         }
 
         btnPodcast.addEventListener('click', function() {
@@ -440,7 +506,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        function unlockAudio() {
+            try {
+                var Ctx = window.AudioContext || window.webkitAudioContext;
+                if (Ctx) {
+                    var ctx = new Ctx();
+                    var buf = ctx.createBuffer(1, 1, 22050);
+                    var src = ctx.createBufferSource();
+                    src.buffer = buf;
+                    src.connect(ctx.destination);
+                    src.start(0);
+                }
+            } catch (e) {}
+        }
+
         btnPlay.addEventListener('click', function() {
+            unlockAudio();
             if (isPlaying) {
                 synth.cancel();
                 if (curAudio) { curAudio.pause(); curAudio = null; }
@@ -473,6 +554,43 @@ document.addEventListener('DOMContentLoaded', function() {
             speakCurrent();
             updateUI();
         });
+
+        var fallbackBtn = panel.querySelector('#podcast-fallback-btn');
+        if (fallbackBtn) {
+            fallbackBtn.addEventListener('click', function() {
+                forceBrowserTTS = true;
+                fallbackBtn.textContent = '✓ 已切换浏览器朗读';
+                fallbackBtn.classList.add('active');
+                if (isPlaying) {
+                    synth.cancel();
+                    if (curAudio) { curAudio.pause(); curAudio = null; }
+                    speakCurrent();
+                } else {
+                    setStatus('已切换为浏览器朗读，点击播放生效', 'warn');
+                }
+            });
+        }
+
+        var testBtn = panel.querySelector('#podcast-test-btn');
+        if (testBtn) {
+            testBtn.addEventListener('click', function() {
+                unlockAudio();
+                try {
+                    var ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    var buf = ctx.createBuffer(1, ctx.sampleRate * 0.2, ctx.sampleRate);
+                    var data = buf.getChannelData(0);
+                    for (var i = 0; i < data.length; i++) data[i] = Math.sin(2 * Math.PI * 440 * i / ctx.sampleRate) * 0.3;
+                    var src = ctx.createBufferSource();
+                    src.buffer = buf;
+                    src.connect(ctx.destination);
+                    src.start(0);
+                    testBtn.textContent = '✓ 有声音吗？';
+                    setTimeout(function() { testBtn.textContent = '🔊 测试音量'; }, 2000);
+                } catch (e) {
+                    testBtn.textContent = '测试失败，请检查浏览器';
+                }
+            });
+        }
 
         synth.addEventListener('voiceschanged', loadVoices);
     })();
