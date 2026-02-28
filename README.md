@@ -52,7 +52,13 @@ git clone https://github.com/mm1025048717-hash/AI-industry-report.git
 cd AI-industry-report
 ```
 
-2. 用浏览器直接打开 `AI行业落地分析报告.html`
+2. **推荐**：用本地服务器打开（数据加载、播客功能需 http 协议）
+```bash
+python -m http.server 8000
+```
+浏览器访问 `http://localhost:8000/AI行业落地分析报告.html`
+
+或直接双击打开 `AI行业落地分析报告.html`（数据可能无法加载，见页内提示）
 
 ### 在线阅读（GitHub Pages）
 

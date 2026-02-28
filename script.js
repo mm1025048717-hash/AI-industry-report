@@ -41,8 +41,11 @@
     if (el && !el.dataset.errorShown) {
       el.dataset.errorShown = '1';
       var tip = document.createElement('small');
-      tip.style.cssText = 'display:block;color:#b45309;margin-top:8px;font-size:0.85em';
-      tip.textContent = '数据加载失败，请检查网络或稍后刷新';
+      tip.style.cssText = 'display:block;color:#b45309;margin-top:8px;font-size:0.85em;line-height:1.6';
+      var isFile = (typeof location !== 'undefined' && location.protocol === 'file:');
+      tip.textContent = isFile
+        ? '数据加载失败：直接打开 file:// 会有 CORS 限制。请用本地服务器：在项目目录运行 python -m http.server 8000，然后访问 http://localhost:8000/'
+        : '数据加载失败，请检查网络或稍后刷新';
       var parent = el.closest('.viz-container, .cover, .chapter');
       if (parent) parent.appendChild(tip);
     }
@@ -351,6 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var curUtterance = null;
         var isPlaying = false;
         var isPodcastMode = false;
+        var audioCache = {}; // 预生成：idx -> { url, revoke }
 
         function pickVoice() {
             for (var i = 0; i < voices.length; i++) {
@@ -386,8 +390,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 isPlaying = false;
                 btnPlay.innerHTML = '<span class="icon">▶</span>播放';
                 setStatus('播放完成', 'done');
+                Object.keys(audioCache).forEach(function(k) { if (audioCache[k] && audioCache[k].url) URL.revokeObjectURL(audioCache[k].url); });
+                audioCache = {};
             }
             updateUI();
+        }
+
+        function preloadNext() {
+            var nextIdx = curIdx + 1;
+            if (forceBrowserTTS || nextIdx >= sections.length || audioCache[nextIdx]) return;
+            var s = sections[nextIdx];
+            if (!s) return;
+            var raw = (s.title || '') + '。' + (s.text || '').substring(0, 3000);
+            fetch(PODCAST_API + '/api/rewrite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ title: s.title, text: (s.text || '').substring(0, 6000) }) })
+                .then(function(r) { return r.ok ? r.json() : null; })
+                .then(function(data) {
+                    var script = (data && data.ok && data.script) ? data.script : (data && data.fallback) ? data.fallback : raw;
+                    return fetch(PODCAST_API + '/api/tts', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: script }) }).then(function(r) { return r.ok ? r.blob() : null; });
+                })
+                .then(function(blob) {
+                    if (blob && !audioCache[nextIdx]) audioCache[nextIdx] = { url: URL.createObjectURL(blob) };
+                })
+                .catch(function() {});
         }
 
         function speakCurrent() {
@@ -408,6 +432,27 @@ document.addEventListener('DOMContentLoaded', function() {
             if (forceBrowserTTS) {
                 setStatus('播放中 · 浏览器朗读', 'fallback');
                 fallbackSpeak(raw, playNextOrStop);
+                return;
+            }
+
+            var cached = audioCache[curIdx];
+            if (cached && cached.url) {
+                setStatus('播放中 · 专业 TTS（已预生成）', 'playing');
+                curAudio = new Audio(cached.url);
+                curAudio.volume = 1;
+                curAudio.onended = function() {
+                    var justPlayed = curIdx;
+                    playNextOrStop();
+                    if (audioCache[justPlayed]) { URL.revokeObjectURL(audioCache[justPlayed].url); delete audioCache[justPlayed]; }
+                };
+                curAudio.onerror = function() {
+                    var justPlayed = curIdx;
+                    playNextOrStop();
+                    if (audioCache[justPlayed]) { URL.revokeObjectURL(audioCache[justPlayed].url); delete audioCache[justPlayed]; }
+                };
+                curAudio.play().catch(function() { playNextOrStop(); });
+                preloadNext();
+                updateUI();
                 return;
             }
 
@@ -434,6 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     curAudio.onerror = function() { playNextOrStop(); };
                     var p = curAudio.play();
                     if (p && p.catch) p.catch(function() { fallbackSpeak(text, playNextOrStop); });
+                    preloadNext();
                 }).catch(function() {
                     setStatus('语音服务连接失败，使用浏览器朗读', 'warn');
                     fallbackSpeak(text, playNextOrStop);
@@ -499,6 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 panel.classList.add('visible');
                 sections = getMainContent();
                 curIdx = 0;
+                audioCache = {};
                 buildEpisodeList();
                 updateUI();
             } else {
@@ -527,6 +574,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (curAudio) { curAudio.pause(); curAudio = null; }
                 isPlaying = false;
                 btnPlay.innerHTML = '<span class="icon">▶</span>播放';
+                setStatus('已暂停', '');
                 return;
             }
             if (!panel.classList.contains('visible')) {

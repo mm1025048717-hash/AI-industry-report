@@ -77,7 +77,8 @@ body {
     margin: 0 auto;
     background: var(--gray-50);
 }
-.main a { color: var(--blue); }
+.main a { color: var(--blue); text-underline-offset: 3px; transition: color 0.2s; }
+.main a:hover { text-decoration: underline; color: #1d4ed8; }
 .main a:hover { text-decoration: underline; }
 
 .cover {
@@ -102,15 +103,31 @@ body {
     width: 100%;
     max-width: 100%;
     margin: 20px 0 8px;
-    padding: 16px 20px 16px 20px;
-    border-left: 4px solid var(--gray-400);
-    background: var(--gray-50);
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--blue);
+    background: var(--white);
     font-size: 0.95em;
     line-height: 1.8;
     color: var(--gray-600);
     text-align: left;
 }
-.cover-thought strong { color: var(--gray-800); }
+.cover-thought strong { color: var(--black); }
+
+.cover-intro {
+    margin: 16px 0;
+    padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--blue);
+    text-align: left;
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: var(--black);
+}
+.cover-intro p { margin: 0 0 12px; text-indent: 0; }
+.cover-intro p:last-child { margin-bottom: 0; }
+.cover-intro a { color: var(--blue); }
 .cover-thought-byline {
     display: block;
     margin-top: 10px;
@@ -295,26 +312,19 @@ body {
 .tip-box {
     padding: 14px 18px;
     border-radius: 4px;
+    border: 1px solid var(--border);
     border-left: 4px solid var(--blue);
     margin: 16px 0;
     font-size: 0.95em;
-    background: var(--blue-light);
+    background: var(--white);
 }
-.tip-box.tip-blue {
-    background: #eff6ff;
-    border-color: #2563eb;
-}
-.tip-box.tip-green {
-    background: #f0fdf4;
-    border-color: #22c55e;
-}
-.tip-box.tip-amber {
-    background: #fffbeb;
-    border-color: #f59e0b;
-}
+/* 统一蓝白黑：tip-green/amber/purple 均用蓝色描边 */
+.tip-box.tip-blue,
+.tip-box.tip-green,
+.tip-box.tip-amber,
 .tip-box.tip-purple {
-    background: #faf5ff;
-    border-color: #a855f7;
+    background: var(--white);
+    border-color: var(--blue);
 }
 .tip-box strong { display: block; margin-bottom: 6px; }
 .tip-box, .tip-box p { text-indent: 0; }
@@ -423,9 +433,9 @@ body {
 .highlight-table tr:nth-child(even) td { background: var(--gray-50); }
 
 /* 封面/提示区 */
-.cover-box { padding: 12px 16px; border-radius: 4px; border-left: 4px solid var(--blue); background: var(--blue-light); margin: 12px 0; }
+.cover-box { padding: 12px 16px; border: 1px solid var(--border); border-left: 4px solid var(--blue); background: var(--white); margin: 12px 0; }
 .cover-box a { color: var(--blue); }
-.callout-box { padding: 16px; border-radius: 4px; border-left: 4px solid var(--blue); background: var(--blue-light); margin-bottom: 24px; }
+.callout-box { padding: 16px; border-radius: 4px; border: 1px solid var(--border); border-left: 4px solid var(--blue); background: var(--white); margin-bottom: 24px; }
 
 /* 打印优化 */
 /* ========== 移动端响应式 ========== */
@@ -510,7 +520,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-
 .step-chapter-2 { border: 2px solid var(--blue); border-radius: 8px; padding: 24px; margin: 32px 0; }
 .step-chapter-1 h2 { color: var(--gray-800); }
 .step-chapter-2 h2 { color: var(--blue); }
-.step-intro { margin-top: 12px; padding: 12px; background: var(--blue-light); border-radius: 8px; font-size: 0.9em; }
+.step-intro { margin-top: 12px; padding: 12px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--blue); border-radius: 4px; font-size: 0.9em; }
 
 /* 右上角：转为播客 + 播放 */
 .top-right-ctrl {

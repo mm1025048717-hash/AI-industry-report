@@ -81,9 +81,11 @@ chapter#appendix（如有附录）
 
 ## 三、排版与样式
 
-### 3.1 表格
+### 3.1 表格与可视化优先
 
-- 统一使用 `class="comp-table"`
+- **繁琐信息**优先表格化或流程图，少用长段落
+- 表格：`class="comp-table"`
+- 流程图：Mermaid `flowchart LR/TD`
 - 宽表需放在 `div.table-wrap` 内（脚本已自动包裹）
 
 ### 3.2 提示框颜色语义
