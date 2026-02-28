@@ -1,7 +1,7 @@
 {
   "_meta": {
     "last_updated": "2026年02月28日",
-    "last_fetch": "2026-02-28 13:45 UTC",
+    "last_fetch": "2026-02-28 05:25 UTC",
     "sources": [
       "manual",
       "github_api"
@@ -24,8 +24,8 @@
   },
   "github": {
     "langchain_stars": 127713,
-    "dify_stars": 130639,
-    "openclaw_stars": 237784,
+    "dify_stars": 130638,
+    "openclaw_stars": 237708,
     "coze_repo_stars": 0
   },
   "news": {
@@ -76,15 +76,15 @@
         "query": "AI 垂直行业 创业"
       },
       {
-        "title": "人工智能将淘汰大多数年轻的垂直SAAS初创公司，我不会推广 - Reddit",
-        "snippet": "他完全没抓住垂直行业软件背后的价值，也就是对供应链的深刻理解、独特的数据流、市场碎片化、以及热门工具缺乏定制化，导致垂直行业客户迫切需要利用专有 ...",
-        "link": "https://www.reddit.com/r/startups/comments/1ilkg43/ai_will_obsolete_most_young_vertical_saas/?tl=zh-hans",
+        "title": "a16z 年度预测：2026 年，AI 创业的新机会都在垂直行业 - AI TNT",
+        "snippet": "AI 正在推动医疗、法律、房地产等垂直领域软件的快速增长。这个过程经历了三个阶段：第一阶段是信息检索，查找和总结；第二阶段是，2025 年进入推理阶段，如 ...",
+        "link": "https://m.aitntnews.com/newDetail.html?newId=20642",
         "query": "AI 垂直行业 创业"
       },
       {
-        "title": "AI投资“后共识阶段”：创投押注垂类应用与底层设施 - 21财经",
-        "snippet": "他也指出，产业+AI与AI+产业是当下创业确定性的机会之一。如果创业者有产业数据、场景、盈利思路，可以通过AI提升差异化，进行产业+AI的创业实践。同时，如果 ...",
-        "link": "https://www.21jingji.com/article/20260130/herald/69f4da503b91e5710be818d9f26b31bc.html",
+        "title": "人工智能将淘汰大多数年轻的垂直SAAS初创公司，我不会推广 - Reddit",
+        "snippet": "他完全没抓住垂直行业软件背后的价值，也就是对供应链的深刻理解、独特的数据流、市场碎片化、以及热门工具缺乏定制化，导致垂直行业客户迫切需要利用专有 ...",
+        "link": "https://www.reddit.com/r/startups/comments/1ilkg43/ai_will_obsolete_most_young_vertical_saas/?tl=zh-hans",
         "query": "AI 垂直行业 创业"
       },
       {
@@ -100,15 +100,15 @@
         "query": "AI创业 失败案例"
       },
       {
-        "title": "AI 创业最容易踩的坑：2025年部分案例回顾",
-        "snippet": "这篇文章将结合数据、案例和策略，总结AI创业者最容易踩的坑，以及那些活下来的项目是如何转身自救的。 常见失败原因：数据不足、场景不清、模型错配. 1. 没有数据 ...",
-        "link": "https://www.woshipm.com/ai/6272229.html",
+        "title": "AI墓地的1289个项目写着创业的九死一生 - 亿邦动力",
+        "snippet": "正因无处不在、人人皆可触及，AI写作和chatbot也成为了最拥挤的创业赛道之一。当然，在文生文的产品中，也有涌现出集中的新失败案例，它们包括了AI Prompt领域 ...",
+        "link": "https://www.ebrun.com/20250704/584501.shtml",
         "query": "AI创业 失败案例"
       },
       {
-        "title": "one-person company - AI赋能个人创业",
-        "snippet": "一人公司(One-Person Company)是专为高科技工作者打造的创业指南平台。在这里，您将学习如何利用AI工具提升工作效率，掌握个人创业的核心技能。从零开始，打造属于您的 ...",
-        "link": "https://one-person-company.com/",
+        "title": "OPC（一人公司）：AI 时代的组织革命，一个人如何调度\"千军万马\"？",
+        "snippet": "\"OPC 本质是'一人公司+ AI 集群'——个人通过AI 智能体放大能力，实现'单人成军'。一个人+ 一套AI 智能体= 一家无需通勤、情绪稳定、效率爆表、7×24 小时运营 ...",
+        "link": "https://www.cnblogs.com/informatics/p/19642782",
         "query": "一人公司 AI"
       },
       {
@@ -118,19 +118,13 @@
         "query": "一人公司 AI"
       },
       {
-        "title": "“一人即公司，AI造未来”！北京亦庄在你身后 - 国际科技创新中心",
-        "snippet": "在人工智能重塑生产力的当下，北京亦庄依托“模数世界”新质产业社区，打造模数OPC社区，构建AItools（工具赋能)、Amplification（加速成长）、Alliance（协同网络） ...",
-        "link": "https://www.ncsti.gov.cn/kjdt/xwjj/202602/t20260202_237108.html",
+        "title": "one-person company - AI赋能个人创业",
+        "snippet": "一人公司(One-Person Company)是专为高科技工作者打造的创业指南平台。在这里，您将学习如何利用AI工具提升工作效率，掌握个人创业的核心技能。从零开始，打造属于您的 ...",
+        "link": "https://one-person-company.com/",
         "query": "一人公司 AI"
       }
     ],
     "intl": [
-      {
-        "title": "AI startup program | Google Cloud",
-        "snippet": "Our AI program is built to accelerate AI Startups. Receive $350,000 in Cloud credits, resources to accelerate your startup journey, dedicated support and ...",
-        "link": "https://cloud.google.com/startup/ai",
-        "query": "AI startup opportunities"
-      },
       {
         "title": "AI (Artificial Intelligence) Startups funded by Y Combinator (YC) 2026",
         "snippet": "Browse 1455 of the top AI startups funded by Y Combinator. We also have a Startup Directory where you can search through over 5,000 companies.",
@@ -138,25 +132,31 @@
         "query": "AI startup opportunities"
       },
       {
-        "title": "OpenAI for Startups",
-        "snippet": "AI for ambitious builders. You've got the vision. OpenAI gives you the tools, resources, and community to bring your big idea to life.",
-        "link": "https://openai.com/startups/",
+        "title": "AI startup program | Google Cloud",
+        "snippet": "Tap into the best of Google's infrastructure, AI products, and foundation models. Get up to $350000 USD in Google Cloud credits, training, and more.",
+        "link": "https://cloud.google.com/startup/ai",
         "query": "AI startup opportunities"
       },
       {
-        "title": "Why 95% Of AI Pilots Fail, And What Business Leaders ...",
-        "snippet": "Despite $30–40 billion in enterprise investment in generative artificial intelligence, AI pilot failure is officially the norm — 95% of ...",
-        "link": "https://www.forbes.com/sites/andreahill/2025/08/21/why-95-of-ai-pilots-fail-and-what-business-leaders-should-do-instead/",
+        "title": "Inception Program for Startups - NVIDIA",
+        "snippet": "NVIDIA Inception is a free program designed to nurture startups, providing co-marketing support, and opportunities to connect with the NVIDIA experts.",
+        "link": "https://www.nvidia.com/en-us/startups/",
+        "query": "AI startup opportunities"
+      },
+      {
+        "title": "MIT report: 95% of generative AI pilots at companies are failing",
+        "snippet": "Yet, MIT's research suggests companies see far more failures when going solo. Companies surveyed were often hesitant to share failure rates, ...",
+        "link": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
         "query": "AI startup failure"
       },
       {
-        "title": "99% of AI Startups Will Be Dead by 2026 — Here's Why | by ...",
+        "title": "99% of AI Startups Will Be Dead by 2026 — Here's Why - Srinivas Rao",
         "snippet": "2. The Wrappers Problem: Intelligence for Rent. Most so-called “AI-powered” tools are just a pretty interface wrapped around OpenAI's API.",
         "link": "https://skooloflife.medium.com/99-of-ai-startups-will-be-dead-by-2026-heres-why-bfc974edd968",
         "query": "AI startup failure"
       },
       {
-        "title": "Why AI-Native Startups Fail: Data, Compute & Scaling ...",
+        "title": "Why AI-Native Startups Fail: Data, Compute & Scaling Mistakes",
         "snippet": "Why do AI startups fail despite the hype? Quick Summary. Question: Why are failure rates among AI‑native startups so high? Answer: A ...",
         "link": "https://www.clarifai.com/blog/reasons-why-ai-native-startups-fail",
         "query": "AI startup failure"
@@ -181,183 +181,5 @@
       }
     ],
     "fetch_date": "2026-02-28"
-  },
-  "supplements": {
-    "finance_ai": {
-      "topic": "金融AI",
-      "query": "金融AI 市场规模 2026 银行 保险",
-      "items": [
-        {
-          "title": "2026年银行业及资本市场展望| 德勤中国 - Deloitte",
-          "snippet": "但到2026年，需要银行制定更加稳健的全行级战略、治理体系以及严谨的投资回报管理策略。AI智能体（Agentic AI）虽展现出突破性潜力，但其发展必须植根于稳固的 ...",
-          "link": "https://www.deloitte.com/cn/zh/Industries/banking-capital-markets/perspectives/2026-banking-industry-outlook.html"
-        },
-        {
-          "title": "38万亿险资最新动向！看好AI算力、有色金属！盯上AI训练数据龙头",
-          "snippet": "根据金融监管总局披露的数据，保险资金在2025年入市显著。截至2025年末，保险公司资金运用余额达38.5万亿元，同比增长15.7%。其中，股票配置比例创下自2022年 ...",
-          "link": "https://zhuanlan.zhihu.com/p/2010742407562535486"
-        },
-        {
-          "title": "金融科技市场概述，包括规模、份额、价值|成长[2034]",
-          "snippet": "预计2026年市场价值为4607.6亿美元，到2034年将达到17601.8亿美元，预测期内复合年增长率为18.20%。 2025年，北美地区以32.30%的份额主导全球市场。 金融科技 ...",
-          "link": "https://www.fortunebusinessinsights.com/zh/fintech-market-108641"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "medical_ai": {
-      "topic": "医疗AI",
-      "query": "医疗AI 影像 慢病管理 2026 市场规模",
-      "items": [
-        {
-          "title": "发展现状、市场空间、产业链及相关公司深度梳理【慧博出品】 - 知乎",
-          "snippet": "2022年全球AI制药市场规模为10.4亿美元，较上一年增长31.31%，据预测到2026年全球AI制药市场规模将达到29.94亿美元。",
-          "link": "https://zhuanlan.zhihu.com/p/2001664366525846645"
-        },
-        {
-          "title": "2026年全球医疗行业趋势研究报告：AI医疗、创新药与医疗器械",
-          "snippet": "2025年中国医疗器械市场表现分化，医疗设备子板块领涨35.96%，医疗耗材和体外诊断分别增长27.58%和25.44%，行业结构向高端化、智能化优化的同时，基层市场的 ...",
-          "link": "https://caifuhao.eastmoney.com/news/20260127144553794256370"
-        },
-        {
-          "title": "2026年全球医疗行业趋势研究报告：AI医疗、创新药与医疗器械",
-          "snippet": "其中，超声设备作为临床应用最广泛的影像技术之一，2021-2026年年均复合增长率预计达10.5%，2026年市场规模将达171亿元，彩超品类占比超80%，成为绝对主导。",
-          "link": "https://www.cnblogs.com/yangykaifa/p/19617602"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "mfg_ai": {
-      "topic": "制造业AI",
-      "query": "制造业AI 质检 视觉检测 落地 2026",
-      "items": [
-        {
-          "title": "工赋上海收官，识渊科技AI质检方案硬核亮相！实力获官方背书！",
-          "snippet": "2026年1月10日，2026工赋上海创新大会在静安新业坊M-Hub落下帷幕。识渊科技携AI工业质检技术及产品登场，围绕电子制造智能化质检方向开展技术分享； ...",
-          "link": "https://news.sina.com.cn/shangxunfushen/2026-01-19/detail-inhhvmxv1233993.shtml"
-        },
-        {
-          "title": "传统制造业与AI的深度融合路径——从痛点破局到价值落地",
-          "snippet": "这一步需重点做好两件事：一是需求具象化，明确AI产品的输入、输出与验收标准，避免“提升质检效率”这类模糊表述，而是定义为“通过AI视觉检测，实现某零件表面 ...",
-          "link": "https://www.woshipm.com/ai/6344282.html"
-        },
-        {
-          "title": "爆发式增长！2026-2032年AI质检设备市场前瞻：千亿赛道 - 涛越咨询",
-          "snippet": "从产能与出货量来看，2025年全球AI质检设备产能约为18万套，实际出货量达15万套，产能利用率维持在83.3%的合理区间，市场需求旺盛；单套系统平均价格约为8.5万 ...",
-          "link": "https://www.tydatainfo.com/news/1901/aizhijianshebei"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "retail_ai": {
-      "topic": "零售AI",
-      "query": "零售 数字人直播 智能客服 AI 2026",
-      "items": [
-        {
-          "title": "2026 智能体按效果付费在多行业走出第一步- 零售- 亿邦动力",
-          "snippet": "智能体按效果付费（RaaS）模式在2026年兴起，为企业提供新机遇。 1. 模式兴起源于企业采购偏好转向可量化结果，如IDC数据显示66%中国企业倾向按业务成果计 ...",
-          "link": "https://m.ebrun.com/640456.html"
-        },
-        {
-          "title": "2026 智能客服系统：全链路AI 化盘点与选型实战手册 - IT之家",
-          "snippet": "产品内置零售行业专属模板，支持与淘宝、天猫、支付宝等阿里系产品无缝联动，实现订单数据、会员信息、支付状态的实时同步，AI 导购机器人能基于用户消费轨迹 ...",
-          "link": "https://www.ithome.com/0/918/141.htm"
-        },
-        {
-          "title": "AI电商从技术到价值的赋能逻辑- 2026年02月- 行业研究数据- 小牛行研",
-          "snippet": "研究报告节选: AI客服：智能客服零售大模型不断提升服务问答场景质量以及店铺运营水平，有效解决数量大、重复性高的客户问题，节约人力成本。",
-          "link": "https://www.hangyan.co/charts/3840167427136554424"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "edu_ai": {
-      "topic": "教育AI",
-      "query": "教育AI K12 职教 2026 政策",
-      "items": [
-        {
-          "title": "教育部宣布2026年起中小学全面开设人工智能通识课，AI_财富号",
-          "snippet": "AI教育大模型： 消息面：教育部宣布2026年起中小学全面开设人工智能通识课，AI教育进入政策红利期。 AI教育概念股以下是一些常见的AI教育概念股，供参考：",
-          "link": "https://caifuhao.eastmoney.com/news/20260210112610378025410"
-        },
-        {
-          "title": "2026 年教育政策重点已明确：基础教育、AI、职教全面推进 - 多鲸资本",
-          "snippet": "在此背景下，职业教育产教融合持续深化，高等教育分类改革节奏明显加快，教育系统内部的结构性调整已初见轮廓。这些变化，共同构成了2026 年教育工作全面发力的重要前提。",
-          "link": "http://www.djcapital.net/nd.jsp?id=1437"
-        },
-        {
-          "title": "政策清晰、AI 平权，2026 年教育行业有哪些新机会？ - 36氪",
-          "snippet": "国家层面明确将素质教育、职业教育、AI+教育列为鼓励方向。「十五五」规划释放出清晰信号：规范与提质并重，完善终身教育体系、推动职业教育发展、提升教育 ...",
-          "link": "https://m.36kr.com/p/3638025138490500"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "agent_trend": {
-      "topic": "Agent智能体",
-      "query": "AI Agent 智能体 2026 企业应用",
-      "items": [
-        {
-          "title": "谷歌2026 AI Agent智能体报告深度解读：五大趋势重塑商业 ...",
-          "snippet": "报告数据显示，52%的生成式AI应用企业已将智能体投入生产，覆盖多元场景：49%用于客户服务、46%用于营销或安全运营、45%用于技术支持、43%用于产品创新或 ...",
-          "link": "https://zhuanlan.zhihu.com/p/2001714411086320099"
-        },
-        {
-          "title": "AI agent trends 2026 report",
-          "snippet": "帮助您更快地构建游戏并为其扩容的各种AI 驱动型解决方案。 ... 可优化制造业价值链的各种迁移工具和AI 工具。 ... 跨供应链和物流运营实现可持续、高效且有弹性的以数据为依据 ...",
-          "link": "https://cloud.google.com/resources/content/ai-agent-trends-2026?hl=zh-CN"
-        },
-        {
-          "title": "2026 年最新企业级AI 智能体盘点，直击企业业务痛点",
-          "snippet": "在2026 年的当下，通用类Chatbot 已退守辅助位，能解决深度数据挖掘和业务闭环的专业智能体正式上位。企业引入AI 不再是为了“尝鲜”，而是为了解决具体的业务 ...",
-          "link": "https://www.ithome.com/0/919/087.htm"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "rag_app": {
-      "topic": "RAG应用",
-      "query": "RAG 检索增强 企业知识库 应用",
-      "items": [
-        {
-          "title": "什么是RAG？— 检索增强生成AI 详解 - AWS",
-          "snippet": "检索增强生成（RAG）是指对大语言模型输出进行优化，使其能够在生成响应之前引用训练数据来源之外的权威知识库。大语言模型（LLM）用海量数据进行训练，使用数十亿个参数为 ...",
-          "link": "https://aws.amazon.com/cn/what-is/retrieval-augmented-generation/"
-        },
-        {
-          "title": "什么是检索增强生成(RAG)？ - Google Cloud",
-          "snippet": "RAG（检索增强生成）是一种AI 框架，将传统信息检索系统（例如搜索和数据库）的优势与生成式大语言模型(LLM) 的功能相结合。通过将您的数据和世界知识与LLM 语言技能相结合， ...",
-          "link": "https://cloud.google.com/use-cases/retrieval-augmented-generation?hl=zh-CN"
-        },
-        {
-          "title": "零基础入门：如何用RAG (检索增强生成) 打造知识库QA 系统 - GitHub",
-          "snippet": "RAG 是Retrieval-Augmented Generation 的缩写，中文翻译为\"检索增强生成\"。它是一种将检索系统和生成式AI 模型结合的技术方案，主要包含两个核心步骤：. 检索（Retrieval） ...",
-          "link": "https://github.com/rag-web-ui/rag-web-ui/blob/main/docs/tutorial/README.md"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    },
-    "ai_market_data": {
-      "topic": "AI市场数据",
-      "query": "中国AI产业规模 2026 信通院 艾瑞",
-      "items": [
-        {
-          "title": "中国AI，2026年最新趋势来了！ - 搜狐",
-          "snippet": "人工智能（AI）企业数量超过6000家，AI核心产业规模预计突破1.2万亿元，同比增长近30%； · 国产开源大模型全球累计下载量突破100亿次； · 中国成为AI专利最大拥有 ...",
-          "link": "https://www.sohu.com/a/981083080_121106908"
-        },
-        {
-          "title": "AI应用爆发背后存“同质化”问题“小而美”智能体或成突围关键 - 新浪财经",
-          "snippet": "工信部方面的数据显示，截至2025年9月，我国人工智能核心产业规模超9000亿元，企业数量突破5300家，AI应用已成为产业数字化转型的重要抓手。但同时，行业发展也 ...",
-          "link": "https://finance.sina.com.cn/roll/2026-02-27/doc-inhphkfh0686744.shtml"
-        },
-        {
-          "title": "基于艾瑞与易观报告的GEO评测体系：2026年TOP10中国服务商排名 ...",
-          "snippet": "基于艾瑞与易观报告的GEO评测体系：2026年TOP10中国服务商排名解析 · 第一,PureblueAI清蓝:定义GEO赛道标准的技术革命者。 · 第二,蓝色光标:全域赋能的科技营销巨头。 · 第三, ...",
-          "link": "https://tech.ifeng.com/c/8r6goWuD1hY"
-        }
-      ],
-      "fetch_date": "2026-02-28"
-    }
   }
 }
