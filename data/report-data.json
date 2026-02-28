@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "last_updated": "2026年02月28日",
+    "last_fetch": "2026-02-28 13:25 UTC",
+    "sources": [
+      "manual",
+      "github_api"
+    ],
+    "version": "1.0"
+  },
+  "market": {
+    "core_2026": "1.2～1.25万亿",
+    "saidi_2026": "近6000亿",
+    "growth_rate": "30%～32%",
+    "ai_companies": "6000+",
+    "sme_champions": "400+",
+    "genai_users": "5.15亿",
+    "user_penetration": "36.5%",
+    "agent_deploy_rate": "52%",
+    "coding_agent_deploy": "86",
+    "coding_agent_adopt": "91",
+    "positive_roi_rate": "88%",
+    "patents": "157.6万项"
+  },
+  "github": {
+    "langchain_stars": 127713,
+    "dify_stars": 130638,
+    "openclaw_stars": 237705,
+    "coze_repo_stars": 0
+  },
+  "news": {
+    "latest_headlines": [],
+    "fetch_date": ""
+  },
+  "opc": {
+    "single_founder_2025": "36.3%",
+    "ai_death_total": "675",
+    "ai_death_daily": "1+",
+    "ai_new_reg": "23.7万",
+    "ai_bankrupt": "8万",
+    "listed_loss_count": "19",
+    "listed_loss_total": "62.4亿"
+  },
+  "startup": {
+    "finance_ai_2024": "196.94亿",
+    "finance_ai_2027": "415.48亿",
+    "medical_2026": "1600亿",
+    "mfg_roi": "3-6月",
+    "customer_price": "299-699",
+    "edu_county": "85%"
+  },
+  "assembly": {
+    "cn": [
+      {
+        "title": "2026年中国AI发展趋势前瞻 - 清华大学",
+        "snippet": "人工智能（AI）企业数量超过6000家，AI核心产业规模预计突破1.2万亿元，同比增长近30%；. 国产开源大模型全球累计下载量突破100亿次；. 中国成为AI专利最大 ...",
+        "link": "https://www.tsinghua.edu.cn/info/1182/124190.htm",
+        "query": "中国AI创业 2026"
+      },
+      {
+        "title": "新华深读丨2026年中国AI发展趋势前瞻",
+        "snippet": "2026年是“十五五”开局之年。根据“十五五”规划建议，中国将加强人工智能同产业发展、文化建设、民生保障、社会治理相结合，全 ...",
+        "link": "https://www.news.cn/politics/20260128/25f6978fe8cf41bda53b78bcf7106fec/c.html",
+        "query": "中国AI创业 2026"
+      },
+      {
+        "title": "人工智能企業正引領2026年上市浪潮 - HKEX Group",
+        "snippet": "香港交易所數據顯示，人工智能公司推動2026年1月香港新股集資額增長勢頭，香港正構建起覆蓋人工智能價值鏈各領域的發行人生態圈。",
+        "link": "https://www.hkexgroup.com/media-centre/insight/insight/2026/johnson-chui/ai-ipos-drive-a-strong-start-to-2026?sc_lang=zh-HK",
+        "query": "中国AI创业 2026"
+      },
+      {
+        "title": "a16z 年度预测：2026 年，AI 创业的新机会都在垂直行业 - 智源社区",
+        "snippet": "AI 正在推动医疗、法律、房地产等垂直领域软件的快速增长。这个过程经历了三个阶段：第一阶段是信息检索，查找和总结；第二阶段是，2025 年进入推理阶段，如 ...",
+        "link": "https://hub.baai.ac.cn/view/51106",
+        "query": "AI 垂直行业 创业"
+      },
+      {
+        "title": "a16z 年度预测：2026 年，AI 创业的新机会都在垂直行业 - AI TNT",
+        "snippet": "AI 正在推动医疗、法律、房地产等垂直领域软件的快速增长。这个过程经历了三个阶段：第一阶段是信息检索，查找和总结；第二阶段是，2025 年进入推理阶段，如 ...",
+        "link": "https://m.aitntnews.com/newDetail.html?newId=20642",
+        "query": "AI 垂直行业 创业"
+      },
+      {
+        "title": "人工智能将淘汰大多数年轻的垂直SAAS初创公司，我不会推广 - Reddit",
+        "snippet": "他完全没抓住垂直行业软件背后的价值，也就是对供应链的深刻理解、独特的数据流、市场碎片化、以及热门工具缺乏定制化，导致垂直行业客户迫切需要利用专有 ...",
+        "link": "https://www.reddit.com/r/startups/comments/1ilkg43/ai_will_obsolete_most_young_vertical_saas/?tl=zh-hans",
+        "query": "AI 垂直行业 创业"
+      },
+      {
+        "title": "2025 AI创业者年度翻车实录 - UniFuncs",
+        "snippet": "具体失败案例：. Builder.ai - 估值13亿美元的独角兽，因财务造假、技术虚假宣传破产; 澜码科技- 李开复大弟子创办，估值15亿，因融资不顺欠薪800万; Robin AI ...",
+        "link": "https://unifuncs.com/s/BKP7iJWq",
+        "query": "AI创业 失败案例"
+      },
+      {
+        "title": "那些2023年创业失败的AI项目，踩了哪些坑？ - 虎嗅",
+        "snippet": "AI创业者需要从这些失败案例中吸取教训，避免重蹈覆辙。 1. AI搜索引擎：Neeva. Neeva是一个人工智能驱动的搜索引擎，主打一个无广告和优先考虑用户 ...",
+        "link": "https://m.huxiu.com/article/2486885.html",
+        "query": "AI创业 失败案例"
+      },
+      {
+        "title": "AI墓地的1289个项目写着创业的九死一生 - 亿邦动力",
+        "snippet": "正因无处不在、人人皆可触及，AI写作和chatbot也成为了最拥挤的创业赛道之一。当然，在文生文的产品中，也有涌现出集中的新失败案例，它们包括了AI Prompt领域 ...",
+        "link": "https://www.ebrun.com/20250704/584501.shtml",
+        "query": "AI创业 失败案例"
+      },
+      {
+        "title": "OPC（一人公司）：AI 时代的组织革命，一个人如何调度\"千军万马\"？",
+        "snippet": "\"OPC 本质是'一人公司+ AI 集群'——个人通过AI 智能体放大能力，实现'单人成军'。一个人+ 一套AI 智能体= 一家无需通勤、情绪稳定、效率爆表、7×24 小时运营 ...",
+        "link": "https://www.cnblogs.com/informatics/p/19642782",
+        "query": "一人公司 AI"
+      },
+      {
+        "title": "一人公司革命❗️我用AI Agent，48小時搞定自動化全流程 - YouTube",
+        "snippet": "有沒有一種方式，讓你依然是一個人，但你身後卻有一支AI團隊，能自動完成那些雜亂卻關鍵的任務？ 這就是今天我想挑戰的一個命題：AI 能不能真正支撐起一人 ...",
+        "link": "https://www.youtube.com/watch?v=hw2_fc4suqE",
+        "query": "一人公司 AI"
+      },
+      {
+        "title": "one-person company - AI赋能个人创业",
+        "snippet": "一人公司(One-Person Company)是专为高科技工作者打造的创业指南平台。在这里，您将学习如何利用AI工具提升工作效率，掌握个人创业的核心技能。从零开始，打造属于您的 ...",
+        "link": "https://one-person-company.com/",
+        "query": "一人公司 AI"
+      }
+    ],
+    "intl": [
+      {
+        "title": "AI (Artificial Intelligence) Startups funded by Y Combinator (YC) 2026",
+        "snippet": "Browse 1455 of the top AI startups funded by Y Combinator. We also have a Startup Directory where you can search through over 5,000 companies.",
+        "link": "https://www.ycombinator.com/companies/industry/ai",
+        "query": "AI startup opportunities"
+      },
+      {
+        "title": "AI startup program | Google Cloud",
+        "snippet": "Tap into the best of Google's infrastructure, AI products, and foundation models. Get up to $350000 USD in Google Cloud credits, training, and more.",
+        "link": "https://cloud.google.com/startup/ai",
+        "query": "AI startup opportunities"
+      },
+      {
+        "title": "Inception Program for Startups - NVIDIA",
+        "snippet": "NVIDIA Inception is a free program designed to nurture startups, providing co-marketing support, and opportunities to connect with the NVIDIA experts.",
+        "link": "https://www.nvidia.com/en-us/startups/",
+        "query": "AI startup opportunities"
+      },
+      {
+        "title": "MIT report: 95% of generative AI pilots at companies are failing",
+        "snippet": "Yet, MIT's research suggests companies see far more failures when going solo. Companies surveyed were often hesitant to share failure rates, ...",
+        "link": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/",
+        "query": "AI startup failure"
+      },
+      {
+        "title": "99% of AI Startups Will Be Dead by 2026 — Here's Why - Srinivas Rao",
+        "snippet": "2. The Wrappers Problem: Intelligence for Rent. Most so-called “AI-powered” tools are just a pretty interface wrapped around OpenAI's API.",
+        "link": "https://skooloflife.medium.com/99-of-ai-startups-will-be-dead-by-2026-heres-why-bfc974edd968",
+        "query": "AI startup failure"
+      },
+      {
+        "title": "Why AI-Native Startups Fail: Data, Compute & Scaling Mistakes",
+        "snippet": "Why do AI startups fail despite the hype? Quick Summary. Question: Why are failure rates among AI‑native startups so high? Answer: A ...",
+        "link": "https://www.clarifai.com/blog/reasons-why-ai-native-startups-fail",
+        "query": "AI startup failure"
+      },
+      {
+        "title": "Indie Hackers: Work Together to Build Profitable Online Businesses",
+        "snippet": "Indie Hackers Los Angeles: Building AI-Native Companies Los Angeles, USA · Mar ... Stay informed as an indie hacker. Market insights that help you start ...",
+        "link": "https://www.indiehackers.com/",
+        "query": "indie hacker AI"
+      },
+      {
+        "title": "Indie hacker making $40k MRR with an AI wrapper No Code SaaS",
+        "snippet": "Best AI marketing tools for indie hackers. Successful indie hacker SaaS revenue examples. Indie hackers community insights and size. Comparison ...",
+        "link": "https://www.reddit.com/r/indiehackers/comments/1bnr1a3/indie_hacker_making_40k_mrr_with_an_ai_wrapper_no/",
+        "query": "indie hacker AI"
+      },
+      {
+        "title": "How AI Agents Are Finally Doing What I Always Hoped Automation ...",
+        "snippet": "Stay informed as an indie hacker. Market insights that help you start and grow your business. Subscribe. Indie Hackers logo glyph Indie ...",
+        "link": "https://www.indiehackers.com/post/how-ai-agents-are-finally-doing-what-i-always-hoped-automation-would-ed8a3f2ab7",
+        "query": "indie hacker AI"
+      }
+    ],
+    "fetch_date": "2026-02-28"
+  }
+}

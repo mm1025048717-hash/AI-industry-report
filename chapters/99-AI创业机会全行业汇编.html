@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI创业机会全行业汇编·100万字+·全网评论社交媒体报告提取</title>
+    <title>AI创业机会全行业汇编·30万字+·全网评论社交媒体报告提取</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 </head>
@@ -31,6 +31,8 @@
             <a href="#case" class="toc-item level1">真实案例</a>
             <a href="#risk" class="toc-item level1">避坑指南</a>
             <a href="99c-一人公司与避坑深度.html" class="toc-item level2">一人公司·避坑深度→</a>
+            <a href="99d-教育农业政务物流等深度.html" class="toc-item level2">教育·农业·政务·物流等深度→</a>
+            <a href="#intl" class="toc-item level1">中美欧对标</a>
             <a href="#ref" class="toc-item level1">参考文献</a>
             <div class="sidebar-nav-label">📌 快速导航</div>
             <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
@@ -41,26 +43,30 @@
         <main class="main">
             <div class="cover">
                 <h1>AI创业机会全行业汇编</h1>
-                <p class="subtitle">全网评论·社交媒体·报告提取 · 100万字+</p>
-                <p class="meta">来源：知乎、小红书、36氪、德勤、赛迪、行业白皮书、生财有术等 · 2026年2月</p>
-                <p class="tip-box" style="margin-top:12px"><strong>本报告</strong>综合全网公开信息，提取各行业AI创业机会，供创业者、从业者参考。数据来源见文末参考文献。</p>
-            <p style="margin-top:8px"><a href="99a-金融AI创业机会深度.html">金融深度</a> · <a href="99b-零售制造AI创业机会深度.html">零售·制造深度</a> · <a href="99c-一人公司与避坑深度.html">一人公司·避坑深度</a></p>
+                <p class="subtitle">全网评论·社交媒体·报告提取 · 30万字+</p>
+                <p class="meta">来源：知乎、小红书、36氪、德勤、赛迪、行业白皮书、生财有术等 · 数据更新：<span data-update="_meta.last_updated">2026年2月</span></p>
+                <p class="tip-box" style="margin-top:12px"><strong>说人话</strong>：这页把<strong>15+行业的AI创业机会</strong>全捋一遍，用大白话讲清楚——每个行业市场多大、痛点在哪、能干啥、咋切入。数据会<strong>自动更新</strong>，关键数字是实时的。</p>
+                <p style="margin-top:8px"><a href="99a-金融AI创业机会深度.html">金融深度</a> · <a href="99b-零售制造AI创业机会深度.html">零售·制造深度</a> · <a href="99c-一人公司与避坑深度.html">一人公司·避坑深度</a> · <a href="99d-教育农业政务物流等深度.html">教育·农业·政务·物流·保险·房产·客服深度</a></p>
             </div>
 
             <!-- 数据来源与方法 -->
             <div class="chapter" id="meta">
                 <h2>一、数据来源与研究方法</h2>
+                <p class="tip-box tip-green"><strong>通俗讲</strong>：下面这些数字和结论，不是我们拍脑袋写的，而是从知乎、36氪、德勤报告、生财有术等渠道汇总来的。你拿去用的时候，可以注明来源。</p>
                 <p><strong>社交媒体</strong>：知乎AI创业话题、小红书经营趋势、生财有术航海案例、微博话题、B站UP主分享。</p>
                 <p><strong>行业报告</strong>：德勤《技术趋势2026》、新质生产力产业数据联盟《2026年中国"人工智能+"应用趋势报告》、洞隐科技《物流与供应链AI应用研究》、腾讯《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》等。</p>
                 <p><strong>新闻与调研</strong>：36氪、虎嗅、混沌学园、新浪科技、澎湃新闻等。</p>
+                <p><strong>爬取机制</strong>：配置 <code>SERPER_API_KEY</code> 后，每周自动爬取<strong>国内</strong>（中国AI创业、垂直行业、失败案例、一人公司）与<strong>国外</strong>（AI startup opportunities、failure、indie hacker）关键词，结果写入 <code>report-data.json</code>，页内实时展示。</p>
+                <div id="assembly-feed" class="viz-container" style="margin-top:12px"></div>
             </div>
 
             <!-- 执行摘要 -->
             <div class="chapter" id="exec">
                 <h2>二、执行摘要：2026 AI创业核心发现</h2>
-                <p><strong>趋势转变</strong>：从技术驱动→价值驱动。大模型已成公共服务，创业重心从"造模型"转向"用好模型解决具体问题"。</p>
-                <p><strong>红海与蓝海</strong>：通用内容生成趋饱和；<strong>垂直行业深度定制</strong>、<strong>岗位级提效</strong>、<strong>缝隙市场超级细分</strong>才是蓝海。</p>
-                <p><strong>成功公式</strong>：行业洞察+产品定义+快速落地；建立"业务场景-技术落地-业务提效-收益增长"闭环。</p>
+                <p class="tip-box tip-blue"><strong>一句话总结</strong>：别造大模型了，<strong>用好现成的模型解决具体问题</strong>才是正道。垂直行业、岗位提效、超级细分市场——这些才是蓝海。</p>
+                <p><strong>趋势转变</strong>：从技术驱动→价值驱动。大模型已经像水电一样成基础设施了，创业重心从"造模型"变成"用好模型解决具体问题"。</p>
+                <p><strong>红海与蓝海</strong>：通用内容生成（写文案、画画）已经挤爆了；<strong>垂直行业深度定制</strong>（比如只做短剧剧本）、<strong>岗位级提效</strong>（帮财务、法务省时间）、<strong>缝隙市场超级细分</strong>（只做宠物险AI）才是蓝海。</p>
+                <p><strong>成功公式</strong>：行业洞察+产品定义+快速落地；建立"业务场景→技术落地→业务提效→收益增长"的闭环，缺一不可。</p>
                 <div class="viz-container">
                     <div class="viz-title">2026 AI创业赛道综合评分（来源：生财有术等）</div>
                     <div class="maturity-bar">
@@ -75,129 +81,147 @@
             <!-- 八大主流赛道 -->
             <div class="chapter" id="trend">
                 <h2>三、八大主流创业赛道（全网汇总）</h2>
-                <p><strong>1. AI应用与智能体</strong>（9.9/10）— 将AI封装成产品，自动化运营；启动成本低至千元，边际成本趋零；HR转型职场AI顾问月入8万+。</p>
-                <p><strong>2. 内容生成AIGC</strong>— 市场潜力最大；蓝海在垂直行业深度定制（如短剧剧本）；关键在数据飞轮。</p>
-                <p><strong>3. 数字内容创作</strong>（8.7）— 效率10倍；脚本、剪辑、配乐全流程自动化。</p>
-                <p><strong>4. 跨境电商AI化</strong>（8.5）— 多国店铺、自动翻译、智能客服、物流追踪。</p>
-                <p><strong>5. 知识IP</strong>（8.3）— 经验产品化、订阅制、个性化定制。</p>
-                <p><strong>6. 智能生活服务</strong>（8.0）— AI收纳、育儿、健身等场景化。</p>
-                <p><strong>7. AI小说写作</strong>— 用Gemini月入过万；拆结构、改稿稳定变现。</p>
-                <p><strong>8. 小红书/GEO营销</strong>— 垂直品类单场GMV达120万；GEO取代SEO。</p>
+                <p class="tip-box"><strong>说人话</strong>：下面8个是当下最火、评分最高的方向。评分来自生财有术等社群的实操反馈，不是拍脑袋。</p>
+                <table class="comp-table">
+                    <tr><th>赛道</th><th>说人话</th><th>评分</th></tr>
+                    <tr><td>AI应用与智能体</td><td>把AI封装成产品，自动化干活；启动成本千元级，边际成本趋零；HR转型职场AI顾问月入8万+</td><td>9.9</td></tr>
+                    <tr><td>内容生成AIGC</td><td>市场潜力最大；蓝海在垂直定制（如短剧剧本）；关键在有数据飞轮</td><td>—</td></tr>
+                    <tr><td>数字内容创作</td><td>脚本、剪辑、配乐全流程自动化，效率10倍</td><td>8.7</td></tr>
+                    <tr><td>跨境电商AI化</td><td>多国店铺、自动翻译、智能客服、物流追踪</td><td>8.5</td></tr>
+                    <tr><td>知识IP</td><td>经验产品化、订阅制、个性化定制</td><td>8.3</td></tr>
+                    <tr><td>智能生活服务</td><td>AI收纳、育儿、健身等场景化</td><td>8.0</td></tr>
+                    <tr><td>AI小说写作</td><td>用Gemini月入过万；拆结构、改稿稳定变现</td><td>—</td></tr>
+                    <tr><td>小红书/GEO营销</td><td>垂直品类单场GMV达120万；GEO取代SEO</td><td>—</td></tr>
+                </table>
             </div>
 
             <!-- 金融 -->
             <div class="chapter" id="finance">
                 <h2>四、金融行业AI创业机会</h2>
-                <p><strong>市场规模</strong>（来源：互联互通社区、腾讯云、企殿政策）：2024年金融AI投资196.94亿，2027年将达415.48亿（+111%）；金融大模型2024年28.66亿，2025年破50亿。AI技术要素占比2021年72%→2025年92%。</p>
-                <p><strong>核心机会</strong>：①<strong>中小微融资风控</strong>— 新浪财经、上海融资：小微企业"缺数据、难评估"，AI多模态理解+异构数据整合，风控成本数千→百元级，准确率↑30%、风险识别效率↑50%；OCR+NLP智能尽调成本↓60%、逾期率↓25%。②<strong>可解释AI平台</strong>— 魔数智擎与某大行：业务人员5次点击建模、人效↑40%，全国近60家复制；存款2人3月10模型，AUM增11亿、转化率↑4倍。③<strong>零代码建模</strong>— 业务人员拖拽数天搞定。④<strong>全流程智能体</strong>— 神州信息城商行：访前天→分钟、调研小时→分钟、方案周→天；新员工6-12月→1-3月。⑤<strong>行业知识库RAG</strong>— 合规可追溯。53%机构已用Agent，43%欺诈管理，42%风险管理。</p>
-                <p><strong>财富管理</strong>：智能投顾、AI分析师、财报分析。区域：长三角粤港澳京津冀88%，北京广东上海专利申请前三。</p>
+                <p class="tip-box tip-green"><strong>通俗讲</strong>：金融就是钱多、规矩多、数据多。AI能帮银行/保险/券商<strong>贷得快、审得准、防得稳</strong>。53%的金融机构已经用上Agent了。</p>
+                <p><strong>市场规模</strong>（互联互通、腾讯云）：2024年金融AI投资<span data-update="startup.finance_ai_2024">196.94亿</span>，2027年将达<span data-update="startup.finance_ai_2027">415.48亿</span>（+111%）；金融大模型2024年28.66亿，2025年破50亿。AI技术要素占比2021年72%→2025年92%。</p>
+                <p><strong>核心机会（说人话）</strong>：①<strong>中小微风控</strong>— 小微企业缺数据难评估，AI把风控成本从数千压到百元级，准确率↑30%；②<strong>可解释AI</strong>— 魔数智擎：业务人员5次点击就能建模，人效↑40%，全国近60家复制；③<strong>全流程智能体</strong>— 神州信息城商行：访前准备从天缩到分钟、新员工培训从6-12月缩到1-3月；④<strong>行业知识库RAG</strong>— 合规可追溯。53%机构已用Agent，43%搞欺诈管理，42%搞风险管理。</p>
                 <p><a href="99a-金融AI创业机会深度.html">→ 金融行业深度详情</a></p>
             </div>
 
             <!-- 医疗 -->
             <div class="chapter" id="medical">
                 <h2>五、医疗行业AI创业机会</h2>
-                <p><strong>2026爆发元年</strong>：市场规模破1600亿；慢病AI健康管理超300亿、年增42.7%；影像分析全球300亿美元、中国2026破500亿。</p>
-                <p><strong>四大赛道</strong>：①<strong>医学影像</strong>— 敏感度超95%，基层渗透加速；轻量化设备价格仅进口60%；②<strong>慢病管理</strong>— 3亿+患者，药店/社区/体检中心；AI健康管理师人均服务200→1000人；③<strong>手术机器人</strong>— 国产替代，渗透率5% vs 美国25%；④<strong>AI制药</strong>— 全球29.9亿美元、年增30%+。</p>
-                <p><strong>基层机会</strong>：影像AI下沉、2小时部署慢病系统、远程协作。医保支付通道打开。</p>
+                <p class="tip-box"><strong>说人话</strong>：2026是医疗AI爆发年。影像、慢病、手术机器人、AI制药——四大赛道都有机会。医保支付通道一开，基层市场就活了。</p>
+                <p><strong>2026爆发元年</strong>：市场规模破<span data-update="startup.medical_2026">1600亿</span>；慢病AI健康管理超300亿、年增42.7%；影像分析全球300亿美元、中国2026破500亿。</p>
+                <p><strong>四大赛道</strong>：①医学影像—敏感度超95%，基层渗透加速；②慢病管理—3亿+患者，AI健康管理师人均服务200→1000人；③手术机器人—国产替代，渗透率5% vs 美国25%；④AI制药—全球29.9亿美元、年增30%+。基层机会：影像AI下沉、2小时部署慢病系统、远程协作。</p>
             </div>
 
             <!-- 教育 -->
             <div class="chapter" id="edu">
                 <h2>六、教育行业AI创业机会</h2>
-                <p><strong>政策清晰+AI平权</strong>：2026推AI进课标、教学、考试；县域覆盖85%+，年培训50万教师。</p>
+                <p class="tip-box"><strong>说人话</strong>：政策明确要推AI进课标，县域覆盖<span data-update="startup.edu_county">85%</span>+，每年培训50万教师。K12学科细分、职教实训、知识付费——都能蹭上这波。</p>
                 <p><strong>方向</strong>：K12学科细分（英语口语、语文作文、数学解题）；职教实训、文献分析；知识付费高毛利+AI突破增长焦虑。教培需抓住AI创新应对变化。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#edu">→ 教育深度详情</a></p>
             </div>
 
             <!-- 制造 -->
             <div class="chapter" id="mfg">
                 <h2>七、制造业AI创业机会</h2>
-                <p><strong>痛点</strong>：质检占人力成本15%+，6-8人/产线，漏检率12%，人眼精度82%。</p>
-                <p><strong>AI方案</strong>：检测速度10倍+，人力减75%，漏检&lt;3%，精度95%+。初期&lt;10万，SaaS按量付费，3-6月回收。</p>
+                <p class="tip-box"><strong>说人话</strong>：工厂最愁质检——人眼看不过来、漏检多。AI视觉检测又快又准，<span data-update="startup.mfg_roi">3-6月</span>就能回收成本。汽车、食品、电子都有机会。</p>
+                <p><strong>痛点</strong>：质检占人力成本15%+，6-8人/产线，漏检率12%，人眼精度82%。<strong>AI方案</strong>：检测速度10倍+，人力减75%，漏检&lt;3%，精度95%+。初期&lt;10万，SaaS按量付费，3-6月回收。</p>
                 <p><strong>机会</strong>：垂直细分（汽车零部件、食品包装、电子焊点）；SaaS+硬件租赁；边缘部署保护隐私。案例：汽车效率↑300%、食品错贴率3‰→0.07‰年省360万。</p>
             </div>
 
             <!-- 零售 -->
             <div class="chapter" id="retail">
                 <h2>八、零售行业AI创业机会</h2>
-                <p><strong>618数据</strong>（环球Tech）：1.7万品牌数字人直播、1.4万智能体上岗。百度段笑天：超拟真数字人成本1/10真人、转化↑30%、超越80%真人、24种语言、24小时。</p>
-                <p><strong>赛道</strong>（腾讯新闻、天猫、36Kr、搜狐）：①<strong>数字人直播</strong>— 美妆教育旅游食品多行业。②<strong>智能客服</strong>— 80%场景、3秒、省75%人力。③<strong>AIGC</strong>— 视频7-15天→1-2分钟；天猫150万条、140万商家；图生视频、多风格、社媒自动。④<strong>实体同城</strong>— 千元级、社区超市美甲店单场万元；智享AI直播官方授权。⑤<strong>小红书</strong>— 兴趣圈层、GEO取代SEO、KOS矩阵、24h客服。</p>
+                <p class="tip-box"><strong>说人话</strong>：618数据：1.7万品牌上数字人直播、1.4万智能体上岗。数字人成本只有真人1/10，转化还能↑30%。美妆、教育、旅游、食品都在用。</p>
+                <p><strong>赛道</strong>：①数字人直播—多行业；②智能客服—80%场景、3秒响应、省75%人力；③AIGC—视频从7-15天缩到1-2分钟；天猫150万条、140万商家；④实体同城—千元级、社区超市美甲店单场万元；⑤小红书—GEO取代SEO、KOS矩阵、24h客服。</p>
                 <p><a href="99b-零售制造AI创业机会深度.html">→ 零售·制造深度详情</a></p>
             </div>
 
             <!-- 法律 -->
             <div class="chapter" id="legal">
                 <h2>九、法律行业AI创业机会</h2>
-                <p><strong>效率</strong>：百页合同2天→3分钟，准确率95%+。</p>
-                <p><strong>产品</strong>：木瓜法宝与10+律所合作；法小师200+条款、成本降80%；法鉴角色立场调度、Pre-A融资。</p>
-                <p><strong>模式</strong>：C端免费初审积累数据→B端SaaS；帮律师做标准化、专注复杂问题。</p>
+                <p class="tip-box"><strong>说人话</strong>：律师最烦审合同——百页合同以前要2天，现在AI 3分钟、准确率95%+。C端免费初审攒数据，B端SaaS挣钱。</p>
+                <p>木瓜法宝、法小师、法鉴等产品已有落地。模式：帮律师做标准化、律师专注复杂问题。</p>
             </div>
 
             <!-- 农业 -->
             <div class="chapter" id="agri">
                 <h2>十、农业行业AI创业机会</h2>
-                <p><strong>政策</strong>：2026中央一号文件促AI+农业，拓展无人机、物联网、机器人。</p>
-                <p><strong>规模</strong>：植保450-500亿、年增25%+；30万架无人机、效率↑15倍。</p>
-                <p><strong>机会</strong>：①<strong>飞防服务</strong>— 1-2台5-10万投入、月入3万+、年净利15-20万；②<strong>飞手培训</strong>— 缺口50万+、考证费5000-1万；③<strong>病虫害数据化</strong>— 天空地监测、农药减35%、效率↑30%。</p>
+                <p class="tip-box"><strong>说人话</strong>：2026中央一号文件推AI+农业。植保450-500亿、30万架无人机。飞防服务1-2台投入5-10万，月入3万+、年净利15-20万；飞手缺口50万+。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#agri">→ 农业深度详情</a></p>
             </div>
 
             <!-- 政务 -->
             <div class="chapter" id="gov">
                 <h2>十一、政务与智慧城市AI创业机会</h2>
-                <p><strong>北京</strong>：智慧城市场景揭榜— 大模型应用、智能体协同、AI数字人、地下监测、森林防火等。</p>
-                <p><strong>深圳</strong>：模型券最高200万/年；AI示范标杆最高1000万；揭榜挂帅配套最高1000万。</p>
+                <p class="tip-box"><strong>说人话</strong>：北京揭榜、深圳发券。模型券最高200万/年，AI示范标杆最高1000万。大模型应用、智能体、数字人、地下监测、森林防火——都是方向。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#gov">→ 政务深度详情</a></p>
             </div>
 
             <!-- 物流 -->
             <div class="chapter" id="logistics">
                 <h2>十二、物流行业AI创业机会</h2>
-                <p><strong>窗口期</strong>：政策+技术成熟+成本下降三重红利。改造成本门槛19.8万。</p>
-                <p><strong>赛道</strong>：智能仓储AGV、无人配送、智慧调度；区域生鲜冷链（县域腐损18%、中央补贴120亿）；跨境逆向物流（退货成本35-50%）；工业品特殊运输。</p>
-                <p><strong>收益</strong>：订单满足率58%→89%；文单成本↓92%；智能客服省78万/年。</p>
+                <p class="tip-box"><strong>说人话</strong>：政策+技术+成本三重红利。改造成本门槛19.8万。智能仓储、无人配送、智慧调度；生鲜冷链县域腐损18%、中央补贴120亿。订单满足率58%→89%，文单成本↓92%。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#logistics">→ 物流深度详情</a></p>
             </div>
 
             <!-- 保险 -->
             <div class="chapter" id="insurance">
                 <h2>十三、保险行业AI创业机会</h2>
-                <p><strong>成熟场景</strong>：健康险45%+案件自动审核、最快15秒；车险定损116秒。</p>
-                <p><strong>机会</strong>：垂直小模型（宠物险、意外险）；反欺诈；专业经纪理赔协助；AI原生端到端系统。</p>
+                <p class="tip-box"><strong>说人话</strong>：健康险45%+案件自动审核、最快15秒；车险定损116秒。垂直小模型（宠物险、意外险）、反欺诈、专业经纪理赔——都是机会。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#insurance">→ 保险深度详情</a></p>
             </div>
 
             <!-- 房地产 -->
             <div class="chapter" id="realestate">
                 <h2>十四、房地产行业AI创业机会</h2>
-                <p><strong>变现最快</strong>：楼盘AI智能体、营销内容生成。CRIC已落地百盘，市场研判数周→10分钟。</p>
-                <p><strong>经纪</strong>：58小安服务数十万经纪人，AI讲房播放超亿次。智慧发房、智能微聊、商机跟进。</p>
+                <p class="tip-box"><strong>说人话</strong>：变现最快。楼盘AI智能体、营销内容生成。CRIC落地百盘，市场研判从数周缩到10分钟。58小安服务数十万经纪人，AI讲房播放超亿次。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#realestate">→ 房地产深度详情</a></p>
             </div>
 
             <!-- 智能客服 -->
             <div class="chapter" id="customer">
                 <h2>十五、智能客服AI创业机会</h2>
-                <p><strong>代理模式</strong>：创业黑马+豆包"代理+落地+分成"，按Token消耗约40%分润；来鼓获小红书官方授权。</p>
-                <p><strong>市场</strong>：2026全球180亿、2027破300亿美元。小微方案299-699元/月起。</p>
+                <p class="tip-box"><strong>说人话</strong>：入门门槛最低。创业黑马+豆包"代理+落地+分成"，按Token约40%分润；来鼓有小红书官方授权。小微方案<span data-update="startup.customer_price">299-699</span>元/月起。2026全球180亿、2027破300亿美元。</p>
+                <p><a href="99d-教育农业政务物流等深度.html#customer">→ 智能客服深度详情</a></p>
             </div>
 
             <!-- 真实案例 -->
             <div class="chapter" id="case">
                 <h2>十六、真实案例（社交媒体与报道提炼）</h2>
-                <p><strong>杭州张三</strong>（职高毕业）：5个月用AI开发120+App，90%上线即付费。康心伴医疗应用火到海外。模式：AI扫描全球需求缺口，1小时出2-3款App。</p>
-                <p><strong>杭州武先生</strong>：1人公司靠AI月入200万，成本3000元。海外营销全链条AI执行。</p>
+                <p class="tip-box tip-blue"><strong>说人话</strong>：下面都是媒体报道或社群分享里的真人真事，不是广告。关键看<strong>他们怎么干的</strong>。</p>
+                <p><strong>杭州张三</strong>（职高）：5个月120+App，90%上线即付费。康心伴火到海外。模式：AI扫描全球需求缺口，1小时出2-3款。</p>
+                <p><strong>杭州武先生</strong>：1人月入200万，成本3000。海外营销全链条AI执行。</p>
                 <p><strong>生财圈友</strong>：哆元AI工具垂类月销2万+；发发AI小说月入过万；申铭家居直播单场GMV 120万；阁主美区TK月过万美金。</p>
                 <p><strong>玉伯/Z.ai</strong>：错把情怀当定位→聚焦创作者信息管理；零预算冷启动半年100倍。</p>
             </div>
 
             <!-- 避坑指南 -->
             <div class="chapter" id="risk">
-                <h2>十七、避坑指南（675家倒闭公司+幸存者经验）</h2>
-                <p><strong>失败主因</strong>（澎湃、36Kr）：烧钱105次、商业逻辑问题；54%从未融资；大模型冲击淘汰消费级硬件、自动驾驶。</p>
-                <p><strong>战略误区</strong>（虎嗅、混沌）：错把情怀当定位—玉伯从"AI纸笔"→创作者信息管理；市场特性≠市场机会；三年规划脱离AI不确定性；有品类无品牌≠机会。</p>
-                <p><strong>生存法则</strong>：用户驱动、小切口（插件→产品）、零预算冷启动、1万付费×20美元目标、创业三问、找无人战场、从预测规划→应对变化设计。</p>
-                <p><a href="99c-一人公司与避坑深度.html">→ 一人公司·避坑深度详情</a></p>
+                <h2>十七、避坑指南（<span data-update="opc.ai_death_total">675</span>家倒闭公司+幸存者经验）</h2>
+                <p class="tip-box tip-amber"><strong>说人话</strong>：AI创业死了一大批。日均1+项目终结。别光看机会，<strong>先看看别人咋死的</strong>。</p>
+                <p><strong>失败主因</strong>：烧钱、商业逻辑稀烂、54%从未融资；大模型冲击淘汰消费级硬件、自动驾驶。倒闭多成立于2015–2018年（63%），寿命中位5.3年。</p>
+                <p><strong>典型案例</strong>：澜码（All in金融被大厂碾压）、波形（半年被OPPO收购）、竹间（业务亏损停工）、毫末（资源分散崩盘）、Robin AI（未达增速被抛弃）、Afiniti（融3.2亿仍破产）。</p>
+                <p><strong>生存法则</strong>：用户驱动、小切口、零预算冷启动、1万付费×20美元、找无人战场。</p>
+                <p><a href="99c-一人公司与避坑深度.html">→ 一人公司·避坑深度详情（10大失败案例+三大致命坑+五条铁律）</a></p>
+            </div>
+
+            <!-- 中美欧对标 -->
+            <div class="chapter" id="intl">
+                <h2>十八、中美欧AI创业对标（国内+国外数据）</h2>
+                <p class="tip-box tip-purple"><strong>说人话</strong>：中国"工业级实用主义"应用快，美国"实验室精英主义"基础强。创业选赛道要看各自优劣势。</p>
+                <table class="comp-table">
+                    <tr><th>领域</th><th>中国</th><th>美国/欧盟</th></tr>
+                    <tr><td>制造</td><td>富士康AI质检缺陷率2%→0.3%；电气年省200万；渗透率&lt;30%</td><td>高端制造、无人驾驶引领</td></tr>
+                    <tr><td>医疗</td><td>2800家医院部署、日均CT 200万例；多细分领先</td><td>生物医药、技术创新更强</td></tr>
+                    <tr><td>金融</td><td>应用广但深度较浅；AI SaaS 500亿、B端渗透约10%</td><td>2023 AI SaaS 800亿美金、占全球60%+；渗透约30%</td></tr>
+                    <tr><td>基础层</td><td>智能算力&lt;美国1/10；高端芯片90%进口</td><td>英伟达H100算力领先</td></tr>
+                </table>
+                <p>中国计划在具身智能、AI Agent、智能终端硬件三大领域突破；未来3–5年为生态补短板窗口期。</p>
             </div>
 
             <!-- 参考文献 -->
             <div class="chapter" id="ref">
-                <h2>十八、参考文献与数据来源</h2>
+                <h2>十九、参考文献与数据来源</h2>
                 <ul>
                     <li>生财有术《2026 AI创业全景图》；《一个人+AI=无限可能》</li>
                     <li>36氪《AI是中小企业最后的机会》；《政策清晰、AI平权，2026教育机会》</li>
@@ -205,11 +229,11 @@
                     <li>新质生产力产业数据联盟《2026中国"人工智能+"应用趋势报告》</li>
                     <li>洞隐科技《物流与供应链AI应用研究》</li>
                     <li>虎嗅《AI创业祛魅：务实生存指南》</li>
-                    <li>澎湃《AI创业大浪淘沙》</li>
+                    <li>澎湃《AI创业大浪淘沙》；IT桔子死亡公司数据</li>
                     <li>新浪、搜狐、腾讯新闻报道；知乎、小红书社区讨论</li>
                     <li>北京/深圳智慧城市政策文件；2026中央一号文件</li>
                 </ul>
-                <p style="margin-top:24px"><em>本报告持续更新，建议定期检索获取最新信息。</em></p>
+                <p style="margin-top:24px"><em>本报告持续更新，关键数据自动抓取，建议定期检索获取最新信息。</em></p>
             </div>
 
             <p class="footer-nav">
@@ -219,11 +243,31 @@
                 <a href="公司名录-全球.html">🏢 公司名录</a> · 
                 <a href="99a-金融AI创业机会深度.html">金融深度</a> · 
                 <a href="99b-零售制造AI创业机会深度.html">零售·制造深度</a> · 
-                <a href="99c-一人公司与避坑深度.html">一人公司·避坑</a>
+                <a href="99c-一人公司与避坑深度.html">一人公司·避坑</a> · 
+                <a href="99d-教育农业政务物流等深度.html">教育·农业·政务·物流等</a>
             </p>
         </main>
     </div>
     <script src="../script.js"></script>
-    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+    <script>
+    if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});
+    (function(){
+      var path=document.querySelector('script[src*="script.js"]');var base=path?path.src.replace(/[^/]+$/,''):'../';
+      fetch(base+'data/report-data.json').then(function(r){return r.ok?r.json():null;}).then(function(data){
+        var d=document.getElementById('assembly-feed');
+        if(!d)return;
+        var c=(data&&data.assembly&&data.assembly.cn)||[],i=(data&&data.assembly&&data.assembly.intl)||[],fd=(data&&data.assembly&&data.assembly.fetch_date)||'';
+        var h='<div class="viz-title">最新爬取摘要（国内+国外 · 每周自动更新）</div>';
+        if(c.length||i.length){
+          if(fd)h+='<p class="meta" style="margin-bottom:8px">更新：'+fd+'</p>';
+          if(c.length){h+='<p><strong>国内</strong></p><ul>';c.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
+          if(i.length){h+='<p><strong>国外</strong></p><ul>';i.slice(0,8).forEach(function(x){var esc=function(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');},lk=esc(x.link);h+='<li>'+(lk?'<a href="'+lk+'" target="_blank" rel="noopener">'+esc(x.title)+'</a>':esc(x.title))+' — '+esc(x.snippet)+'</li>';});h+='</ul>';}
+        }else{
+          h+='<p class="tip-box">暂无爬取数据。在 GitHub Secrets 配置 <code>SERPER_API_KEY</code> 后，每周一 08:00 自动抓取，页内实时展示。</p>';
+        }
+        d.innerHTML=h;
+      }).catch(function(){});
+    })();
+    </script>
 </body>
 </html>

@@ -120,6 +120,7 @@
             <a href="#app-4" class="toc-item level2">附录D 场景速查表</a>
             <a href="#app-5" class="toc-item level2">附录E 政策索引</a>
             <a href="#app-6" class="toc-item level2">附录F 公司与产品索引</a>
+            <a href="#app-intl" class="toc-item level2">附录G 中美欧对标</a>
         </aside>
 
         <main class="main">
@@ -141,7 +142,7 @@
                 <div class="viz-container" style="margin-top:24px">
                     <div class="viz-title">一页核心结论（决策者可速览）</div>
                     <ol class="step-list summary-list">
-                        <li><strong>市场</strong>：中国AI核心产业2026破1.2万亿，增速近30%；88%早期采用者已见正向ROI</li>
+                        <li><strong>市场</strong>：中国AI核心产业2026破<span data-update="market.core_2026">1.2～1.25万亿</span>，增速近30%；<span data-update="market.positive_roi_rate">88%</span>早期采用者已见正向ROI</li>
                         <li><strong>机会</strong>：不在造模型，在应用层——垂直行业、岗位提效、缝隙市场才是蓝海</li>
                         <li><strong>上手成本</strong>：智能客服99～299元/月起；API按量几分钱；零代码平台拖拽可搭</li>
                         <li><strong>见效快</strong>：金融风控、客服、质检、合同审查等场景3～6月回收；RAG可把准确率从31%提到51%</li>
@@ -189,6 +190,7 @@
                     <tr><td>公有云 vs 私有化？</td><td>公有云便宜上手快；数据不出公司、合规高→选私有化。2026新路子：私有化+行业微调。</td></tr>
                     <tr><td>开发工具咋选？</td><td>不写代码→扣子Coze、豆包Agent、Dify拖拽搭；写代码→LangChain、LlamaIndex。先跑通一个场景。</td></tr>
                 </table>
+                <div class="tip-box tip-purple"><strong>开发/低代码平台现状（2025–2026）</strong>：<strong>Coze扣子</strong>免费版够用、专业版月10万次约169元，2025年开源Apache 2.0；<strong>Dify</strong>私有化、知识库RAG强、企业版约500元/10万次；<strong>豆包Agent</strong>与字节生态整合、日活高。选Coze：快速上线、对接微信/飞书/抖音；选Dify：数据不出域、复杂工作流、技术团队较强。详见第二篇技术基础。</div>
                 <div class="viz-container">
                     <div class="viz-title">大模型咋选？一句话口诀（2026最新）</div>
                     <div class="card-grid">
@@ -420,6 +422,16 @@ flowchart LR
                     </ol>
                 </div>
                 <p><strong>创业者注意</strong>：想做垂类AI（法律、医疗、金融、客服知识库），RAG是必备。开箱即用方案：阿里云OpenSearch LLM智能问答版、Dify知识库、LangChain等。数据量小可直接用云端；大规模或隐私敏感建议本地/私有化部署。</p>
+                <div class="viz-container">
+                    <div class="viz-title">开发/低代码平台现状（2025–2026，说人话）</div>
+                    <table class="comp-table">
+                        <tr><th>平台</th><th>一句话</th><th>成本（月均10万次级）</th></tr>
+                        <tr><td>Coze扣子</td><td>免费版够用；对接微信/飞书/抖音；2025年开源Apache 2.0</td><td>专业版约169元</td></tr>
+                        <tr><td>Dify</td><td>私有化强、知识库RAG优、80+节点；适合数据不出域</td><td>企业版约500元（含服务器）</td></tr>
+                        <tr><td>豆包Agent</td><td>日活高、语音强、即梦视频；字节生态整合好</td><td>按量/免费起步</td></tr>
+                    </table>
+                    <p style="margin-top:8px;font-size:0.9em">选Coze：无编程背景、快速上线、社交平台对接；选Dify：隐私合规、复杂工作流、技术团队强。Dify v1.5（2025.6）向量检索提速2倍；Coze 2025.7开源支持本地部署。</p>
+                </div>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/8566445/pexels-photo-8566445.jpeg?auto=compress&cs=tinysrgb&w=800" alt="RAG与Agent技术架构" class="report-img" loading="lazy">
                     <p class="report-img-cap">图：RAG+Agent——让AI既会查资料又会干活 · 来源：Pexels</p>
@@ -740,7 +752,7 @@ flowchart LR
                 
                 <h4 id="ch3-10-1">一、旅游景区与文博</h4>
                 <p>智慧文旅大模型、AI导览个性化路线、亚米级导航、博物馆专属知识库。文博场馆、景区、主题公园、历史文化街区都在用。</p>
-                
+                <p><strong>细分案例</strong>（广东2025、中关村科金）：广东"人工智能+文旅"覆盖政府监管、景区运营、资源分销、游客服务全链条；高精度智慧互动导览支持多端交互、个性化路线、亚米级导航、3D文物活化；基于空间智能的文旅虚实共生平台实现虚实融合导览与智能巡检；AI探游讲解系统用RAG构建博物馆专属知识库、支持数字人讲解。北京某5A景区由得助智能体平台实现智慧化跃迁。</p>
                 <h4 id="ch3-10-2">二、酒店与旅行社</h4>
                 <p>智能预订、客服、入住体验；旅行社智能行程、多语言服务。登山等场景还有运动助力机器人。</p>
 
@@ -757,6 +769,7 @@ flowchart LR
                 
                 <h4 id="ch3-12-1">一、电力与新能源</h4>
                 <p>预测性维护、设备管理、调度优化。负荷预测、新能源发电预测、储能调度——都是标配。</p>
+                <p><strong>细分案例</strong>：国网长沙"光明"AI配网调度员—全国电力领域首个可解释AI应用，单次转供决策30分钟→1分钟、大型保供电方案10小时→10分钟，综合研判因素35个（传统10个）。安徽天柱山5A景区智慧配电网—10kV线路改造、200kWh构网型储能、"充电宝"式微网保障2–5小时民生用电；河图镇35千伏智能微电网—乡镇级、水电光伏整合、5–7天自给运行。</p>
 
                 <h3 id="ch3-13">第二十章 法律行业</h3>
                 <p class="no-indent"><a href="chapters/22-法律行业深度.html" >📖 深度报告</a> · <a href="chapters/产品名录-全行业.html#legal" >📋 产品名录</a></p>
@@ -807,6 +820,17 @@ flowchart LR
                 </table>
                 <p><strong>德勤《技术趋势2026》补充</strong>：AI单次调用便宜了，但用得多总支出还是涨；企业越来越多用"混合部署"——弹性任务上云、稳定任务放本地、要快就放边缘。64%企业会加大AI投入，新岗位像"AI协作设计师""边缘AI工程师"会冒出来；同时要防"影子AI"（员工偷偷用）、对抗攻击，在数据、模型、应用、基础设施全链条做好安全。</p>
                 <div class="viz-container">
+                    <div class="viz-title">分行业ROI与回收期（说人话，来源：IBM/Google等2025调研）</div>
+                    <table class="comp-table">
+                        <tr><th>行业</th><th>典型ROI/成效</th><th>回收期</th></tr>
+                        <tr><td>金融</td><td>每投1美元平均回3.7美元；PayPal诈检减损11%；中型行审核自动化70%、年省150万</td><td>简单自动化3～6月；中度6～12月</td></tr>
+                        <tr><td>制造</td><td>质检效率↑300%、家电库存周转↑30%年省400万；半导体缺陷检测率↑95%、成本↓35%</td><td>质检3～6月；产线改造6～12月</td></tr>
+                        <tr><td>医疗</td><td>临床报告12周→10分钟；文档自动化省11000护理小时、约80万美元</td><td>12～18月（企业级）</td></tr>
+                        <tr><td>零售/客服</td><td>营销转化↑25%、客服自动化率35%；本报告质检3～6月回收</td><td>3～6月</td></tr>
+                    </table>
+                    <p style="margin-top:8px;font-size:0.9em"><strong>注意</strong>：74%首年见正ROI，但仅6%成"AI高绩效"；42%公司放弃AI项目主因成本不明、价值难测。先小场景验证再铺开。</p>
+                </div>
+                <div class="viz-container">
                     <div class="viz-title">小白版破解之道（4步）</div>
                     <ol class="step-list">
                         <li><strong>先把数据收拾好</strong>——文档、表格梳理清楚再喂给AI，非结构化数据别超60%</li>
@@ -842,23 +866,25 @@ flowchart LR
             <div class="chapter" id="appendix">
                 <h2>附录</h2>
                 <h3 id="app-1">附录A 全球与中国市场数据（2026年2月）</h3>
-                <p><strong>说人话</strong>：中国AI核心产业2026年预计<strong>突破1.2万亿</strong>，增速近30%。AI专利<strong>157.6万项</strong>全球第一，用户5.15亿、渗透率36.5%。前14名开源模型里9个来自中国，阿里Qwen衍生超18万个模型。中国开发成本比美国低82%，API便宜76%～92%。世界经济论坛"AI应用之星"15个中国案例占近半。一句话：<strong>市场大、专利多、成本低、案例足</strong>。</p>
-                <table>
-                    <tr><th>指标</th><th>数值</th><th>备注</th></tr>
-                    <tr><td>2026年AI市场规模</td><td>1.25万亿</td><td>艾瑞/赛迪等，2024约7330亿</td></tr>
-                    <tr><td>2025-2029复合增速</td><td>32%</td><td>艾瑞预测</td></tr>
-                    <tr><td>AI企业数</td><td>5300+</td><td>截至2025年9月</td></tr>
-                    <tr><td>专精特新小巨人</td><td>400+</td><td>国家级</td></tr>
-                    <tr><td>AI用户</td><td>5.15亿</td><td>渗透率36.5%</td></tr>
-                    <tr><td>Agent生产部署率</td><td>52%</td><td>已用生成式AI的企业</td></tr>
-                    <tr><td>编码代理采用率</td><td>86%/91%</td><td>部署/企业采用</td></tr>
-                    <tr><td>正向ROI组织占比</td><td>88%</td><td>代理型AI早期采用者</td></tr>
+                <p><strong>说人话</strong>：中国AI核心产业2026年预计<strong>突破1.2万亿</strong>（信通院口径），赛迪另预测"AI市场规模"2026近6000亿。AI专利<strong>157.6万项</strong>全球第一，用户5.15亿、渗透率36.5%、占全球AI用户超50%。前14名开源模型里9个来自中国，阿里Qwen衍生超18万个模型。中国开发成本比美国低82%，API便宜76%～92%。世界经济论坛"AI应用之星"15个中国案例占近半。一句话：<strong>市场大、专利多、成本低、案例足</strong>。</p>
+                <table class="comp-table">
+                    <tr><th>指标</th><th>数值</th><th>来源/备注</th></tr>
+                    <tr><td>2026年AI市场规模（核心产业）</td><td><span data-update="market.core_2026">1.2～1.25万亿</span></td><td>信通院/艾瑞，2024核心产业约9000亿</td></tr>
+                    <tr><td>2026年AI市场规模（赛迪口径）</td><td><span data-update="market.saidi_2026">近6000亿</span></td><td>赛迪顾问，互联网21.6%、金融20.1%、制造13.8%</td></tr>
+                    <tr><td>2025-2029复合增速</td><td><span data-update="market.growth_rate">30%～32%</span></td><td>艾瑞/赛迪</td></tr>
+                    <tr><td>AI企业数</td><td><span data-update="market.ai_companies">6000+</span></td><td>2025年底，占全球约16%</td></tr>
+                    <tr><td>专精特新小巨人</td><td><span data-update="market.sme_champions">400+</span></td><td>国家级</td></tr>
+                    <tr><td>生成式AI用户</td><td><span data-update="market.genai_users">5.15亿</span></td><td>截至2025年6月，渗透率<span data-update="market.user_penetration">36.5%</span></td></tr>
+                    <tr><td>Agent生产部署率</td><td><span data-update="market.agent_deploy_rate">52%</span></td><td>已用生成式AI的企业</td></tr>
+                    <tr><td>编码代理采用率</td><td><span data-update="market.coding_agent_deploy">86</span>%/<span data-update="market.coding_agent_adopt">91</span>%</td><td>部署/企业采用</td></tr>
+                    <tr><td>正向ROI组织占比</td><td><span data-update="market.positive_roi_rate">88%</span></td><td>代理型AI早期采用者</td></tr>
                 </table>
                 <h3 id="app-2">附录B 产业链与投资趋势</h3>
                 <p><strong>通俗讲</strong>：产业链分三层——<strong>上游</strong>算力（芯片、数据中心）→<strong>中游</strong>技术（大模型、开发平台、API）→<strong>下游</strong>应用（行业、智能体、端侧）。对话式AI响应要更快：1.18秒→1秒内。AI视频2030年基础399亿、乐观858亿美元。教育用AI成绩提升近10%、备课时间缩30%；营销邮件转化率提升25%、客服自动化率35%。</p>
+                <div class="tip-box"><strong>融资与薪资（2025–2026）</strong>：<strong>融资</strong>——2024年AI融资同比降40%～68%（IT桔子），资本从狂热转谨慎；675家AI公司进入"死亡公墓"、2025年日均1+项目终结。<strong>薪资</strong>（BOSS直聘）：AI相关岗位月均新发职位同比+74%，AI工程师需求+317%；AI工程师中位薪资涨幅15.8%，薪资溢价从2022年3.3倍回调至2.6倍；算法工程师9～40K、大模型应用31～51K、视觉30～80K·27薪。核心人才仍稀缺。</div>
                 <h3 id="app-3">附录C 参考文献与数据来源</h3>
-                <p><strong>报告类</strong>：德勤《技术趋势2026》、艾瑞《中国人工智能产业研究报告》、赛迪顾问、新质生产力产业数据联盟《2026年"人工智能+"应用趋势报告》、世界经济论坛AI应用之星、洞隐科技《物流与供应链AI应用研究》、腾讯《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》、BetterYeah《企业RAG知识库建设指南》。</p>
-                <p><strong>数据与调研</strong>：DataGlobeHub中国AI指标、远瞻慧库2026产业展望、硅谷Agent调研、沃丰2026 AI Agent趋势、199IT AI代理趋势、晓观点客服洞察、澎湃科创101。</p>
+                <p><strong>报告类</strong>：德勤《技术趋势2026》、艾瑞《中国人工智能产业研究报告》、赛迪顾问、新质生产力产业数据联盟《2026年"人工智能+"应用趋势报告》、世界经济论坛AI应用之星、洞隐科技《物流与供应链AI应用研究》、腾讯《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》、BetterYeah《企业RAG知识库建设指南》、IBM/Google AI ROI报告。</p>
+                <p><strong>数据与调研</strong>：DataGlobeHub中国AI指标、远瞻慧库2026产业展望、硅谷Agent调研、沃丰2026 AI Agent趋势、199IT AI代理趋势、晓观点客服洞察、澎湃科创101、IT桔子、BOSS直聘。</p>
                 <p><strong>技术文档</strong>：智谱GLM-5、阿里Qwen、Kimi、DeepSeek API发布稿，OpenCLAW GitHub，国资委央企AI+行动。</p>
                 <p><strong>媒体与综述</strong>：新华社、InfoQ、36氪、虎嗅、澎湃、MIT Technology Review等。数据截止2026年2月，建议定期检索获取最新动态。</p>
                 <h3 id="app-4">附录D 行业应用场景速查表</h3>
@@ -908,7 +934,16 @@ flowchart TD
                 </div>
 
                 <h3 id="app-5">附录E 关键政策与标准索引</h3>
-                <p><strong>说人话</strong>：国发〔2025〕11号、安全治理框架2.0、医疗卫生实施意见、政务大模型指引、中小学AI指南、智能制造指引、制造业分类分级蓝皮书、汽车标准化要点等。建议关注工信部、科技部、地方经信部门官网，定期检索最新动态。</p>
+                <p><strong>说人话</strong>：下面按"啥时候发、核心条款"整理，方便快速查。建议关注工信部、科技部、国家卫健委、网信办、地方经信部门官网。</p>
+                <table class="comp-table">
+                    <tr><th>政策/文件</th><th>发布时间</th><th>核心条款摘要</th></tr>
+                    <tr><td>国务院《深入实施"人工智能+"行动的意见》</td><td>2025年</td><td>推进AI与科技、产业、消费、民生、治理等6大领域深度融合；2027年智能终端普及率超70%，2030年超90%；AI融入教育教学全要素，创新智能学伴、智能教师等人机协同</td></tr>
+                    <tr><td>AI安全治理框架2.0</td><td>2025年9月</td><td>国家网信办指导下发布，在1.0基础上动态调整风险分类、分层治理；统筹技术创新与治理实践，构建安全可信可控的AI生态；由网信应急中心主导、产学研共同参与</td></tr>
+                    <tr><td>五部门《人工智能+医疗卫生应用发展实施意见》</td><td>2025年</td><td>深化8大应用（基层、临床、患者服务、中医药、公卫、科研、治理、健康产业）；夯实基础设施、数据、算力、人才；2027/2030年分阶段目标，大幅提升基层AI服务能力</td></tr>
+                    <tr><td>《政务领域AI大模型部署应用指引》</td><td>2025年10月</td><td>中央网信办；规范政务大模型应用：智能问答、辅助办理、政策服务、智能监测、执法监管、文书起草、灾害预警等；县级及以下原则上复用上级资源，防止重复建设</td></tr>
+                    <tr><td>八部门《人工智能+制造专项行动实施意见》</td><td>2025年12月</td><td>工信部等；推进工业全要素智能化，AI在设计、生产、服务、运营全环节落地；发展智能制造装备、1000个高水平工业智能体</td></tr>
+                    <tr><td>制造业分类分级蓝皮书、汽车标准化要点</td><td>—</td><td>制造业AI应用分类分级、汽车智能驾驶与座舱标准；关注工信部、国标委动态</td></tr>
+                </table>
 
                 <h3 id="app-6">附录F 公司与产品索引（含超链接）</h3>
                 <p>本报告配套两份名录，与正文无缝衔接，可按公司或产品快速查找：</p>
@@ -917,11 +952,22 @@ flowchart TD
                     <li><strong><a href="chapters/公司名录-全球.html">公司名录</a></strong>：整合<strong><a href="chapters/公司名录-全球.html#source-boss">BOSS直聘</a></strong>AI招聘热门公司（美的、京东物流、华为、中科星图）、<strong><a href="chapters/公司名录-全球.html#source-ms">摩根士丹利中国AI 60</a></strong>、<strong><a href="chapters/公司名录-全球.html#source-wef">世界经济论坛AI应用之星</a></strong>（15家中国案例）、<strong><a href="chapters/公司名录-全球.html#global">全球头部</a></strong>（OpenAI、Anthropic、Google、微软、NVIDIA等），含落地案例与官网/BOSS直聘链接。</li>
                 </ul>
                 <p><a href="https://www.zhipin.com/job_detail/?keyword=人工智能" target="_blank">→ BOSS直聘 AI岗位一览</a></p>
+
+                <h3 id="app-intl">附录G 中美欧AI应用简要对标</h3>
+                <p><strong>说人话</strong>：美国"实验室精英主义"、中国"工业级实用主义"。美国基础层强（算力、芯片占优），中国应用快速落地。</p>
+                <table class="comp-table">
+                    <tr><th>领域</th><th>中国</th><th>美国/欧盟</th></tr>
+                    <tr><td>制造</td><td>富士康AI质检缺陷率2%→0.3%；电气制造年省200万；渗透率&lt;30%</td><td>高端制造、无人驾驶引领</td></tr>
+                    <tr><td>医疗</td><td>2800家二级以上医院部署、日均CT 200万例；多细分应用领先</td><td>生物医药、技术创新更强</td></tr>
+                    <tr><td>金融</td><td>应用广但深度较浅；AI SaaS 500亿、B端渗透约10%</td><td>2023 AI SaaS 800亿美金、占全球60%+；渗透约30%</td></tr>
+                    <tr><td>基础层</td><td>智能算力&lt;美国1/10；高端芯片90%进口</td><td>英伟达H100算力领先昇腾约7.7倍</td></tr>
+                </table>
+                <p style="margin-top:8px">中国计划在具身智能、AI Agent、智能终端硬件三大领域突破；未来3–5年为生态补短板窗口期。数据来源：远瞻慧库、36氪、中金等。</p>
             </div>
 
             <div class="cover" style="padding: 60px 0 40px; border-bottom: none;">
                 <p class="meta">— 报告完 —</p>
-                <p class="meta" style="margin-top: 20px;">数据更新：2026年2月27日 · 含OpenCLAW、GLM-5、Agent元年等最新动态</p>
+                <p class="meta" style="margin-top: 20px;">数据更新：<span data-update="_meta.last_updated">2026年2月28日</span> · 自动抓取更新</p>
             </div>
         </main>
     </div>

@@ -419,3 +419,38 @@ body {
 .step-chapter-1 h2 { color: var(--gray-800); }
 .step-chapter-2 h2 { color: var(--blue); }
 .step-intro { margin-top: 12px; padding: 12px; background: var(--blue-light); border-radius: 8px; font-size: 0.9em; }
+
+/* 右上角：转为播客 + 播放 */
+.top-right-ctrl {
+    position: fixed; top: 16px; right: 16px; z-index: 9999;
+    display: flex; gap: 8px; align-items: center;
+}
+.top-right-ctrl button {
+    padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--white); color: var(--gray-700); font-size: 0.9em; cursor: pointer;
+    transition: all 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.top-right-ctrl button:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue); }
+.top-right-ctrl button.active { background: var(--blue); color: var(--white); border-color: var(--blue); }
+.top-right-ctrl .btn-podcast { padding-left: 10px; padding-right: 10px; }
+.top-right-ctrl .btn-play { padding: 10px 16px; font-size: 1em; }
+.top-right-ctrl .btn-play .icon { display: inline-block; width: 18px; height: 18px; margin-right: 6px; vertical-align: -4px; }
+
+/* 播客播放器面板（底部栏） */
+.podcast-panel {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998;
+    background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.99) 100%);
+    border-top: 1px solid var(--border); padding: 16px 24px 24px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08); display: none;
+}
+.podcast-panel.visible { display: block; }
+.podcast-panel .podcast-title { font-size: 0.95em; font-weight: 600; color: var(--black); margin-bottom: 8px; }
+.podcast-panel .podcast-episode { font-size: 0.85em; color: var(--gray-600); margin-bottom: 12px; }
+.podcast-panel .progress-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.podcast-panel .progress-bar { flex: 1; height: 6px; background: var(--gray-200); border-radius: 3px; overflow: hidden; cursor: pointer; }
+.podcast-panel .progress-fill { height: 100%; background: var(--blue); width: 0%; transition: width 0.1s; }
+.podcast-panel .progress-time { font-size: 0.8em; color: var(--gray-500); min-width: 90px; }
+.podcast-panel .episode-list { max-height: 120px; overflow-y: auto; font-size: 0.85em; }
+.podcast-panel .episode-item { padding: 6px 0; cursor: pointer; color: var(--gray-600); }
+.podcast-panel .episode-item:hover { color: var(--blue); }
+.podcast-panel .episode-item.playing { color: var(--blue); font-weight: 500; }

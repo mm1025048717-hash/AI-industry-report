@@ -103,10 +103,12 @@ AI行业落地报告/
 
 ---
 
-## 🔄 即时更新机制
+## 🔄 自动更新机制
 
-- **手动刷新**：仓库 → **Actions** → **报告即时更新** → **Run workflow**
-- **自动刷新**：每周一 08:00（北京时）自动更新报告日期并触发 Pages 部署
+- **数据抓取**：GitHub Actions 自动抓取 GitHub  star 数等数据，更新 `data/report-data.json`
+- **客户端注入**：报告加载时从 JSON 动态填充市场规模、企业数、用户数等关键指标
+- **触发方式**：① 手动：Actions → 报告自动更新 → Run workflow  ② 每周一 08:00 北京时  ③ 修改 data/ 或 scripts/ 后 push
+- **可选**：在仓库 Secrets 配置 `SERPER_API_KEY` 可启用网页搜索数据源（免费 2500 次/月）
 - **模型表格**：覆盖国内外 16+ 主流模型（DeepSeek、通义、GPT-4o、Claude、Gemini 等）+ 成本档次
 
 ## 📅 更新日志

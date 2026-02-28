@@ -1,0 +1,47 @@
+# AI行业落地报告 - 自动更新配置
+# 用于 scripts/fetch_data.py，报告通过 script.js 客户端加载 data/report-data.json
+
+# 数据源配置
+sources:
+  github:
+    enabled: true
+    repos:
+      - owner: langchain-ai
+        repo: langchain
+        key: langchain_stars
+      - owner: langgenius
+        repo: dify
+        key: dify_stars
+      - owner: openclaw
+        repo: openclaw
+        key: openclaw_stars
+
+  serper:
+    enabled: true
+    # 需在 GitHub Secrets 配置 SERPER_API_KEY（本地运行则设环境变量或 .env）
+    # 免费额度: 2500次/月；每周运行 7 次查询，约 28 次/月
+    queries_cn:
+      - "中国AI创业 2026"
+      - "AI 垂直行业 创业"
+      - "AI创业 失败案例"
+      - "一人公司 AI"
+    queries_intl:
+      - "AI startup opportunities"
+      - "AI startup failure"
+      - "indie hacker AI"
+
+# RSS 信息源（可选，用于动态摘要）
+rss:
+  enabled: false
+  feeds: []
+
+# 占位符映射：HTML 中的 {{DATA.xxx}} 对应 report-data.json 的路径
+placeholders:
+  - DATA.market.core_2026
+  - DATA.market.saidi_2026
+  - DATA.market.growth_rate
+  - DATA.market.ai_companies
+  - DATA.market.genai_users
+  - DATA.market.agent_deploy_rate
+  - DATA.market.positive_roi_rate
+  - DATA._meta.last_updated
