@@ -318,6 +318,16 @@ body {
     font-size: 0.9em;
 }
 
+/* 一页核心结论：序号紧贴文字、居中、紧凑美观 */
+.step-list.summary-list {
+    max-width: 640px;
+    margin: 12px auto 20px;
+}
+.step-list.summary-list li {
+    padding-left: 36px;
+    margin: 10px 0;
+}
+
 /* 表格 */
 .comp-table {
     width: 100%;
