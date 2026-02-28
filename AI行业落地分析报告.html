@@ -190,12 +190,13 @@
                     <tr><td>开发工具咋选？</td><td>不写代码→扣子Coze、豆包Agent、Dify拖拽搭；写代码→LangChain、LlamaIndex。先跑通一个场景。</td></tr>
                 </table>
                 <div class="viz-container">
-                    <div class="viz-title">大模型咋选？一句话口诀</div>
+                    <div class="viz-title">大模型咋选？一句话口诀（国内外通用）</div>
                     <div class="card-grid">
                         <div class="info-card"><div class="value">省钱</div><div class="label">→ DeepSeek</div></div>
                         <div class="info-card"><div class="value">长文档</div><div class="label">→ Kimi/通义</div></div>
                         <div class="info-card"><div class="value">要稳</div><div class="label">→ 文心/通义</div></div>
                         <div class="info-card"><div class="value">写代码</div><div class="label">→ DeepSeek/Claude</div></div>
+                        <div class="info-card"><div class="value">出海</div><div class="label">→ GPT/Claude/Gemini</div></div>
                     </div>
                 </div>
 
@@ -371,18 +372,29 @@ flowchart LR
                 <p class="callout-box"><strong>📖 本篇章写给谁</strong>：想选大模型、搭知识库、做智能体的创业者。不讲复杂原理，只讲<strong>怎么选、怎么用、花多少钱</strong>。看完就能动手。</p>
                 
                 <h3 id="ch2-1">第四章 大模型选谁？怎么选？</h3>
-                <p><strong>通俗讲</strong>：大模型就是"会聊天的AI大脑"，接上就能做智能客服、写文案、分析数据。<strong>不用自己训练</strong>，调API按量付费。</p>
+                <p><strong>通俗讲</strong>：大模型就是"会聊天的AI大脑"，接上就能做智能客服、写文案、分析数据。<strong>不用自己训练</strong>，调API按量付费。下面覆盖国内外主流模型，按成本与场景帮你选。</p>
+                <div class="tip-box"><strong>成本梯队（输入价格，约数）</strong>：省钱→DeepSeek/豆包/Kimi（0.1～0.5元/百万Token）；中档→通义/智谱/文心（约1～3元）；高端→GPT-4o/Claude/Gemini（约15～21美元/百万Token）。国内比国际便宜约76%～92%。</div>
                 <table class="comp-table">
-                    <tr><th>模型</th><th>适合啥</th><th>一句话</th></tr>
-                    <tr><td>智谱GLM-5</td><td>智能体、长任务</td><td>推理与代码均衡</td></tr>
-                    <tr><td>阿里通义Qwen</td><td>超长文档</td><td>Max版综合均衡，SLA 99.5%</td></tr>
-                    <tr><td>Kimi</td><td>128K长文本</td><td>开源成本低约0.12元/百万tokens</td></tr>
-                    <tr><td>DeepSeek</td><td>省钱、写代码</td><td>价格最便宜，代码能力最强</td></tr>
-                    <tr><td>豆包</td><td>高并发</td><td>稳定性好</td></tr>
-                    <tr><td>文心一言</td><td>企业级</td><td>商业化成熟，中文覆盖全</td></tr>
+                    <tr><th>模型</th><th>厂商/地区</th><th>适合啥</th><th>一句话</th><th>成本档次</th></tr>
+                    <tr><td>DeepSeek R1/V3</td><td>深度求索</td><td>省钱、写代码、推理</td><td>价格最低，代码与推理强</td><td>★ 0.1～0.5元/百万T</td></tr>
+                    <tr><td>豆包</td><td>字节</td><td>高并发、通用</td><td>稳定性好，场景多</td><td>★ 低</td></tr>
+                    <tr><td>Kimi</td><td>月之暗面</td><td>长文本、128K+</td><td>长文档首选，开源版约0.12元/百万T</td><td>★ 低</td></tr>
+                    <tr><td>智谱GLM-5</td><td>智谱AI</td><td>智能体、长任务</td><td>推理与代码均衡</td><td>★★ 中</td></tr>
+                    <tr><td>通义Qwen</td><td>阿里</td><td>超长文档、企业</td><td>Max综合均衡，SLA 99.5%</td><td>★★ 中</td></tr>
+                    <tr><td>文心一言</td><td>百度</td><td>企业级、中文</td><td>商业化成熟，中文覆盖全</td><td>★★ 中</td></tr>
+                    <tr><td>腾讯混元</td><td>腾讯</td><td>通用、游戏/社交</td><td>与微信生态对接好</td><td>★★ 中</td></tr>
+                    <tr><td>零一万物Yi</td><td>零一万物</td><td>多模态、代码</td><td>开源+API，长上下文</td><td>★★ 中</td></tr>
+                    <tr><td>百川</td><td>百川智能</td><td>垂直、推理</td><td>小而美，适合特定场景</td><td>★★ 中</td></tr>
+                    <tr><td>MiniMax</td><td>MiniMax</td><td>语音、多模态</td><td>语音合成与对话强</td><td>★★ 中</td></tr>
+                    <tr><td>GPT-4o / o1</td><td>OpenAI</td><td>综合、代码、推理</td><td>全球标杆，贵但强</td><td>★★★ 高（约$2.5～15/百万T）</td></tr>
+                    <tr><td>Claude 3.5</td><td>Anthropic</td><td>长文本、分析、代码</td><td>200K上下文，分析能力强</td><td>★★★ 高（约$3～15/百万T）</td></tr>
+                    <tr><td>Gemini 1.5</td><td>Google</td><td>长文档、多模态</td><td>百万Token级上下文</td><td>★★★ 高（约$1.25～21/百万T）</td></tr>
+                    <tr><td>Llama 3</td><td>Meta</td><td>开源、自部署</td><td>可本地部署，成本可控</td><td>★★ 中（开源）</td></tr>
+                    <tr><td>Mistral</td><td>Mistral AI</td><td>欧洲、开源</td><td>欧盟合规，多语言</td><td>★★ 中</td></tr>
+                    <tr><td>Grok</td><td>xAI</td><td>实时信息、X整合</td><td>接X平台，适合海外营销</td><td>★★★ 高</td></tr>
                 </table>
-                <p><strong>成本示例</strong>：处理10万字文档，DeepSeek约0.024元，文心一言约0.144元。中小企业做客服、营销、数据分析，月API费几百到几千就够。</p>
-                <p><strong>价格说人话（公开定价）</strong>：DeepSeek-V3 约0.5元/百万Token（缓存命中），输入成本约GPT-4o的1/12；国内输入低至0.1元/百万Token且普遍支持缓存。用缓存、动态路由、请求压缩，企业平均推理成本可降42%、高频场景可降67%。国际模型最高约21美元/百万Token——国内便宜一大截。</p>
+                <p><strong>成本示例</strong>：处理10万字文档，DeepSeek约0.024元，文心一言约0.144元，GPT-4o约2.5美元。中小企业做客服、营销、数据分析，月API费几百到几千就够；国内模型比国际便宜一大截。</p>
+                <p><strong>价格说人话</strong>：DeepSeek-V3 约0.5元/百万Token（缓存命中），输入成本约GPT-4o的1/12；国内输入低至0.1元/百万Token且普遍支持缓存。用缓存、动态路由、请求压缩，企业平均推理成本可降42%、高频场景可降67%。<strong>选型口诀</strong>：省钱→DeepSeek；长文档→Kimi/通义；要稳→文心/通义；写代码→DeepSeek/Claude；出海→GPT/Claude/Gemini。</p>
                 <h3 id="ch2-2">第五章 RAG是啥？为啥重要？</h3>
                 <p><strong>一句话</strong>：RAG就是<strong>"让AI先查你家资料库，再按资料回答"</strong>，而不是瞎编（大模型有时候会"幻觉"——编造不存在的内容）。</p>
                 <p><strong>通俗例子</strong>：你是卖保险的，把保险条款、产品说明塞进知识库；客户问"这款重疾险保哪些病？"AI先去知识库检索相关条款，再基于检索结果回答——这样就不会胡说。好处：①不会胡说八道；②资料更新了，AI自然更新；③回答能追溯到具体条文，可溯源。</p>

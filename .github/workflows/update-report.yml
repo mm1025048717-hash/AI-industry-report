@@ -1,0 +1,55 @@
+# 即时更新机制：自动刷新报告「数据更新」日期并触发 Pages 部署
+# 触发方式：① 手动 Run workflow  ② 每周一 08:00 北京时
+name: 报告即时更新
+
+on:
+  workflow_dispatch:  # 手动触发：Actions 页 → 报告即时更新 → Run workflow
+  schedule:
+    - cron: '0 0 * * 1'  # 每周一 00:00 UTC = 北京 08:00
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 更新报告日期
+        run: |
+          python3 << 'EOF'
+          import re
+          from datetime import datetime
+          path = "AI行业落地分析报告.html"
+          with open(path, "r", encoding="utf-8") as f:
+            content = f.read()
+          today = datetime.now().strftime("%Y年%m月%d日")
+          new_content = re.sub(
+            r'数据更新：[0-9]+年[0-9]+月[0-9]+日',
+            f'数据更新：{today}',
+            content
+          )
+          with open(path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+          print(f"Updated date to {today}")
+          EOF
+
+      - name: 检查是否有变更
+        id: changes
+        run: |
+          if git diff --quiet AI行业落地分析报告.html; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 提交并推送
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add AI行业落地分析报告.html
+          git commit -m "chore: 自动更新报告日期 [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
