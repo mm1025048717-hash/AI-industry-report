@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十三章 汽车与交通AI落地深度报告</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">汽车行业目录</div>
+            <div class="step-toc-1">【第一步】行业知识</div>
+            <a href="#industry-what" class="toc-item level2">汽车/交通是啥、谁在玩</a>
+            <a href="#industry-pain" class="toc-item level2">痛点在哪</a>
+            <div class="step-toc-2">【第二步】AI落地知识</div>
+            <a href="#overview" class="toc-item level2">AI怎么帮上忙</a>
+            <a href="#drive" class="toc-item level1">二、智能驾驶</a>
+            <a href="#cabin" class="toc-item level1">三、智能座舱</a>
+            <a href="#operation" class="toc-item level1">四、车企运营</a>
+            <a href="#zero2one" class="toc-item level1">五、创业者机会</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>第十三章 汽车与交通AI落地</h1>
+                <p class="subtitle">先学行业·再学落地 · 通俗易懂</p>
+                <p class="meta">2026年2月更新 · 按「行业知识→AI落地」逻辑编写</p>
+                <div style="margin-top:12px;padding:12px;background:#f0fdf4;border-radius:8px;font-size:0.9em">
+                    <strong>本教材结构</strong>：①先讲汽车/交通行业干啥、谁在玩、痛点在哪；②再讲AI怎么落地、用什么、咋做。先懂行，再懂AI。
+                </div>
+            </div>
+
+            <!-- 【第一步】行业知识 -->
+            <div class="chapter step-chapter-1">
+                <h2>【第一步】行业知识：先把汽车/交通搞明白</h2>
+                <h3 id="industry-what">一、汽车与交通是啥？谁在玩？</h3>
+                <p>通俗讲：<strong>汽车=造车+用车</strong>，交通=运人运货。主要玩家：<strong>整车厂</strong>（比亚迪、华为、小鹏、特斯拉）、<strong>零部件</strong>、<strong>出行/物流</strong>（滴滴、京东、百度Apollo）。链条：研发→生产→销售→使用→运营。智驾、智能座舱、自动驾驶出租车、物流配送车都是AI主战场。</p>
+                <div class="viz-container">
+                    <div class="viz-title">汽车/交通"谁在玩"一览</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[整车厂] --> B[智驾/座舱]
+    C[出行/物流] --> D[自动驾驶]
+                    </pre>
+                </div>
+                <h3 id="industry-pain">二、汽车与交通的痛点在哪？</h3>
+                <p>①<strong>驾驶累、事故多</strong>——长途、堵车、疲劳；人力成本高。②<strong>座舱体验同质化</strong>——导航、音乐、控制，要更智能。③<strong>物流配送贵</strong>——人力、路径、调度，成本压不下来。④<strong>运营效率低</strong>——客服、试驾邀约、排产。懂了痛点，就知道AI能往哪儿使力了。</p>
+            </div>
+
+            <!-- 【第二步】AI落地知识 -->
+            <div class="chapter step-chapter-2">
+                <h2>【第二步】AI落地知识：AI怎么帮上忙</h2>
+                <h3 id="overview">一、汽车/交通为什么适合AI？</h3>
+                <p>智能驾驶市场四千多亿，六成新车带L2辅助驾驶，L3开始商用。华为乾崑、小鹏VLA、比亚迪天神之眼。自动驾驶出租车北京可无人运营，武汉订单破百万。</p>
+                <div class="viz-container">
+                    <div class="viz-title">图1-1 汽车AI核心数据</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">4500亿</div><div class="label">智驾市场规模</div></div>
+                        <div class="info-card"><div class="value">60%+</div><div class="label">新车L2渗透</div></div>
+                        <div class="info-card"><div class="value">300万</div><div class="label">华为2026交付目标</div></div>
+                        <div class="info-card"><div class="value">40%</div><div class="label">京东配送车成本降</div></div>
+                        <div class="info-card"><div class="value">3倍</div><div class="label">Apollo环卫效率</div></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-2 智驾技术路线</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[激光雷达] --> B[视觉方案]
+    B --> C[融合感知]
+    C --> D[无图/轻图]
+    D --> E[端到端VLA]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="drive">
+                <h2>二、智能驾驶</h2>
+                <p>华为ADS 4.0/5覆盖80+车型；小鹏VLA L3体验；比亚迪天神之眼12摄像+5毫米波+3激光雷达。特斯拉事故率比人低六成。</p>
+            </div>
+
+            <div class="chapter" id="cabin">
+                <h2>三、智能座舱</h2>
+                <p>多模态交互、场景智能、数字人助手。</p>
+            </div>
+
+            <div class="chapter" id="operation">
+                <h2>四、车企运营</h2>
+                <p>京东长三角500台配送车成本↓40%；百度Apollo环卫效率人工3倍、成本↓50%。</p>
+            </div>
+
+            <div class="chapter" id="zero2one">
+                <h2>五、创业者机会</h2>
+                <p>①智能座舱、客服、运营优化；②物流/配送自动驾驶；③车路协同、智慧交通。技术门槛高，适合有车企或出行资源的团队。</p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="产品名录-全行业.html#auto">📋 产品名录</a> · 
+                <a href="12-制造业深度.html">制造业深度</a> · 
+                <a href="20-物流行业深度.html">物流行业</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>

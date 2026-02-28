@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十五章 房地产行业AI落地深度报告</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">房地产目录</div>
+            <div class="step-toc-1">【第一步】行业知识</div>
+            <a href="#industry-what" class="toc-item level2">房地产是啥、谁在玩</a>
+            <a href="#industry-pain" class="toc-item level2">痛点在哪</a>
+            <div class="step-toc-2">【第二步】AI落地知识</div>
+            <a href="#overview" class="toc-item level2">AI怎么帮上忙</a>
+            <a href="#dev" class="toc-item level1">二、开发建设</a>
+            <a href="#sales" class="toc-item level1">三、营销</a>
+            <a href="#property" class="toc-item level1">四、物业与经纪</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>第十五章 房地产行业AI落地</h1>
+                <p class="subtitle">先学行业·再学落地 · 通俗易懂</p>
+                <p class="meta">2026年2月更新 · 按「行业知识→AI落地」逻辑编写</p>
+                <div style="margin-top:12px;padding:12px;background:#f0fdf4;border-radius:8px;font-size:0.9em">
+                    <strong>本教材结构</strong>：①先讲房地产行业干啥、谁在玩、痛点在哪；②再讲AI怎么落地、用什么、咋做。先懂行，再懂AI。
+                </div>
+            </div>
+
+            <!-- 【第一步】行业知识 -->
+            <div class="chapter step-chapter-1">
+                <h2>【第一步】行业知识：先把房地产搞明白</h2>
+                <h3 id="industry-what">一、房地产是啥？谁在玩？</h3>
+                <p>通俗讲：<strong>房地产=建房+卖房+管房</strong>——开发商拿地建房、营销卖房、物业管小区、经纪撮合二手。主要玩家：<strong>开发商</strong>（万科、碧桂园）、<strong>物业</strong>、<strong>经纪</strong>（链家、58）。链条：拿地→开发→营销→交付→物业。懂了谁在玩，才知道AI能帮谁。</p>
+                <div class="viz-container">
+                    <div class="viz-title">房地产"钱和货"一览</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[拿地开发] --> B[营销销售]
+    B --> C[物业/经纪]
+                    </pre>
+                </div>
+                <h3 id="industry-pain">二、房地产的痛点在哪？</h3>
+                <p>①<strong>定价难</strong>——市场波动、竞品多，靠人估不准。②<strong>营销费人</strong>——客服、讲房、内容生成，人力贵。③<strong>物业巡检累</strong>——报修、能耗、安防，靠人盯不过来。④<strong>经纪匹配低效</strong>——房源多、客源杂，对接慢。懂了痛点，就知道AI能往哪儿使力了。</p>
+            </div>
+
+            <!-- 【第二步】AI落地知识 -->
+            <div class="chapter step-chapter-2">
+                <h2>【第二步】AI落地知识：AI怎么帮上忙</h2>
+                <h3 id="overview">一、房地产为什么适合AI？（对应上面痛点）</h3>
+                <p>万科、碧桂园等精准预测定价、AI数字人营销；央国企超1/3投入千万+；DeepSeek/通义/豆包为主。91%计划试点、70%列精准定价为首要。</p>
+                <div class="viz-container">
+                    <div class="viz-title">图1-1 房企AI布局</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">91%</div><div class="label">计划1-2年试点</div></div>
+                        <div class="info-card"><div class="value">70%</div><div class="label">精准定价首要</div></div>
+                        <div class="info-card"><div class="value">1/3</div><div class="label">央国企投千万+</div></div>
+                        <div class="info-card"><div class="value">2.9</div><div class="label">平均用模型数</div></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-2 房地产AI应用链路</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[市场预测] --> B[精准定价]
+    B --> C[数字人营销]
+    C --> D[VR看房]
+    D --> E[合同辅助]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="dev">
+                <h2>二、开发建设</h2>
+                <p>全流程成本优化、个性化产品设计、多模态大模型。</p>
+            </div>
+
+            <div class="chapter" id="sales">
+                <h2>三、营销</h2>
+                <p>AI数字人客服营销、精准市场预测定价。</p>
+            </div>
+
+            <div class="chapter" id="property">
+                <h2>四、物业与经纪</h2>
+                <p>物业智能巡检、报修、能耗管理。经纪智能匹配、VR看房、合同辅助。RAG非结构化数据挖掘为60%企业重点。</p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="产品名录-全行业.html#realestate">📋 产品名录</a> · 
+                <a href="99-AI创业机会全行业汇编.html#realestate">📊 创业汇编</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>

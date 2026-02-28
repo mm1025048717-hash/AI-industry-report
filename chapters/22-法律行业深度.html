@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二十章 法律行业AI落地深度报告</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">法律行业目录</div>
+            <div class="step-toc-1">【第一步】行业知识</div>
+            <a href="#industry-what" class="toc-item level2">法律是啥、谁在玩</a>
+            <a href="#industry-pain" class="toc-item level2">痛点在哪</a>
+            <div class="step-toc-2">【第二步】AI落地知识</div>
+            <a href="#overview" class="toc-item level2">AI怎么帮上忙</a>
+            <a href="#contract" class="toc-item level1">二、合同审查</a>
+            <a href="#litigation" class="toc-item level1">三、诉讼辅助</a>
+            <a href="#ip" class="toc-item level1">四、知识产权与合规</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>第二十章 法律行业AI落地</h1>
+                <p class="subtitle">先学行业·再学落地 · 通俗易懂</p>
+                <p class="meta">2026年2月更新 · 按「行业知识→AI落地」逻辑编写</p>
+                <div class="step-intro">
+                    <strong>本教材结构</strong>：①先讲法律行业干啥、谁在玩、痛点在哪；②再讲AI怎么落地、用什么、咋做。先懂行，再懂AI。
+                </div>
+            </div>
+
+            <!-- 【第一步】行业知识 -->
+            <div class="chapter step-chapter-1">
+                <h2>【第一步】行业知识：先把法律搞明白</h2>
+                <h3 id="industry-what">一、法律行业是啥？谁在玩？</h3>
+                <p>通俗讲：<strong>法律=解决纠纷+防范风险</strong>——律所帮人打官司、审合同，企业法务管合规、审条款。主要玩家：<strong>律所</strong>、<strong>企业法务</strong>、<strong>法律科技公司</strong>。链条：接案→调研→起草→审查→诉讼。懂了谁在玩，才知道AI能帮谁。</p>
+                <div class="viz-container">
+                    <div class="viz-title">法律"活儿怎么干"一览</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[合同/案件] --> B[审查/检索]
+    B --> C[报告/诉讼]
+                    </pre>
+                </div>
+                <h3 id="industry-pain">二、法律的痛点在哪？</h3>
+                <p>①<strong>合同审查累</strong>——页数多、条款杂，人工审慢易漏。②<strong>案例检索费时</strong>——找相似判例、法条，靠人翻。③<strong>起草重复</strong>——模板多、改来改去，效率低。④<strong>合规监测难</strong>——法规多、更新快，人力盯不过来。懂了痛点，就知道AI能往哪儿使力了。</p>
+            </div>
+
+            <!-- 【第二步】AI落地知识 -->
+            <div class="chapter step-chapter-2">
+                <h2>【第二步】AI落地知识：AI怎么帮上忙</h2>
+                <h3 id="overview">一、法律为什么适合AI？（对应上面痛点）</h3>
+                <p>法律AI主要干两件事——<strong>审合同、查案例</strong>。华宇元典睿核、法小师、PowerLawGLM等，15秒能审300页合同，准确率九成多，审查从7天缩到1天。</p>
+                <div class="viz-container">
+                    <div class="viz-title">图1-1 法律AI核心数据</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">15秒</div><div class="label">审300页合同</div></div>
+                        <div class="info-card"><div class="value">92%</div><div class="label">准确率</div></div>
+                        <div class="info-card"><div class="value">7天→1天</div><div class="label">审查周期</div></div>
+                        <div class="info-card"><div class="value">95%</div><div class="label">法小师条款分析</div></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-2 法律AI应用链路</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[合同输入] --> B[OCR/解析]
+    B --> C[条款分析]
+    C --> D[风险识别]
+    D --> E[报告生成]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="contract">
+                <h2>二、合同审查</h2>
+                <p>元典睿核大模型+小模型+规则融合；法小师200+条款分析95%准确；PowerLawGLM 90%专业律师水平。</p>
+            </div>
+
+            <div class="chapter" id="litigation">
+                <h2>三、诉讼辅助</h2>
+                <p>起诉状拆解72要素、自动关联相似判例。最高法《智能审判辅助系统准入规范》多维公平性测试。</p>
+            </div>
+
+            <div class="chapter" id="ip">
+                <h2>四、知识产权与合规</h2>
+                <p>专利检索、侵权分析、合规监测。AI+合同进入规范化，数据沙盒与隐私计算探索。</p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="产品名录-全行业.html#legal">📋 产品名录</a> · 
+                <a href="08-金融行业深度.html">金融（合规风控）</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>

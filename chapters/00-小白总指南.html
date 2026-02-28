@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI行业落地 · 小白总指南（从0到1选赛道）</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">小白总指南</div>
+            <a href="#who" class="toc-item level1">一、写给谁？</a>
+            <a href="#truth" class="toc-item level1">二、5个真相</a>
+            <a href="#choose" class="toc-item level1">三、怎么选赛道？</a>
+            <a href="#path" class="toc-item level1">四、3条入门路径</a>
+            <a href="#tools" class="toc-item level1">五、第一周要做的5件事</a>
+            <a href="#links" class="toc-item level1">六、行业实战入口</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>AI行业落地 · 小白总指南</h1>
+                <p class="subtitle">创业者/从业者 · 零基础也能看懂的从0到1选赛道手册</p>
+                <p class="meta">帮你从"不懂"到"会用"、从"观望"到"动手" · 2026年2月</p>
+                <p class="tip-box" style="margin-top:12px"><strong>🎯 核心主张</strong>：2026年机会不在重造大模型，而在<strong>应用层创新</strong>——把成熟AI封装成行业方案，帮中小企业省钱赚钱。你帮别人用好AI，就是你的机会。</p>
+            </div>
+
+            <div class="chapter" id="who">
+                <h2>一、写给谁？</h2>
+                <ul>
+                    <li><strong>想入行AI的创业者</strong>——不知道从哪下手、怕门槛高、怕亏钱</li>
+                    <li><strong>想转型的传统从业者</strong>——客服、营销、制造、农业等，想用AI提效或做副业</li>
+                    <li><strong>零基础小白</strong>——没学过编程、不懂技术，但想抓住AI机会</li>
+                </ul>
+                <p>一句话：<strong>帮你从"不懂"到"会用"、从"观望"到"动手"</strong>。</p>
+            </div>
+
+            <div class="chapter" id="truth">
+                <h2>二、先搞清楚5个真相（别被忽悠）</h2>
+                <ol>
+                    <li><strong>你不用自己造AI</strong>——调大模型API就行，DeepSeek、通义、Kimi等按量付费，处理10万字文档几毛钱</li>
+                    <li><strong>大部分情况不用买算力</strong>——云上按用多少付多少，做应用层（客服、营销、数据分析）不关心算力</li>
+                    <li><strong>门槛最低的是零售和客服</strong>——月费299～2000元就能上AI客服，小团队年省2名客服约14万、ROI 1:20</li>
+                    <li><strong>60%+企业反馈公有云AI难适配或数据不合规</strong>——私有化+行业微调是2026新范式，有技术实力的可以主打</li>
+                    <li><strong>2026是Agent元年</strong>——AI从"你问一句我答一句"变成"你说目标它能自己干完"，扣子、Dify、豆包Agent零代码可搭</li>
+                </ol>
+            </div>
+
+            <div class="chapter" id="choose">
+                <h2>三、怎么选赛道？按你的背景来</h2>
+                <table>
+                    <tr><th>你的背景</th><th>推荐赛道</th><th>门槛</th></tr>
+                    <tr><td>电商/零售/营销</td><td>AI客服、AI营销、数字人直播、虚拟电商</td><td>⭐ 最低</td></tr>
+                    <tr><td>客服/销售</td><td>智能客服SaaS代理、知识库问答</td><td>⭐ 低</td></tr>
+                    <tr><td>工厂/制造</td><td>视觉质检、预测维护、智能仓储</td><td>⭐⭐ 中（需懂工业）</td></tr>
+                    <tr><td>法律/法务</td><td>合同审查、案例检索、条款扫描</td><td>⭐⭐ 中（垂直客单价高）</td></tr>
+                    <tr><td>农业/农村</td><td>病虫害识别、产量预测、农机调度</td><td>⭐⭐ 中（需农业资源）</td></tr>
+                    <tr><td>金融/保险</td><td>风控系统、智能核保、客服营销</td><td>⭐⭐⭐ 高（监管严）</td></tr>
+                    <tr><td>医疗</td><td>影像辅助、健康管理、知识库问诊</td><td>⭐⭐⭐ 高（需审批合规）</td></tr>
+                    <tr><td>政务/政府</td><td>政策匹配、智能申报、办事引导</td><td>⭐⭐⭐ 高（需招投标/关系）</td></tr>
+                </table>
+                <p><strong>口诀</strong>：零基础选零售/客服；有行业资源选垂直（法律、农业、制造）；有技术团队可做私有化+微调。</p>
+            </div>
+
+            <div class="chapter" id="path">
+                <h2>四、3条入门路径（选一条先走）</h2>
+                <h3>路径A：用现成工具提效（0～2周）</h3>
+                <p>适合：业务人员、想先试水。工具：<strong>扣子(Coze)、豆包Agent、ChatGPT</strong>。做什么：搭建简单客服机器人、写文案、做数据分析。成本：免费或月费几十到几百。</p>
+                <h3>路径B：做AI产品/服务代理（1～3个月）</h3>
+                <p>适合：有销售能力、想赚钱。模式：代理智齿、网易七鱼、火山引擎等SaaS，给中小企业部署AI客服/营销。或做AI工具代运营、咨询。收入：工具订阅费+运营服务费+效果分成。</p>
+                <h3>路径C：做垂直行业方案（3～6个月）</h3>
+                <p>适合：有行业经验、有技术或能找到技术合伙人。做什么：法律合同审查、制造视觉质检、农业病虫害识别等。门槛高但客单价高，可做私有化部署+行业微调。</p>
+                <pre class="mermaid">
+flowchart LR
+    A[路径A: 用工具] --> B[路径B: 做代理]
+    B --> C[路径C: 做方案]
+    A -.->|先试水| B
+    B -.->|有客户| C
+                </pre>
+            </div>
+
+            <div class="chapter" id="tools">
+                <h2>五、第一周要做的5件事（照着做）</h2>
+                <ol>
+                    <li><strong>注册一个AI账号</strong>——通义、Kimi、豆包、DeepSeek任选，免费试用来感受</li>
+                    <li><strong>在扣子(Coze)建一个简单机器人</strong>——选"客服"或"问答"模板，10分钟能跑通</li>
+                    <li><strong>读完主报告第一篇+第二篇</strong>——30分钟搞清楚市场、技术基础</li>
+                    <li><strong>选1个行业深度读</strong>——零售/制造/医疗/金融，按你背景选，看"从0到1"实战</li>
+                    <li><strong>列一个"我能做什么"清单</strong>——结合你的资源，写3个可能方向，选1个下周动手</li>
+                </ol>
+            </div>
+
+            <div class="chapter" id="links">
+                <h2>六、行业实战入口（点进去有步骤+工具+案例）</h2>
+                <ul>
+                    <li><a href="16-零售从0到1实战.html">零售/电商从0到1</a>——门槛最低，虚拟电商零成本起步</li>
+                    <li><a href="11-制造从0到1实战.html">制造业从0到1</a>——中小厂视觉质检、预测维护，有政策支持</li>
+                    <li><a href="09-医疗从0到1实战.html">医疗从0到1</a>——影像辅助、健康管理，需注意合规</li>
+                    <li><a href="08-金融行业深度.html">金融行业深度</a>——风控、信贷、客服，客单价高</li>
+                </ul>
+                <p>更多行业见主报告第三篇，每章都有"创业者机会"和产品名录链接。</p>
+                <p><a href="../AI行业落地分析报告.html">→ 返回主报告</a> · <a href="产品名录-全行业.html">→ 产品名录</a> · <a href="公司名录-全球.html">→ 公司名录</a></p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="99-AI创业机会全行业汇编.html">📊 创业汇编</a> · 
+                <a href="产品名录-全行业.html">📋 产品名录</a> · 
+                <a href="公司名录-全球.html">🏢 公司名录</a> · 
+                <a href="16-零售从0到1实战.html">零售从0到1</a> · 
+                <a href="11-制造从0到1实战.html">制造从0到1</a> · 
+                <a href="08-金融行业深度.html">金融深度</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>

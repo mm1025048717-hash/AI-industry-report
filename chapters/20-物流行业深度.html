@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十八章 物流与供应链AI落地深度报告</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">物流行业目录</div>
+            <div class="step-toc-1">【第一步】行业知识</div>
+            <a href="#industry-what" class="toc-item level2">物流是啥、谁在玩</a>
+            <a href="#industry-pain" class="toc-item level2">痛点在哪</a>
+            <div class="step-toc-2">【第二步】AI落地知识</div>
+            <a href="#overview" class="toc-item level2">AI怎么帮上忙</a>
+            <a href="#warehouse" class="toc-item level1">二、仓储</a>
+            <a href="#transport" class="toc-item level1">三、运输配送</a>
+            <a href="#supply" class="toc-item level1">四、供应链</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>第十八章 物流与供应链AI落地</h1>
+                <p class="subtitle">先学行业·再学落地 · 通俗易懂</p>
+                <p class="meta">2026年2月更新 · 按「行业知识→AI落地」逻辑编写</p>
+                <div class="step-intro">
+                    <strong>本教材结构</strong>：①先讲物流行业干啥、谁在玩、痛点在哪；②再讲AI怎么落地、用什么、咋做。先懂行，再懂AI。
+                </div>
+            </div>
+
+            <!-- 【第一步】行业知识 -->
+            <div class="chapter step-chapter-1">
+                <h2>【第一步】行业知识：先把物流搞明白</h2>
+                <h3 id="industry-what">一、物流是啥？谁在玩？</h3>
+                <p>通俗讲：<strong>物流就是"货怎么从A到B"</strong>——仓储、运输、配送、供应链。主要玩家：<strong>快递</strong>（顺丰、京东、菜鸟）、<strong>仓储</strong>、<strong>同城配送</strong>、<strong>冷链</strong>。链条：入库→存储→拣选→装车→配送。懂了谁在玩，才知道AI能帮谁。</p>
+                <div class="viz-container">
+                    <div class="viz-title">物流"货怎么动"一览</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[入库存储] --> B[拣选分拣]
+    B --> C[装车配送]
+                    </pre>
+                </div>
+                <h3 id="industry-pain">二、物流的痛点在哪？</h3>
+                <p>①<strong>需求预测难</strong>——卖多少、进多少、放哪儿，靠人猜不准。②<strong>仓储分拣累</strong>——人力贵、漏拣错拣多。③<strong>路径调度费时</strong>——装车、路线、运力，人工算不过来。④<strong>客服咨询多</strong>——查单、催单、异常，人工接不过来。懂了痛点，就知道AI能往哪儿使力了。</p>
+            </div>
+
+            <!-- 【第二步】AI落地知识 -->
+            <div class="chapter step-chapter-2">
+                <h2>【第二步】AI落地知识：AI怎么帮上忙</h2>
+                <h3 id="overview">一、物流为什么适合AI？（对应上面痛点）</h3>
+                <p>物流用AI做三件事——<strong>预测卖多少、货放哪儿、怎么装怎么送</strong>。京东超脑周转提三成，顺丰装箱优化从10分钟缩到20毫秒，菜鸟做库存预测、无人仓。狼族分拣机器人日均千万单。</p>
+                <div class="viz-container">
+                    <div class="viz-title">图1-1 物流AI核心数据</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">30%</div><div class="label">京东周转提升</div></div>
+                        <div class="info-card"><div class="value">20ms</div><div class="label">顺丰装箱优化</div></div>
+                        <div class="info-card"><div class="value">120倍</div><div class="label">丰知决策效率↑</div></div>
+                        <div class="info-card"><div class="value">千万单</div><div class="label">狼族日分拣</div></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-2 物流AI全链路</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[需求预测] --> B[智能布仓]
+    B --> C[装箱优化]
+    C --> D[路径规划]
+    D --> E[智能分拣]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="warehouse">
+                <h2>二、仓储</h2>
+                <p>状态监测、异常报警、智能盘点。京东AI年货地图、超脑供应链大模型；顺丰丰知大模型；菜鸟天机π。</p>
+            </div>
+
+            <div class="chapter" id="transport">
+                <h2>三、运输配送</h2>
+                <p>路径优化、运力调度、末端配送。OCR+RFID乡镇成本↓92%。</p>
+            </div>
+
+            <div class="chapter" id="supply">
+                <h2>四、供应链</h2>
+                <p>需求预测、库存协同、供应商管理。</p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="产品名录-全行业.html#logistics">📋 产品名录</a> · 
+                <a href="17-零售行业深度.html">零售行业</a> · 
+                <a href="14-汽车行业深度.html">汽车行业</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>

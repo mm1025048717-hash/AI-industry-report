@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十一章 制造业AI落地深度报告</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">制造业目录</div>
+            <div class="step-toc-1">【第一步】行业知识</div>
+            <a href="#industry-what" class="toc-item level2">制造是啥、痛点</a>
+            <div class="step-toc-2">【第二步】AI落地知识</div>
+            <a href="#overview" class="toc-item level2">AI怎么帮上忙</a>
+            <a href="#vision" class="toc-item level1">二、AI视觉质检</a>
+            <a href="#predict" class="toc-item level1">三、预测维护与调度</a>
+            <a href="#energy" class="toc-item level1">四、能耗优化</a>
+            <a href="#zero2one" class="toc-item level1">五、从0到1创业实战</a>
+            <div class="sidebar-nav-label">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>第十一章 制造业AI落地</h1>
+                <p class="subtitle">先学行业·再学落地 · 通俗易懂</p>
+            </div>
+
+            <!-- 【第一步】行业知识 -->
+            <div class="chapter step-chapter-1">
+                <h2>【第一步】行业知识</h2>
+                <h3 id="industry-what">制造是啥？工厂痛点在哪？</h3>
+                <p>通俗讲：<strong>制造业就是"工厂做东西"</strong>——汽车、手机、食品、钢铁、化工……从原料到成品。链条：研发→生产→质检→仓储→发货。痛点：①<strong>质检靠人眼看</strong>——累、慢、漏检多；②<strong>设备坏了才修</strong>——一停全停；③<strong>能耗算不清</strong>——电、气、水用多少靠经验。懂了这些，就知道AI能帮啥。</p>
+            </div>
+
+            <!-- 【第二步】AI落地知识 -->
+            <div class="chapter step-chapter-2">
+                <h2>【第二步】AI落地知识</h2>
+                <h3 id="overview">一、制造AI干三件事（对应上面痛点）</h3>
+                <p>通俗讲：上面三个痛点，AI都能补——①质检→<strong>AI视觉看得准</strong>，漏检少；②设备→<strong>预测维护</strong>，坏了提前知道；③能耗→<strong>AI算得准</strong>，用多少最省。宁德时代质量波动降50%、江门造纸能耗↓36%、一汽缺陷识别99.2%。</p>
+                <div class="viz-container">
+                    <div class="viz-title">图1-1 制造AI核心指标</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">99.2%</div><div class="label">一汽缺陷识别率</div></div>
+                        <div class="info-card"><div class="value">1000%+</div><div class="label">视觉质检ROI</div></div>
+                        <div class="info-card"><div class="value">6个月</div><div class="label">典型回收期</div></div>
+                        <div class="info-card"><div class="value">75%</div><div class="label">质检人力可减</div></div>
+                        <div class="info-card"><div class="value">36%</div><div class="label">江门造纸能耗降</div></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-2 硬基建-软应用-强决策架构</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 硬基建
+        X1[5G工厂] --> X2[工业互联网]
+        X2 --> X3[数据中台]
+    end
+    subgraph 软应用
+        Y1[研发设计] --> Y2[生产制造]
+        Y2 --> Y3[质检物流]
+    end
+    subgraph 强决策
+        Z1[预测分析] --> Z2[供应链孪生]
+        Z2 --> Z3[经营决策]
+    end
+    X3 --> Y1
+    Y3 --> Z1
+                    </pre>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-3 制造AI渗透率（2026）</div>
+                    <div class="maturity-bar">
+                        <div class="row"><span class="name">汽车制造</span><div class="bar-wrap"><div class="bar" style="width:92%"></div></div><span class="pct">92%</span></div>
+                        <div class="row"><span class="name">电子/半导体</span><div class="bar-wrap"><div class="bar" style="width:88%"></div></div><span class="pct">88%</span></div>
+                        <div class="row"><span class="name">流程工业</span><div class="bar-wrap"><div class="bar" style="width:75%"></div></div><span class="pct">75%</span></div>
+                        <div class="row"><span class="name">新能源电池</span><div class="bar-wrap"><div class="bar" style="width:85%"></div></div><span class="pct">85%</span></div>
+                    </div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">图1-4 中小厂AI投资回报曲线</div>
+                    <div class="viz-wrapper" style="height:240px"><canvas id="chartMfg"></canvas></div>
+                </div>
+            </div>
+
+            <div class="chapter" id="vision">
+                <h2>二、AI视觉质检</h2>
+                <p>传统每条产线6-8名质检员→AI减至1-2人；漏检率12%→&lt;3%。百度飞桨EasyDL等零门槛平台，15分钟上手。案例：汽车零部件效率↑300%；电子制造漏检&lt;0.02%；LED显示屏ROI 1778%。</p>
+                <div class="viz-container">
+                    <div class="viz-title">视觉质检四步实施</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[制定计划] --> B[数据收集]
+    B --> C[模型构建]
+    C --> D[工厂验收]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="predict">
+                <h2>三、预测维护与调度</h2>
+                <p>AI调度产能↑30%，设备利用率65%→88%；预测维护提前12小时预警故障；需求预测库存周转↑5%。</p>
+            </div>
+
+            <div class="chapter" id="energy">
+                <h2>四、能耗优化</h2>
+                <p>江门造纸产量↑5%、能耗↓36%，服务700+企业。树根根灵大模型能耗预测95%、电耗降15%。</p>
+            </div>
+
+            <div class="chapter" id="zero2one">
+                <h2>五、从0到1创业实战</h2>
+                <p>优先选客户服务、智能仓储、设备健康管理单点切入。用轻量化、开箱即用工具；关注政府补贴。产品：格创东智、树根互联、华为盘古、百度飞桨EasyDL。</p>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="00-小白总指南.html">🎯 小白指南</a> · 
+                <a href="11-制造从0到1实战.html">🎯 制造从0到1</a> · 
+                <a href="产品名录-全行业.html#manufacturing">📋 产品名录</a> · 
+                <a href="99b-零售制造AI创业机会深度.html">零售·制造创业深度</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+    if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});
+    if(typeof Chart!='undefined'){
+        const el=document.getElementById('chartMfg');
+        if(el)new Chart(el,{type:'line',data:{labels:['第1月','第3月','第6月','第12月'],datasets:[{label:'累计投入(万)',data:[8,15,22,30],borderColor:'#64748b'},{label:'累计收益(万)',data:[0,5,25,80],borderColor:'#22c55e',fill:true,backgroundColor:'rgba(34,197,94,0.1)'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top'}},scales:{y:{beginAtZero:true}}}});
+    }
+    </script>
+</body>
+</html>

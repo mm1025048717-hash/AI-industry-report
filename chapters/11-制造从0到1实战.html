@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制造业AI从0到1实战教程</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">制造从0到1</div>
+            <a href="#overview" class="toc-item level1">一、中小厂为啥要上AI？</a>
+            <a href="#policy" class="toc-item level1">二、国家有啥支持？</a>
+            <a href="#decision" class="toc-item level1">三、10项核心决策</a>
+            <a href="#path" class="toc-item level1">四、四阶段实施路径</a>
+            <a href="#scene" class="toc-item level1">五、场景与成效</a>
+            <a href="#pitfall" class="toc-item level1">六、避坑指南</a>
+            <div style="padding:8px 16px;font-size:0.75em;color:#64748b;font-weight:600;border-top:1px solid #e2e8f0;margin-top:12px">📌 快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="00-小白总指南.html" class="toc-item level2">🎯 小白指南</a>
+            <a href="99-AI创业机会全行业汇编.html" class="toc-item level2">📊 创业汇编</a>
+            <a href="产品名录-全行业.html" class="toc-item level2">📋 产品名录</a>
+            <a href="公司名录-全球.html" class="toc-item level2">🏢 公司名录</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>制造业AI 从0到1实战教程</h1>
+                <p class="subtitle">中小企业专用 · 政策+步骤+案例 · 全网资料嵌入</p>
+                <p class="meta">2026年工信部推数字化转型，有资金支持 · 2月</p>
+            </div>
+
+            <div class="chapter" id="overview">
+                <h2>一、中小厂为啥要上AI？能赚到钱</h2>
+                <p><strong>通俗讲</strong>：工厂用AI主要干三件事——<strong>质检（看得准）、预测（算得准）、降能耗</strong>。真实数据：AI调度系统产能提30%，设备利用率从65%→88%；视觉检测缺陷率降99%，人工成本降40%～60%；预测维护能提前12小时预警故障；需求预测能让库存周转提5%。宁德时代质量波动降50%、研发周期缩半；江门造纸产量升5%、能耗降36%。<strong>算得清、见效快</strong>，中小厂只要选对场景，能实实在在省成本、提效率。</p>
+            </div>
+
+            <div class="chapter" id="policy">
+                <h2>二、国家有啥支持？2026重点</h2>
+                <p>工信部等十部门发《中小企业数字化转型促进计划（2026-2028）》，核心几条：</p>
+                <ul>
+                    <li><strong>AI赋能全环节</strong>——研发设计、生产制造、经营管理都用AI</li>
+                    <li><strong>专项资金</strong>——对AI应用项目给补助或贷款贴息</li>
+                    <li><strong>普惠服务平台</strong>——一站式数字化转型服务中心</li>
+                    <li><strong>人才计划</strong>——中小企业数字化人才万人计划</li>
+                </ul>
+                <p>创业者可以关注当地经信部门、工信厅的申报通知，很多项目有补贴。</p>
+            </div>
+
+            <div class="chapter" id="decision">
+                <h2>三、10项核心决策（照着做）</h2>
+                <ol>
+                    <li><strong>定目标</strong>——按SMART原则设可量化目标，聚焦1～2个高ROI场景</li>
+                    <li><strong>评估家底</strong>——数据、技术、人才、资金，缺啥补啥</li>
+                    <li><strong>选技术路径</strong>——中小厂优先用<strong>第三方SaaS和云服务</strong>，别自建</li>
+                    <li><strong>选试点场景</strong>——优先选"数据基础好、业务价值高、难度低"的，比如客户服务、供应链优化</li>
+                    <li><strong>搭团队</strong>——技术+数据+业务对接，小团队就能起步</li>
+                    <li><strong>控成本</strong>——分阶段实施，先上低成本应用</li>
+                    <li><strong>保数据质量</strong>——数据清洗、合规是底线</li>
+                    <li><strong>敏捷推进</strong>——MVP验证，快速试、快速改</li>
+                    <li><strong>选合作伙伴</strong>——看技术实力、行业经验</li>
+                    <li><strong>规划长期</strong>——试点成功后规模推广</li>
+                </ol>
+            </div>
+
+            <div class="chapter" id="path">
+                <h2>四、四阶段实施路径</h2>
+                <pre class="mermaid">
+flowchart TD
+    A[第一阶段：数据筑基] --> B[第二阶段：基础组件]
+    B --> C[第三阶段：单场景落地]
+    C --> D[第四阶段：规模推广]
+                </pre>
+                <p><strong>第一阶段</strong>：打破数据孤岛，整合数据，建统一标准。没数据，AI就是瞎的。</p>
+                <p><strong>第二阶段</strong>：选基座大模型，规划云-边-端架构。中小厂用云就行，别自己买服务器。</p>
+                <p><strong>第三阶段</strong>：做试点——一个场景（比如质检、预测维护）跑通，形成感知-决策-执行闭环。</p>
+                <p><strong>第四阶段</strong>：多智能体协同，流程自动化，从一个点铺到全厂。</p>
+            </div>
+
+            <div class="chapter" id="scene">
+                <h2>五、场景与成效（选一个先干）</h2>
+                <table>
+                    <tr><th>场景</th><th>成效参考</th></tr>
+                    <tr><td>视觉质检</td><td>缺陷率降99%，人工成本降40%～60%</td></tr>
+                    <tr><td>AI调度</td><td>产能↑30%，设备利用率65%→88%</td></tr>
+                    <tr><td>预测维护</td><td>提前12小时预警故障，减少停机</td></tr>
+                    <tr><td>需求预测/库存</td><td>库存周转↑5%</td></tr>
+                    <tr><td>智能仓储</td><td>从这儿切入最现实</td></tr>
+                </table>
+                <p><strong>小步快跑</strong>：优先选客户服务、业务助手、供应链优化；用轻量化、开箱即用的AI工具；建ROI评估体系；用政府补贴和地方扶持。</p>
+            </div>
+
+            <div class="chapter" id="pitfall">
+                <h2>六、避坑指南</h2>
+                <ul>
+                    <li><strong>别追技术不追业务</strong>——业务驱动，ROI说话</li>
+                    <li><strong>别忽视数据治理</strong>——垃圾进垃圾出，先理数据</li>
+                    <li><strong>别全放云端</strong>——有些场景要边缘计算，车间网络可能不稳</li>
+                    <li><strong>别低估环境变化</strong>——产线换了、工艺改了，模型要跟着调</li>
+                    <li><strong>别业务IT两张皮</strong>——要培训员工，让人愿用、会用</li>
+                </ul>
+            </div>
+
+            <p style="margin-top:40px;padding:16px;background:#f8fafc;border-radius:8px;font-size:0.9em">
+                <a href="../AI行业落地分析报告.html">← 主报告</a> · 
+                <a href="12-制造业深度.html">制造业深度</a> · 
+                <a href="产品名录-全行业.html#manufacturing">📋 产品名录</a> · 
+                <a href="99b-零售制造AI创业机会深度.html">零售·制造创业深度</a> · 
+                <a href="16-零售从0到1实战.html">零售从0到1</a>
+            </p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>if(typeof mermaid!='undefined')mermaid.initialize({startOnLoad:true,theme:'neutral'});</script>
+</body>
+</html>
