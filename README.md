@@ -48,8 +48,8 @@
 
 1. 克隆本仓库
 ```bash
-git clone https://github.com/mm1025048717-hash/AI行业落地报告.git
-cd AI行业落地报告
+git clone https://github.com/mm1025048717-hash/AI-industry-report.git
+cd AI-industry-report
 ```
 
 2. 用浏览器直接打开 `AI行业落地分析报告.html`
@@ -57,7 +57,20 @@ cd AI行业落地报告
 ### 在线阅读（GitHub Pages）
 
 - 打开仓库 → **Settings** → **Pages** → Source 选 **main** 分支
-- 几分钟后访问：`https://mm1025048717-hash.github.io/AI行业落地报告/`
+- 几分钟后访问：`https://mm1025048717-hash.github.io/AI-industry-report/`
+
+### 部署到 [GitHub](https://github.com/mm1025048717-hash)
+
+1. 打开 [github.com/new](https://github.com/new)，新建仓库
+   - 名称：`AI-industry-report`（推荐，便于 Pages 访问）
+   - 不勾选「Initialize with README」
+2. 本地执行（已 init + commit）：
+```bash
+cd AI行业落地报告
+git remote add origin https://github.com/mm1025048717-hash/AI-industry-report.git
+git push -u origin main
+```
+3. 启用 GitHub Pages：仓库 **Settings** → **Pages** → Source 选 **main** → Save
 
 ---
 
