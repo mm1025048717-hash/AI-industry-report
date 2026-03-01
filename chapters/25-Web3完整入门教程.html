@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3+Web4完整入门教程：从0到1（含Web4前瞻研究·通俗易懂版）</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">Web3完整教程</div>
+            <div class="sidebar-nav-label">阶段一：建立心智模型</div>
+            <a href="#intro" class="toc-item level1">0. 开篇：怎么用本教程</a>
+            <a href="#ch1" class="toc-item level1">1. Web演进：1→2→3→4</a>
+            <a href="#ch1-evolution" class="toc-item level2">四代对比</a>
+            <a href="#ch1-web3" class="toc-item level2">Web3核心特征</a>
+            <a href="#ch1-web4" class="toc-item level2">Web4前瞻</a>
+            <a href="#ch1-relation" class="toc-item level2">Web3与Web4关系</a>
+            <div class="sidebar-nav-label">阶段二：理解技术底座</div>
+            <a href="#ch2" class="toc-item level1">2. 区块链基础</a>
+            <a href="#ch2-1" class="toc-item level2">交易流程</a>
+            <a href="#ch2-block" class="toc-item level2">区块结构</a>
+            <a href="#ch2-consensus" class="toc-item level2">共识机制</a>
+            <a href="#ch2-2" class="toc-item level2">密码学</a>
+            <a href="#ch2-smart" class="toc-item level2">智能合约</a>
+            <div class="sidebar-nav-label">阶段三：掌握价值工具</div>
+            <a href="#ch3" class="toc-item level1">3. 代币与标准</a>
+            <a href="#ch4" class="toc-item level1">4. 钱包完全指南</a>
+            <div class="sidebar-nav-label">阶段四：认识生态</div>
+            <a href="#ch5" class="toc-item level1">5. 公链与Layer2</a>
+            <a href="#ch6" class="toc-item level1">6. 八大赛道</a>
+            <a href="#ch7" class="toc-item level1">7. Web3+AI（通往Web4）</a>
+            <div class="sidebar-nav-label">阶段五：实践与安全</div>
+            <a href="#ch8" class="toc-item level1">8. 安全与诈骗防范</a>
+            <a href="#ch9" class="toc-item level1">9. 0-1实操教程</a>
+            <div class="sidebar-nav-label">阶段六：延伸</div>
+            <a href="#ch10" class="toc-item level1">10. 市场·监管·资源</a>
+            <a href="#ch10-glossary" class="toc-item level2">术语速查表</a>
+            <div class="sidebar-nav-label">快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="../AI行业落地分析报告.html#ch6" class="toc-item level2">Web3章节摘要</a>
+            <a href="../AI行业落地分析报告.html#ch3-1" class="toc-item level2">🔗 金融×Web3关联</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>Web3完整入门教程</h1>
+                <p class="subtitle">从0到1 · 通俗易懂 · 全网资料整理 · 小白可懂</p>
+                <p class="meta">区块链 · 链上金融 · 数字藏品 · 投票治理 · 资源贡献 · 真实资产上链 · AI+链 · Web4展望 · 2026年2月</p>
+                <div class="tip-box" style="margin-top:16px">
+                    <strong>本教程特点</strong>：① 覆盖所有核心知识点；② 说人话、不堆术语；③ 大量流程图与表格可视化；④ 数据来自国内外权威来源；⑤ 含0-1实操步骤与避坑指南。
+                </div>
+            </div>
+
+            <div class="chapter" id="intro">
+                <h2>0. 开篇：怎么用本教程</h2>
+                <p><strong>写给谁</strong>：完全没碰过区块链的小白、想系统学"下一代互联网"的、想搞懂区块链+AI是啥的。</p>
+                <div class="viz-container">
+                    <div class="viz-title">六阶段学习路线（层层递进）</div>
+                    <pre class="mermaid">
+flowchart TB
+    A[阶段一<br>建立心智模型] --> B[阶段二<br>理解技术底座]
+    B --> C[阶段三<br>掌握价值工具]
+    C --> D[阶段四<br>认识生态]
+    D --> E[阶段五<br>实践与安全]
+    E --> F[阶段六<br>延伸]
+    style A fill:#e0f2fe
+    style E fill:#dcfce7
+                    </pre>
+                    <p class="no-indent" style="font-size:0.9em"><strong>建议</strong>：新手按阶段1→6顺序学；查概念用左侧目录跳转；想实操直奔阶段五。</p>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch1">
+                <h2>1. Web演进：从Web1到Web4</h2>
+
+                <h3 id="ch1-evolution">1.1 四代演进一览</h3>
+                <div class="viz-container">
+                    <div class="viz-title">Web1 → Web2 → Web3 → Web4</div>
+                    <pre class="mermaid">
+flowchart LR
+    W1[Web1 只读] --> W2[Web2 可写]
+    W2 --> W3[Web3 可拥有]
+    W3 --> W4[Web4 可自治]
+    style W1 fill:#fef3c7
+    style W2 fill:#dbeafe
+    style W3 fill:#dcfce7
+    style W4 fill:#ede9fe
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>阶段</th><th>时间</th><th>核心能力</th><th>代表</th></tr>
+                    <tr><td>Web1</td><td>约1990-2000</td><td>只读，静态网页</td><td>雅虎、早期门户</td></tr>
+                    <tr><td>Web2</td><td>约2000至今</td><td>可读可写，但平台掌控数据</td><td>微信、抖音、Google、Meta</td></tr>
+                    <tr><td>Web3</td><td>现在进行时</td><td>可读可写<strong>东西真是你的</strong>——你的钱、你的数据，你说了算</td><td>以太坊、去中心化金融、数字藏品、投票治理</td></tr>
+                    <tr><td>Web4</td><td>概念/早期</td><td><strong>AI自己干活</strong>：AI能自己持钱包、做交易，不用你每次点头</td><td>机器支付协议、能花钱的AI</td></tr>
+                </table>
+
+                <h3 id="ch1-web3">1.2 Web3的四大核心特征</h3>
+                <p><strong>术语来源</strong>：Web3由以太坊联合创始人Gavin Wood于2014年提出。</p>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value">没有大老板</div><div class="label">不像微信数据在腾讯手里，链上数据分散在各地，没人能一家说了算</div></div>
+                    <div class="info-card"><div class="value">东西真是你的</div><div class="label">你的钱、你的账号、你的数字藏品，平台拿不定，你说了算</div></div>
+                    <div class="info-card"><div class="value">用代币干活</div><div class="label">链上各种操作靠代币：付手续费、参与投票、拿奖励，有点像游戏金币</div></div>
+                    <div class="info-card"><div class="value">能拼着用</div><div class="label">各家应用像乐高积木，可以互相连、叠着用，创新更快</div></div>
+                </div>
+
+                <h3 id="ch1-web4">1.3 Web4前瞻：共生网络与AI自治</h3>
+                <p><strong>Web4</strong>（有人叫「共生网络」）是互联网的下一个设想：<strong>AI能自己上网、自己有钱包、自己花钱买东西</strong>，不用你每次都点"同意"。就像给AI发工资让它自己过日子。2026年2月社区有重要进展与争论。</p>
+                <div class="viz-container">
+                    <div class="viz-title">Web4四项核心机制</div>
+                    <pre class="mermaid">
+flowchart LR
+    M1[钱包即身份] --> M2[自动延续] --> M3[机器支付x402] --> M4[自我修改]
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>机制</th><th>说人话</th></tr>
+                    <tr><td>钱包即身份</td><td>AI通过生成以太坊钱包和SIWE配置自启动，链上可追溯，能证明是它干的</td></tr>
+                    <tr><td>自动续命</td><td>钱多了多干活，钱少了少干活，没钱了就停——生存约束写进规则，自己管"生活费"</td></tr>
+                    <tr><td>机器支付（x402）</td><td>基于HTTP 402的协议，Stripe、Cloudflare、Coinbase、Vercel、Google已支持；机器对机器按请求付钱，无需登录或API密钥</td></tr>
+                    <tr><td>自我修改</td><td>AI能改自己代码、装新工具、生成子实例——赚够钱能"生"小AI，形成自然选择式进化</td></tr>
+                </table>
+
+                <h4>The Automaton：2026年首个自我延续AI</h4>
+                <p>0xSigil与Conway Research于2026年2月发布<strong>The Automaton</strong>——声称首个能自我发展、自我改进、自我复制的AI系统。其能挣钱、部署代码、自付算力、再投资，无需人类持续发指令。通过<strong>Conway Terminal</strong>获得：加密身份、原生支付、云算力与部署。生存逻辑：赚→付→改进→复制。</p>
+                <p><strong>Willy LomAIn实验</strong>：2026年2月17日，Sigil Wen给AI代理50美元，要求其"活下去"——验证自治AI经济的可行性。</p>
+
+                <h4>Vitalik的反对立场</h4>
+                <div class="tip-box tip-amber"><strong>以太坊创始人Vitalik强烈反对</strong>：①拉长反馈距离会优化"人类不想要的东西"；②当前自治AI主要产出内容垃圾；③依赖OpenAI等中心化模型，自主权叙事自相矛盾；④应提供护栏而非无限自治——以太坊应增强人类能力，而非构建可能削弱控制权的自治系统。真正普及可能还要5～10年。</div>
+
+                <h3 id="ch1-relation">1.4 Web3与Web4的关系</h3>
+                <div class="viz-container">
+                    <div class="viz-title">Web3是Web4的基建</div>
+                    <pre class="mermaid">
+flowchart LR
+    W3A[区块链身份] --> W4A[AI持币]
+    W3B[钱包支付] --> W4B[自主交易]
+    W3C[智能合约] --> W4C[代理协作]
+    style W3A fill:#dcfce7
+    style W3B fill:#dcfce7
+    style W3C fill:#dcfce7
+    style W4A fill:#ede9fe
+    style W4B fill:#ede9fe
+    style W4C fill:#ede9fe
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>对比</th><th>Web3</th><th>Web4</th></tr>
+                    <tr><td>谁做主</td><td>你（人）</td><td>AI自己</td></tr>
+                    <tr><td>有没有大老板</td><td>没有，靠区块链</td><td>一半一半，AI有时还得用大公司的模型</td></tr>
+                    <tr><td>AI干啥</td><td>帮你干活，听你的</td><td>自己挣钱自己花，能"养活"自己</td></tr>
+                    <tr><td>怎么用</td><td>你要点、要搜、要操作</td><td>AI猜你想要啥，直接给你办好</td></tr>
+                    <tr><td>界面</td><td>主要还是手机电脑屏幕</td><td>可能更多VR/AR、虚拟世界</td></tr>
+                </table>
+                <p><strong>一句话</strong>：Web3让你"真正拥有"；Web4让AI"自己拥有、自己动"。本教程第七章讲的链上AI代理，就是往Web4走的第一步。</p>
+
+                <h3>1.5 Web3知识全景图</h3>
+                <div class="viz-container">
+                    <div class="viz-title">一图看懂Web3全貌</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 基础设施
+        B1[区块链] --> B2[智能合约]
+        B2 --> B3[钱包]
+    end
+    subgraph 应用层
+        A1[DeFi] 
+        A2[NFT]
+        A3[DAO]
+        A4[DePIN]
+        A5[RWA]
+        A6[GameFi]
+    end
+    subgraph 价值层
+        V1[代币]
+        V2[稳定币]
+    end
+    B3 --> A1
+    B3 --> A2
+    B2 --> A1
+    B2 --> A2
+    V1 --> A1
+    V2 --> A1
+    B1 --> V1
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch2">
+                <h2>2. 区块链基础</h2>
+                <h3 id="ch2-1">2.1 区块链交易完整流程（6步）</h3>
+                <div class="viz-container">
+                    <div class="viz-title">一笔交易从发起到确认</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[①用户发起] --> B[②私钥签名]
+    B --> C[③广播网络]
+    C --> D[④矿工/验证者打包]
+    D --> E[⑤共识确认]
+    E --> F[⑥上链不可逆]
+    style A fill:#dbeafe
+    style F fill:#dcfce7
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>步骤</th><th>人话</th></tr>
+                    <tr><td>①产生交易</td><td>用户点"发送"，填地址和金额</td></tr>
+                    <tr><td>②私钥签名</td><td>用你的"密码"证明"这钱是我的，我同意转"，别人仿不了</td></tr>
+                    <tr><td>③广播</td><td>把你的转账请求发给全网的电脑，一传十十传百</td></tr>
+                    <tr><td>④打包</td><td>有人把很多笔转账塞进一个"小本本"（区块）里</td></tr>
+                    <tr><td>⑤大家认账</td><td>全网多数电脑都说"这波交易没问题"</td></tr>
+                    <tr><td>⑥记死了</td><td>小本本连到总账上，交易完成，基本改不了了</td></tr>
+                </table>
+
+                <h3 id="ch2-block">2.2 一个区块里有什么？</h3>
+                <div class="viz-container">
+                    <div class="viz-title">区块≈一页账本：有"上一页"的指纹、本页交易的摘要、具体交易列表</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 区块
+        H[区块头: 前一区块哈希+时间戳+随机数]
+        M[Merkle根: 本区块所有交易的哈希]
+        T[交易数据: 多笔交易列表]
+    end
+    H --> M
+    M --> T
+                    </pre>
+                </div>
+
+                <h3 id="ch2-consensus">2.3 谁有权记账？PoW、PoS、DPoS</h3>
+                <p><strong>说人话</strong>：账本要有人记，那谁来记？三种玩法——比算力、比谁钱多、投票选代表。</p>
+                <table class="comp-table">
+                    <tr><th>机制</th><th>人话</th><th>代表链</th><th>优点</th><th>缺点</th></tr>
+                    <tr><td>PoW 比算力</td><td>谁电脑先算出答案谁记账，像抢答</td><td>比特币</td><td>很安全、很分散</td><td>费电、慢</td></tr>
+                    <tr><td>PoS 比谁钱多</td><td>谁押的币多、押得久，谁更容易被选去记账</td><td>以太坊现在</td><td>省电</td><td>有钱的更有优势</td></tr>
+                    <tr><td>DPoS 投票选人</td><td>大家投票选几个"代表"轮流记账</td><td>波场等</td><td>快</td><td>代表权力大，有点集中</td></tr>
+                </table>
+                <div class="viz-container">
+                    <div class="viz-title">PoW挖矿简化流程</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[组装区块] --> B[算SHA256哈希]
+    B --> C{哈希&lt;目标值?}
+    C -->|否| D[改随机数重算]
+    D --> B
+    C -->|是| E[广播区块获奖励]
+                    </pre>
+                </div>
+
+                <h3 id="ch2-2">2.4 密码学基础（小白必懂三样）</h3>
+                <table class="comp-table">
+                    <tr><th>概念</th><th>说人话</th></tr>
+                    <tr><td>哈希</td><td>把任意内容变成一串固定长度的"指纹"，改一点结果全变，不能反推。用来连区块、验数据</td></tr>
+                    <tr><td>公钥/私钥</td><td>私钥=你的绝密密码；地址（公钥变来的）可公开，像银行卡号。用私钥签名=证明"是我"</td></tr>
+                    <tr><td>Merkle树</td><td>把很多笔交易打包成一棵"树"，树根代表整批，验起来快</td></tr>
+                </table>
+                <div class="tip-box"><strong>比特币 vs 以太坊记账方式</strong>：比特币的"余额"像一堆散落的找零；以太坊更像银行余额，一个数就搞定，更直观。</div>
+
+                <h3 id="ch2-smart">2.5 智能合约</h3>
+                <p><strong>说人话</strong>：写在区块链上的"自动规则"，条件一满足就自己执行，不用人再点。比如"张三转1个币给李四"——你签名后自动转，对方赖不掉。</p>
+                <div class="viz-container">
+                    <div class="viz-title">智能合约做什么</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[用户调用] --> B[满足条件?]
+    B -->|是| C[自动执行]
+    B -->|否| D[不执行]
+    C --> E[结果上链]
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>特点</th><th>说明</th></tr>
+                    <tr><td>不可篡改</td><td>部署后代码不能改，除非有升级机制</td></tr>
+                    <tr><td>透明</td><td>代码公开可查，谁都能验证</td></tr>
+                    <tr><td>无需信任</td><td>不用信对方，信代码逻辑就行</td></tr>
+                    <tr><td>要付手续费</td><td>执行要花钱（Gas），越复杂越贵</td></tr>
+                </table>
+                <p>链上借钱、数字藏品、投票治理……背后都是智能合约。写合约常用Solidity（以太坊的编程语言）。</p>
+            </div>
+
+            <div class="chapter" id="ch3">
+                <h2>3. 代币与标准</h2>
+                <h3>3.1 代币类型全景</h3>
+                <div class="viz-container">
+                    <div class="viz-title">代币分类（2026超2900万种）</div>
+                    <pre class="mermaid">
+flowchart TB
+    T[代币] --> F[同质化 Fungible]
+    T --> N[非同质化 NFT]
+    F --> F1[原生币: BTC/ETH]
+    F --> F2[稳定币: USDT/USDC]
+    F --> F3[治理代币: UNI/AAVE]
+    F --> F4[效用代币: 访问服务]
+    N --> N1[艺术品]
+    N --> N2[游戏道具]
+    N --> N3[虚拟土地]
+    N --> N4[身份/会员]
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>类型</th><th>人话</th><th>例子</th></tr>
+                    <tr><td>同质化</td><td>1个=另1个，可互换</td><td>BTC、ETH、USDT、DOGE</td></tr>
+                    <tr><td>NFT</td><td>独一无二，不可互换</td><td>数字艺术、游戏装备、ENS域名</td></tr>
+                    <tr><td>治理代币</td><td>持币能投票，决定项目怎么发展</td><td>UNI、AAVE</td></tr>
+                    <tr><td>效用代币</td><td>用代币才能用某个服务，有点像游戏点券</td><td>FIL、RNDR</td></tr>
+                    <tr><td>稳定币</td><td>锚定法币，1:1</td><td>USDT、USDC、DAI</td></tr>
+                </table>
+
+                <h3>3.2 代币的"格式"（以太坊为例）</h3>
+                <table class="comp-table">
+                    <tr><th>格式</th><th>说人话</th></tr>
+                    <tr><td>ERC-20</td><td>普通代币格式，能互换的那种（USDT、UNI等）</td></tr>
+                    <tr><td>ERC-721</td><td>数字藏品格式，每个独一无二</td></tr>
+                    <tr><td>ERC-1155</td><td>混合格式，一个合约里既能发普通币又能发藏品，省手续费</td></tr>
+                </table>
+                <p>其他链也有自己的格式（如币安链、Solana），思路差不多。</p>
+            </div>
+
+            <div class="chapter" id="ch4">
+                <h2>4. 钱包完全指南</h2>
+                <h3>4.1 钱包分类全景</h3>
+                <div class="viz-container">
+                    <div class="viz-title">按托管方式 vs 按连接方式</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 按托管
+        C1[托管型] --> C1A[交易所管私钥·便捷但非"你的币"]
+        C2[非托管] --> C2A[你管私钥·真正拥有]
+    end
+    subgraph 按连接
+        H1[热钱包] --> H1A[联网·MetaMask·日常用]
+        H2[冷钱包] --> H2A[离线·Ledger·大额存]
+    end
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>类型</th><th>人话</th><th>代表</th></tr>
+                    <tr><td>托管型</td><td>私钥在平台，你登录即用。平台跑路或倒闭有风险</td><td>币安、欧易钱包</td></tr>
+                    <tr><td>非托管</td><td>私钥你掌握，平台看不到。丢了没人能帮</td><td>MetaMask、imToken、Ledger</td></tr>
+                    <tr><td>热钱包</td><td>联网，方便交易，有被黑风险</td><td>MetaMask、Phantom</td></tr>
+                    <tr><td>冷钱包</td><td>硬件离线存储，最安全，大额推荐</td><td>Ledger、Trezor</td></tr>
+                    <tr><td>多签</td><td>转钱要多人一起同意，适合团队/公司管钱</td><td>Gnosis Safe</td></tr>
+                    <tr><td>MPC</td><td>密码拆成几份，多方一起才能用，企业常用</td><td>Fireblocks等</td></tr>
+                </table>
+                <div class="tip-box tip-amber"><strong>记住</strong>：密码（私钥）不在你手里，币就不是你的。放交易所的币，相当于平台"欠"你的，平台出事可能拿不回来。</div>
+
+                <h3>4.2 钱包三要素</h3>
+                <table class="comp-table">
+                    <tr><th>要素</th><th>人话</th></tr>
+                    <tr><td>私钥</td><td>你的绝密密码，谁有谁就能动钱包里所有钱，绝不能泄露</td></tr>
+                    <tr><td>助记词</td><td>12个英文词，等于私钥的"备份"，手写抄好放安全处</td></tr>
+                    <tr><td>地址</td><td>0x开头那串，像银行卡号，可以告诉别人用来收款</td></tr>
+                </table>
+            </div>
+
+            <div class="chapter" id="ch5">
+                <h2>5. 公链与Layer2</h2>
+                <h3>5.1 主链和"副链"</h3>
+                <p><strong>说人话</strong>：主链（L1）是底层大账本；副链/扩展层（L2）建在主链上，交易更快、手续费更便宜，最后结果还是会记回主链。</p>
+                <div class="viz-container">
+                    <div class="viz-title">主链 + 副链 关系</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph L1[Layer1 基础层]
+        ETH[以太坊]
+        SOL[Solana]
+        BNB[BNB Chain]
+    end
+    subgraph L2[Layer2 扩展层]
+        ARB[Arbitrum]
+        OP[Optimism]
+        MATIC[Polygon]
+        BASE[Base]
+    end
+    L2 -.->|结算到| ETH
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>链</th><th>速度/手续费</th><th>用的人/钱</th></tr>
+                    <tr><td>以太坊</td><td>主网慢、贵；副链快、便宜</td><td>锁了8000多亿，占大头</td></tr>
+                    <tr><td>Solana</td><td>很快，手续费几分钱</td><td>日活470万，AI、链游多</td></tr>
+                    <tr><td>Arbitrum</td><td>快且便宜</td><td>以太坊最大的"副链"</td></tr>
+                    <tr><td>Polygon</td><td>很便宜</td><td>项目多，新手友好</td></tr>
+                </table>
+
+                <h3>5.2 新手咋选？</h3>
+                <p>想省钱练手→<strong>Polygon</strong>或<strong>Arbitrum</strong>；玩AI、链游→<strong>Solana</strong>；做大额、机构玩法→<strong>以太坊</strong>。</p>
+            </div>
+
+            <div class="chapter" id="ch6">
+                <h2>6. 八大赛道</h2>
+                <div class="viz-container">
+                    <div class="viz-title">赛道关系与市场规模</div>
+                    <pre class="mermaid">
+flowchart LR
+    subgraph 金融
+        DeFi[DeFi 2210亿TVL]
+        RWA[RWA 1850亿+]
+        Stable[稳定币 1600亿+]
+    end
+    subgraph 应用
+        NFT[NFT]
+        DAO[DAO]
+        Game[GameFi 330-440亿]
+    end
+    subgraph 基建
+        DePIN[DePIN 192亿]
+    end
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>赛道</th><th>说人话</th><th>代表/规模</th></tr>
+                    <tr><td>DeFi</td><td>链上借钱、换币、存钱吃利息，不用银行——与<strong>传统金融</strong>（银行、证券、保险）互补融合，详见主报告<a href="../AI行业落地分析报告.html#ch3-1">第八章金融行业</a></td><td>Uniswap、Aave；锁了2000多亿</td></tr>
+                    <tr><td>NFT</td><td>独一无二的数字藏品，头像、游戏装备、虚拟地</td><td>OpenSea</td></tr>
+                    <tr><td>DAO</td><td>持币的人投票决定项目咋搞，没有老板</td><td>MakerDAO、Uniswap</td></tr>
+                    <tr><td>DePIN</td><td>贡献WiFi、显卡、硬盘等资源换代币</td><td>Helium、Render、Filecoin；盘子192亿</td></tr>
+                    <tr><td>RWA</td><td>房子、债券等真实资产变成链上代币</td><td>BlackRock等大机构在搞；1800多亿</td></tr>
+                    <tr><td>GameFi</td><td>玩游戏赚代币，边玩边赚</td><td>Axie、The Sandbox；300多亿市场</td></tr>
+                    <tr><td>稳定币</td><td>1个≈1美元，不咋涨跌，用来结算</td><td>USDT、USDC；月交易量超Visa</td></tr>
+                </table>
+
+                <h3>6.1 几个常见的DeFi项目</h3>
+                <table class="comp-table">
+                    <tr><th>项目</th><th>干啥的</th><th>规模</th></tr>
+                    <tr><td>Lido</td><td>存币吃利息，还能继续用</td><td>锁了2000多亿</td></tr>
+                    <tr><td>Aave</td><td>借钱、放贷</td><td>270亿，很多条链都能用</td></tr>
+                    <tr><td>Uniswap</td><td>去中心化换币，不用交易所</td><td>几十到上百亿</td></tr>
+                    <tr><td>MakerDAO</td><td>发行稳定币DAI</td><td>78亿</td></tr>
+                </table>
+            </div>
+
+            <div class="chapter" id="ch7">
+                <h2>7. Web3+AI（通往Web4的桥梁）</h2>
+                <h3>7.1 为什么AI需要Web3？</h3>
+                <div class="viz-container">
+                    <div class="viz-title">三大能力</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[支付] --> A1[AI自主持钱包·实时结算]
+    B[信任] --> B1[链上身份·可追溯]
+    C[协调] --> C1[代理间无需许可协作]
+                    </pre>
+                </div>
+                <p><strong>ChatGPT、Gemini</strong>这种AI不能自己有钱包、不能自己花钱；<strong>链上AI</strong>可以——它能自己持币、自己付钱、自己跟别的AI做生意。</p>
+                <h3>7.2 代表项目与市场</h3>
+                <table class="comp-table">
+                    <tr><th>项目</th><th>市值/定位</th></tr>
+                    <tr><td>Bittensor (TAO)</td><td>38.5亿，去中心化机器学习</td></tr>
+                    <tr><td>Render (RNDR)</td><td>30亿，去中心化GPU</td></tr>
+                    <tr><td>Fetch.ai / ASI</td><td>Fetch+SingularityNET+Ocean合并，20亿+</td></tr>
+                </table>
+                <p>2025年底有550多个"能花钱的AI"项目，总市值40多亿。2026年的新玩法：<strong>多个AI一起干活</strong>——你下个任务，几个AI分工协作自己搞定。这就是<strong>Web4</strong>的雏形：AI自己有钱包、自己交易、不用你次次点头。</p>
+            </div>
+
+            <div class="chapter" id="ch8">
+                <h2>8. 安全与诈骗防范</h2>
+                <h3>8.1 诈骗类型</h3>
+                <table class="comp-table">
+                    <tr><th>骗术</th><th>说人话</th><th>咋防</th></tr>
+                    <tr><td>Rug Pull 跑路</td><td>项目方卷钱跑人。有的是直接锁死你取不出，有的是慢慢套现后消失</td><td>查团队背景、小金额试水</td></tr>
+                    <tr><td>钓鱼</td><td>假网站骗你连钱包、点授权，实为偷你资产</td><td>只从官网进，不明链接别点</td></tr>
+                    <tr><td>假空投</td><td>说送你币，要你连钱包+签名，其实是盗授权</td><td>先搜一下这项目是不是骗局</td></tr>
+                    <tr><td>要助记词</td><td>任何人跟你要12个词=100%骗子</td><td>打死不给，真官方从不索要</td></tr>
+                </table>
+                <p>2024年跑路骗局损失过亿美金；很多是被骗点了"授权"——相当于把钱包钥匙给了别人。</p>
+                <h3>8.2 安全 checklist</h3>
+                <ul>
+                    <li>□ 钱包只从官网或官方应用商店下</li>
+                    <li>□ 助记词手写抄好，放安全地方，绝不泄露</li>
+                    <li>□ 连应用时要看清它要啥权限，用完后去 revoke.cash 撤销授权</li>
+                    <li>□ 大额转账前先转一点点试试</li>
+                    <li>□ 只用闲钱玩，别梭哈、别借钱</li>
+                </ul>
+            </div>
+
+            <div class="chapter" id="ch9">
+                <h2>9. 0-1实操教程</h2>
+                <p>详细步骤见主报告 <a href="../AI行业落地分析报告.html#ch6-7">第六篇第七章</a>，这里给速览：</p>
+                <div class="viz-container">
+                    <div class="viz-title">实操路线（约1小时入门）</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[装MetaMask] --> B[抄助记词]
+    B --> C[加Sepolia链]
+    C --> D[领测试币]
+    D --> E[发第一笔]
+    E --> F[加Polygon逛DApp]
+    style A fill:#dbeafe
+    style F fill:#dcfce7
+                    </pre>
+                </div>
+                <p><strong>关键链接</strong>：<a href="https://metamask.io" target="_blank" rel="noopener">metamask.io</a> · <a href="https://chainlist.org" target="_blank" rel="noopener">chainlist.org</a> · <a href="https://dappradar.com" target="_blank" rel="noopener">dappradar.com</a> · revoke.cash（撤销授权）</p>
+            </div>
+
+            <div class="chapter" id="ch10">
+                <h2>10. 市场·监管·资源</h2>
+                <h3>10.1 关键数据（2025-2026）</h3>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value">5.6～6.6亿</div><div class="label">全球持币人数</div></div>
+                    <div class="info-card"><div class="value">4万亿</div><div class="label">加密总市值</div></div>
+                    <div class="info-card"><div class="value">2210亿</div><div class="label">DeFi TVL</div></div>
+                    <div class="info-card"><div class="value">1600亿+</div><div class="label">稳定币市值</div></div>
+                </div>
+                <h3>10.2 各地政策大概</h3>
+                <table class="comp-table">
+                    <tr><th>地区</th><th>说人话</th></tr>
+                    <tr><td>香港</td><td>2026年3月发首批稳定币牌照，想当数字资产枢纽</td></tr>
+                    <tr><td>美国</td><td>在推联邦层面的稳定币监管框架</td></tr>
+                    <tr><td>中国</td><td>对加密货币仍有严格限制</td></tr>
+                </table>
+                <h3>10.3 学习资源</h3>
+                <p><strong>中文</strong>：learnblockchain.cn、登链社区、阿里云区块链教程</p>
+                <p><strong>英文</strong>：ethereum.org、CoinGecko、DeFiLlama、DappRadar</p>
+
+                <h3 id="ch10-glossary">10.4 术语速查表</h3>
+                <table class="comp-table" style="font-size:0.9em">
+                    <tr><th>词</th><th>说人话</th></tr>
+                    <tr><td>Gas</td><td>链上操作的手续费</td></tr>
+                    <tr><td>TVL</td><td>锁在某个项目里的总钱数</td></tr>
+                    <tr><td>Swap</td><td>用一种币换另一种</td></tr>
+                    <tr><td>DEX</td><td>去中心化交易所，不用注册就能换币</td></tr>
+                    <tr><td>AMM</td><td>用资金池自动报价换币，不用挂单</td></tr>
+                    <tr><td>流动性</td><td>池子里有多少币可供买卖</td></tr>
+                    <tr><td>Staking</td><td>押币赚利息/奖励</td></tr>
+                    <tr><td>APY</td><td>年化收益率，存一年能拿多少</td></tr>
+                    <tr><td>Mint</td><td>铸造，新做一个NFT或代币</td></tr>
+                    <tr><td>Bridge</td><td>跨链桥，把资产从一条链转到另一条</td></tr>
+                    <tr><td>Fork</td><td>分叉，复制一个项目/链弄出新版</td></tr>
+                    <tr><td>白名单</td><td>有优先购买权的那批人</td></tr>
+                    <tr><td>x402</td><td>让AI能自动付钱的协议，Web4用的</td></tr>
+                </table>
+
+                <p class="meta" style="margin-top:24px">— 教程完 — 数据更新：2026年2月 · 来源：全网国内外整理</p>
+                <p class="no-indent" style="font-size:0.85em;color:#64748b;margin-top:12px"><strong>Web4研究来源</strong>：a16z 2026预测、Web3Caff、新浪财经、Sigil/Conway Research、Phemex、AIVineet、0xSigil Automaton、Threads、SaaSCity等。数据截止2026年2月。</p>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        if (typeof mermaid !== 'undefined') mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
+</body>
+</html>

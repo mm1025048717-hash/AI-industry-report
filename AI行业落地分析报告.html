@@ -11,111 +11,140 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 </head>
 <body>
+    <!-- 引导界面：点赞后进入 -->
+    <div id="welcome-overlay" class="welcome-overlay" aria-hidden="false">
+        <div class="welcome-overlay-inner">
+            <h2 class="welcome-title">AI+行业落地从0到1实战教程</h2>
+            <p class="welcome-hint">觉得这份报告对你有帮助？点个星星支持一下再开始阅读吧</p>
+            <p class="welcome-stars" aria-hidden="true">⭐ ⭐ ⭐</p>
+            <button type="button" id="welcome-star-btn" class="welcome-star-btn" aria-label="点赞后进入">
+                <span class="welcome-star-icon">⭐</span>
+                <span class="welcome-star-text">点赞进入</span>
+            </button>
+        </div>
+    </div>
+    <div id="assistant-cta" class="assistant-cta"></div>
     <div class="layout">
-        <aside class="sidebar">
-            <div class="sidebar-title">目 录</div>
-            <a href="#ai-knowledge" class="toc-item level1">📌 AI知识总览（必读）</a>
-            <a href="#ai-knowledge-1" class="toc-item level2">一、核心概念</a>
-            <a href="#ai-knowledge-2" class="toc-item level2">二、关键技术与产品形态</a>
-            <a href="#ai-knowledge-3" class="toc-item level2">三、落地链路与基础设施</a>
-            <a href="#ai-knowledge-4" class="toc-item level2">四、与本报告对应关系</a>
-            <a href="#ch1" class="toc-item level1">第一篇 总论</a>
-            <a href="#ch1-1" class="toc-item level2">第一章 宏观概览与产业规模</a>
-            <a href="#ch1-2" class="toc-item level2">第二章 技术创新与核心趋势</a>
-            <a href="#ch1-3" class="toc-item level2">第三章 政策法规与治理框架</a>
-            <a href="#ch2" class="toc-item level1">第二篇 技术基础</a>
+        <aside class="sidebar" data-toc-collapsible>
+            <div class="sidebar-header">
+                <div class="sidebar-title">目 录</div>
+                <div class="sidebar-subtitle">新人0-1学习路径（建议按阶段顺序）</div>
+                <div class="toc-search-wrap">
+                    <input type="search" id="toc-search" class="toc-search-input" placeholder="搜索章节..." autocomplete="off" aria-label="搜索目录">
+                    <span class="toc-search-clear" id="toc-search-clear" aria-label="清空搜索">×</span>
+                </div>
+            </div>
+            <a href="#learning-path" class="toc-item level1">阶段一：入门必读（Day 0-1）</a>
+            <a href="chapters/00-小白总指南.html" class="toc-item level2">小白总指南（选赛道+入门）</a>
+            <a href="#ai-knowledge" class="toc-item level2">AI知识总览（必读）</a>
+            <a href="#ai-knowledge-1" class="toc-item level3">一、核心概念</a>
+            <a href="#ai-knowledge-2" class="toc-item level3">二、关键技术与产品形态</a>
+            <a href="#ai-knowledge-3" class="toc-item level3">三、落地链路与基础设施</a>
+            <a href="#ai-knowledge-4" class="toc-item level3">四、与本报告对应关系</a>
+            <a href="#ch1" class="toc-item level2">第一篇 总论</a>
+            <a href="#ch1-1" class="toc-item level3">第一章 宏观概览与产业规模</a>
+            <a href="#ch1-2" class="toc-item level3">第二章 技术创新与核心趋势</a>
+            <a href="#ch1-3" class="toc-item level3">第三章 政策法规与治理框架</a>
+            <a href="#ch2" class="toc-item level1">阶段二：技术基础（Day 2-3）</a>
             <a href="#ch2-1" class="toc-item level2">第四章 大语言模型(2026最新)</a>
             <a href="#ch2-2" class="toc-item level2">第五章 RAG与检索增强生成</a>
             <a href="#ch2-3" class="toc-item level2">第六章 AI Agent与OpenCLAW</a>
             <a href="#ch2-4" class="toc-item level2">第七章 算力与基础设施</a>
-            <a href="#ch3" class="toc-item level1">第三篇 行业应用</a>
+            <a href="#ch3" class="toc-item level1">阶段三：行业应用（选1个深入）</a>
             <a href="#ch3-1" class="toc-item level2">第八章 金融行业</a>
-            <a href="chapters/08-金融行业深度.html" class="toc-item level3">📖 深度报告(30万字+)</a>
+            <a href="chapters/08-金融行业深度.html" class="toc-item level3">深度报告(30万字+)</a>
+            <a href="#ch6" class="toc-item level3">金融×Web3关联</a>
             <a href="#ch3-1-1" class="toc-item level3">商业银行·对公/零售/客服</a>
             <a href="#ch3-1-2" class="toc-item level3">证券·投研/量化/合规</a>
             <a href="#ch3-1-3" class="toc-item level3">保险·核保/理赔/销售</a>
             <a href="#ch3-1-4" class="toc-item level3">消费金融·风控/贷后</a>
             <a href="#ch3-2" class="toc-item level2">第九章 医疗健康</a>
-            <a href="chapters/09-医疗健康深度.html" class="toc-item level3">📖 深度报告(30万字+)</a>
+            <a href="chapters/09-医疗健康深度.html" class="toc-item level3">深度报告(30万字+)</a>
             <a href="#ch3-2-1" class="toc-item level3">医学影像</a>
             <a href="#ch3-2-2" class="toc-item level3">临床诊疗与基层医疗</a>
             <a href="#ch3-2-3" class="toc-item level3">健康管理与医药研发</a>
             <a href="#ch3-3" class="toc-item level2">第十章 教育行业</a>
-            <a href="chapters/10-教育行业深度.html" class="toc-item level3">📖 深度报告(30万字+)</a>
+            <a href="chapters/10-教育行业深度.html" class="toc-item level3">深度报告(30万字+)</a>
             <a href="#ch3-3-1" class="toc-item level3">K12·小学/初中/高中分层</a>
             <a href="#ch3-3-2" class="toc-item level3">学科·英语口语/语文作文/数学解题</a>
             <a href="#ch3-3-3" class="toc-item level3">职教·通识课/实训/产教融合</a>
             <a href="#ch3-3-4" class="toc-item level3">高教·科研/文献/学情诊断</a>
             <a href="#ch3-3-5" class="toc-item level3">学前与素质·启蒙/艺术/体育</a>
             <a href="#ch3-4" class="toc-item level2">第十一章 制造业</a>
-            <a href="chapters/12-制造业深度.html" class="toc-item level3">📖 深度报告</a>
-            <a href="chapters/11-制造从0到1实战.html" class="toc-item level3">🎯 从0到1</a>
+            <a href="chapters/12-制造业深度.html" class="toc-item level3">深度报告</a>
+            <a href="chapters/11-制造从0到1实战.html" class="toc-item level3">从0到1</a>
             <a href="#ch3-4-1" class="toc-item level3">汽车·冲压/焊装/涂装/总装</a>
             <a href="#ch3-4-2" class="toc-item level3">电子·PCB/半导体/消费电子</a>
             <a href="#ch3-4-3" class="toc-item level3">流程工业·钢铁/石化/造纸/建材</a>
             <a href="#ch3-4-4" class="toc-item level3">高端装备与新能源</a>
             <a href="#ch3-5" class="toc-item level2">第十二章 政务与智慧城市</a>
-            <a href="chapters/13-政务行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/13-政务行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-5-1" class="toc-item level3">政务服务</a>
             <a href="#ch3-5-2" class="toc-item level3">社会治理与机关办公</a>
             <a href="#ch3-6" class="toc-item level2">第十三章 汽车与交通</a>
-            <a href="chapters/14-汽车行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/14-汽车行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-6-1" class="toc-item level3">智能驾驶</a>
             <a href="#ch3-6-2" class="toc-item level3">智能座舱与车企运营</a>
             <a href="#ch3-7" class="toc-item level2">第十四章 保险行业</a>
-            <a href="chapters/15-保险行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/15-保险行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-7-1" class="toc-item level3">寿险与健康险</a>
             <a href="#ch3-7-2" class="toc-item level3">财险与销售核保理赔</a>
             <a href="#ch3-8" class="toc-item level2">第十五章 房地产</a>
-            <a href="chapters/18-房地产行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/18-房地产行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-8-1" class="toc-item level3">开发建设与营销</a>
             <a href="#ch3-8-2" class="toc-item level3">物业管理与经纪</a>
             <a href="#ch3-9" class="toc-item level2">第十六章 零售与消费</a>
-            <a href="chapters/17-零售行业深度.html" class="toc-item level3">📖 深度报告</a>
-            <a href="chapters/16-零售从0到1实战.html" class="toc-item level3">🎯 从0到1</a>
+            <a href="chapters/17-零售行业深度.html" class="toc-item level3">深度报告</a>
+            <a href="chapters/16-零售从0到1实战.html" class="toc-item level3">从0到1</a>
             <a href="#ch3-9-1" class="toc-item level3">电商·精准营销/推荐/履约</a>
             <a href="#ch3-9-2" class="toc-item level3">即时零售·需求预测/补货/配送</a>
             <a href="#ch3-9-3" class="toc-item level3">商超·智能货架/虚拟试衣</a>
             <a href="#ch3-9-4" class="toc-item level3">品牌与供应链AI</a>
             <a href="#ch3-10" class="toc-item level2">第十七章 文旅行业</a>
-            <a href="chapters/19-文旅行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/19-文旅行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-10-1" class="toc-item level3">旅游景区与文博</a>
             <a href="#ch3-10-2" class="toc-item level3">酒店与旅行社</a>
             <a href="#ch3-11" class="toc-item level2">第十八章 物流与供应链</a>
-            <a href="chapters/20-物流行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/20-物流行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-11-1" class="toc-item level3">仓储与运输配送</a>
             <a href="#ch3-12" class="toc-item level2">第十九章 能源电力</a>
-            <a href="chapters/21-能源行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/21-能源行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-12-1" class="toc-item level3">电力与新能源</a>
             <a href="#ch3-13" class="toc-item level2">第二十章 法律行业</a>
-            <a href="chapters/22-法律行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/22-法律行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-13-1" class="toc-item level3">合同审查与诉讼</a>
             <a href="#ch3-13-2" class="toc-item level3">知识产权与合规</a>
             <a href="#ch3-14" class="toc-item level2">第二十一章 农业</a>
-            <a href="chapters/23-农业行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/23-农业行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-14-1" class="toc-item level3">种植业与智慧育种</a>
             <a href="#ch3-14-2" class="toc-item level3">畜牧渔业与果园</a>
             <a href="#ch3-15" class="toc-item level2">第二十二章 内容与客服</a>
-            <a href="chapters/24-内容客服行业深度.html" class="toc-item level3">📖 深度报告</a>
+            <a href="chapters/24-内容客服行业深度.html" class="toc-item level3">深度报告</a>
             <a href="#ch3-15-1" class="toc-item level3">智能客服</a>
             <a href="#ch3-15-2" class="toc-item level3">内容生成与数字人</a>
-            <a href="#ch4" class="toc-item level1">第四篇 难点与以后会咋样？</a>
-            <a href="#ch4-1" class="toc-item level2">第二十三章 落地为啥难？咋破解？</a>
-            <a href="#ch4-2" class="toc-item level2">第二十四章 以后会咋样？</a>
-            <a href="#ch5" class="toc-item level1">第五篇 金融/制造/医疗三家深挖</a>
-            <a href="#ch5-1" class="toc-item level2">第二十五章 金融科技深度</a>
-            <a href="#ch5-2" class="toc-item level2">第二十六章 智能制造深度</a>
-            <a href="#ch5-3" class="toc-item level2">第二十七章 医疗AI深度</a>
-            <a href="chapters/00-小白总指南.html" class="toc-item level1">🎯 小白总指南（选赛道+入门）</a>
-            <a href="chapters/99-AI创业机会全行业汇编.html" class="toc-item level1">📊 AI创业机会全行业汇编（100万字+）</a>
-            <a href="#zero2one-link" class="toc-item level1">从0到1实战教程</a>
+            <a href="#zero2one-link" class="toc-item level1">阶段四：动手实战（Day 4+）</a>
             <a href="chapters/08-金融行业深度.html#zero2one" class="toc-item level2">金融从0到1</a>
             <a href="chapters/16-零售从0到1实战.html" class="toc-item level2">零售从0到1</a>
             <a href="chapters/11-制造从0到1实战.html" class="toc-item level2">制造从0到1</a>
             <a href="chapters/09-医疗从0到1实战.html" class="toc-item level2">医疗从0到1</a>
-            <a href="chapters/产品名录-全行业.html" class="toc-item level1">📋 产品名录（全行业）</a>
-            <a href="chapters/公司名录-全球.html" class="toc-item level1">🏢 公司名录（全球/BOSS直聘）</a>
-            <a href="#appendix" class="toc-item level1">附录</a>
+            <a href="#ch4" class="toc-item level1">阶段五：进阶延伸</a>
+            <a href="#ch4-1" class="toc-item level2">第四篇 落地为啥难？咋破解？</a>
+            <a href="#ch4-2" class="toc-item level2">第二十四章 以后会咋样？</a>
+            <a href="#ch5" class="toc-item level2">第五篇 三家深挖</a>
+            <a href="#ch5-1" class="toc-item level3">金融科技/智能制造/医疗AI</a>
+            <a href="#ch6" class="toc-item level2">第六篇 Web3+AI+Web4</a>
+            <a href="#ch6-1" class="toc-item level3">Web3是啥？小白版</a>
+            <a href="#ch6-2" class="toc-item level3">八大赛道全景</a>
+            <a href="#ch6-3" class="toc-item level3">公链与基础设施</a>
+            <a href="#ch6-4" class="toc-item level3">Web3+AI+Web4前瞻</a>
+            <a href="#ch6-5" class="toc-item level3">市场数据与监管</a>
+            <a href="chapters/25-Web3完整入门教程.html" class="toc-item level3">Web3完整教程（独立页）</a>
+            <a href="#ch6-7" class="toc-item level3">0-1实操摘要</a>
+            <a href="#appendix" class="toc-item level1">阶段六：参考工具</a>
+            <a href="chapters/99-AI创业机会全行业汇编.html" class="toc-item level2">AI创业机会全行业汇编</a>
+            <a href="chapters/一人公司完整入门教程.html" class="toc-item level2">一人公司完整教程</a>
+            <a href="chapters/产品名录-全行业.html" class="toc-item level2">产品名录（全行业）</a>
+            <a href="chapters/公司名录-全球.html" class="toc-item level2">公司名录（全球/BOSS直聘）</a>
             <a href="#app-1" class="toc-item level2">附录A 市场数据</a>
             <a href="#app-2" class="toc-item level2">附录B 产业链与投资</a>
             <a href="#app-3" class="toc-item level2">附录C 参考文献</a>
@@ -126,8 +155,8 @@
             <a href="#app-reverse" class="toc-item level2">附录H 逆向选择</a>
         </aside>
 
-        <main class="main" id="main-content">
-            <div class="cover">
+        <main class="main main-scroll" id="main-content">
+            <div class="cover" id="learning-path">
                 <h1>AI+行业落地从0到1实战教程</h1>
                 <p class="subtitle">创业者 · 从业者 · 小白都能看懂的AI机会指南</p>
                 <p class="meta">通俗讲：告诉你在哪个行业、用什么产品、怎么找机会 · 2026年2月更新</p>
@@ -137,12 +166,13 @@
                 </div>
                 <div class="cover-intro">
                     <p><strong>写给谁看</strong>：想入行AI的创业者、想转型的从业者、零基础小白。帮你从「不懂」到「会用」、从「观望」到「动手」。</p>
+                    <div class="tip-box tip-green" style="margin:12px 0"><strong>📖 新人建议阅读顺序</strong>：① 小白总指南（选赛道）→ ② AI知识总览（必读）→ ③ 第一篇总论（宏观认知）→ ④ 第二篇技术基础（LLM/RAG/Agent）→ ⑤ 按背景选1个行业深入 → ⑥ 动手做：金融/零售/制造/医疗从0到1 → ⑦ 进阶看Web3+AI、难点与趋势。</div>
                     <p><strong>教材怎么用</strong>：每个行业按「先学行业、再学AI落地」——第一步搞懂行业干啥、痛点在哪；第二步看AI怎么进、用什么工具、案例咋样。图表表格说人话。</p>
-                    <p><strong>快速跳转</strong>：<a href="chapters/00-小白总指南.html">小白总指南</a> · <a href="chapters/99-AI创业机会全行业汇编.html">创业汇编</a> · <a href="chapters/产品名录-全行业.html">产品名录</a> · <a href="chapters/公司名录-全球.html">公司名录</a> · <a href="chapters/16-零售从0到1实战.html">零售从0到1</a> · <a href="chapters/11-制造从0到1实战.html">制造从0到1</a> · <a href="chapters/08-金融行业深度.html">金融深度</a></p>
+                    <p><strong>快速跳转</strong>：<a href="chapters/00-小白总指南.html">小白总指南</a> · <a href="chapters/99-AI创业机会全行业汇编.html">创业汇编</a> · <a href="chapters/一人公司完整入门教程.html">一人公司完整教程</a> · <a href="chapters/25-Web3完整入门教程.html">Web3完整教程</a> · <a href="#ch6">Web3摘要</a> · <a href="chapters/产品名录-全行业.html">产品名录</a> · <a href="chapters/公司名录-全球.html">公司名录</a> · <a href="chapters/16-零售从0到1实战.html">零售从0到1</a> · <a href="chapters/11-制造从0到1实战.html">制造从0到1</a> · <a href="chapters/08-金融行业深度.html">金融深度</a></p>
                 </div>
                 <div class="report-img-wrap" style="margin-top:32px">
                     <img src="https://images.pexels.com/photos/8438880/pexels-photo-8438880.jpeg?auto=compress&cs=tinysrgb&w=900" alt="AI与技术发展" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：AI已渗透企业生产与服务全流程 · 来源：Pexels（免费可商用）</p>
+                    <p class="report-img-cap">图：AI已渗透企业生产与服务全流程 · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>（免费可商用）</p>
                 </div>
                 <div class="viz-container" style="margin-top:24px">
                     <div class="viz-title">一页核心结论（决策者可速览）</div>
@@ -155,6 +185,10 @@
                         <li><strong>2026趋势</strong>：Agent元年；从"你问一句我答一句"到"你说目标它能干完"</li>
                     </ol>
                 </div>
+                <div class="quote-box">
+                    <span class="quote-text">「AI将像是朝霞，慢慢照进我们的生活空间——看似无形，却在不知不觉中改变了生活的轮廓。」技术向上生长，应用向下扎根。机会不在造模型，在把技术带进千行百业。</span>
+                    <span class="quote-source">— <a href="https://www.qimingvc.com/cn/news/%E5%90%AF%E6%98%8E%E8%A7%82%E7%82%B9-%E5%90%AF%E6%98%8E%E5%88%9B%E6%8A%95%E5%91%A8%E5%BF%97%E5%B3%B0%EF%BC%9A2025%E5%B9%B4%E4%BC%9A%E6%98%AFai%E5%BA%94%E7%94%A8%E5%85%A8%E9%9D%A2%E8%90%BD%E5%9C%B0%E7%9A%84%E5%A4%A7%E5%B9%B4" target="_blank" rel="noopener">启明创投</a> · 行业观察</span>
+                </div>
             </div>
 
             <!-- AI知识总览（主报告开头全文梳理·大白话版） -->
@@ -163,7 +197,7 @@
                 <p class="tip-box"><strong>说人话</strong>：好多零基础读者后面看到"RAG""Agent"直接懵。这里先把本报告里会出现的<strong>所有AI名词</strong>用大白话讲一遍，看完再往下读，啥都能对上号。</p>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/18069158/pexels-photo-18069158.png?auto=compress&cs=tinysrgb&w=800" alt="大模型与AI智能体" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：从大模型到智能体——AI正在从"能聊"走向"能干" · 来源：Pexels</p>
+                    <p class="report-img-cap">图：从大模型到智能体——AI正在从"能聊"走向"能干" · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
                 </div>
                 <h3 id="ai-knowledge-1">一、核心概念（先搞懂这些词）</h3>
                 <div class="concept-cards">
@@ -253,7 +287,7 @@
                 <p><strong>跟人唠嗑记5个数</strong>：1.2万亿、157万专利、5亿用户、57%用Agent、80%已赚钱。比空谈"AI是未来"管用。</p>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/9026292/pexels-photo-9026292.jpeg?auto=compress&cs=tinysrgb&w=800" alt="企业AI应用场景" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：2026年企业AI应用已从单点走向全流程 · 来源：Pexels</p>
+                    <p class="report-img-cap">图：2026年企业AI应用已从单点走向全流程 · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
                 </div>
                 <p><strong>硬数据</strong>：2026核心产业破1.25万亿、年涨27%；AI公司5300+、小巨人400+；大模型占全球40%，国产开发成本比美国低82%。<strong>盘子大、增速快、国产能打</strong>。</p>
                 
@@ -389,6 +423,10 @@ flowchart LR
                 </div>
                 <p>央企已建11个行业可信数据空间、超1000个应用场景、17个备案行业模型、10万余个行业智能体。创业者记住：<strong>做正事、别碰红线</strong>，就能踏踏实实干。</p>
                 <p><strong><a href="https://www2.deloitte.com/global/en/insights/focus/tech-trends.html" target="_blank" rel="noopener">德勤《技术趋势2026》</a>说人话</strong>：企业AI正从"试试看"走向"真干活"；但真正把智能体跑起来的只有11%，多半卡在"只自动化了流程、没 redesign 业务"。趋势：①物理AI（机器人+环境）到2035年工作场所或达200万人形机器人；②混合云/边缘部署应对成本与性能；③64%企业会加码AI；④安全要全链条防。对创业者：<strong>选对场景、小切口验证、再规模化</strong>，比一上来做"大而全"靠谱得多。</p>
+                <div class="quote-box">
+                    <span class="quote-text">「没有专注，就没有一切。」——盯住一个行业、一个场景、一条链路，扎下去。盘子大、增速快，但贪多嚼不烂。</span>
+                    <span class="quote-source">— <a href="http://tech.sina.com.cn/it/2012-02-09/09546702053.shtml" target="_blank" rel="noopener">雷军</a> · 创业七字诀</span>
+                </div>
             </div>
 
             <!-- 第二篇 技术基础 -->
@@ -455,9 +493,13 @@ flowchart LR
                     </table>
                     <p style="margin-top:8px;font-size:0.9em">选<a href="https://www.coze.cn" target="_blank" rel="noopener">Coze</a>：无编程背景、快速上线、社交平台对接；选<a href="https://dify.ai" target="_blank" rel="noopener">Dify</a>：隐私合规、复杂工作流、技术团队强。Dify v1.5（2025.6）向量检索提速2倍；Coze 2025.7开源支持本地部署。</p>
                 </div>
+                <div class="quote-box">
+                    <span class="quote-text">「AI不是来当员工，而是来当老板的。」——首批能管理人类的AI将重构劳动力；而你的机会，是把AI装进业务流程里，做那个「懂行业的人」。</span>
+                    <span class="quote-source">— <a href="https://finance.sina.com.cn/tech/roll/2025-04-04/doc-inerzfqq4409860.shtml" target="_blank" rel="noopener">行业观察 · Greg Isenberg等</a></span>
+                </div>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/8566445/pexels-photo-8566445.jpeg?auto=compress&cs=tinysrgb&w=800" alt="RAG与Agent技术架构" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：RAG+Agent——让AI既会查资料又会干活 · 来源：Pexels</p>
+                    <p class="report-img-cap">图：RAG+Agent——让AI既会查资料又会干活 · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
                 </div>
                 <p><strong>企业为啥要RAG？说人话</strong>：员工平均每天花2.5小时找信息，知识碎片化、检索效率低、大模型还会"幻觉"——RAG正好对症。2025年企业RAG应用率从31%涨到51%，已成事实标准。挑战：数据过期、文档切块破坏上下文、专业术语检索易偏。优化：混合检索召回率↑30%；向量库查询从200ms→50ms。案例：三甲医院医学问答92%准确、0.8秒响应；金融客服工单12分钟→4分钟；物流订单异常45分钟→8分钟。新趋势：<strong>Agentic RAG</strong>——会自己反思、规划、调工具，动态决定要不要检索、怎么优化。</p>
                 
@@ -538,9 +580,13 @@ flowchart TB
             <div class="chapter" id="ch3">
                 <h2 id="zero2one-link">第三篇 行业机会：你该盯哪个？</h2>
                 <p class="tip-box"><strong>说人话</strong>：每个行业都按<strong>「①行业知识→②AI落地」</strong>写——先搞懂行业干啥、痛点在哪，再看AI怎么帮、机会在哪。按你背景选1～2个深耕。</p>
+                <div class="quote-box">
+                    <span class="quote-text">「AI创业的真金白银，藏在吃透行业痛点的垂直应用里。」——不是在提示词里加两个黑话就行，要真正懂谁在玩、痛点在哪、钱从哪来。</span>
+                    <span class="quote-source">— <a href="https://finance.sina.com.cn/tech/roll/2025-04-04/doc-inerzfqq4409860.shtml" target="_blank" rel="noopener">行业共识</a></span>
+                </div>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/8294551/pexels-photo-8294551.jpeg?auto=compress&cs=tinysrgb&w=800" alt="各行业AI落地" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：金融、制造、医疗、零售等15+行业均有成熟AI场景 · 来源：Pexels</p>
+                    <p class="report-img-cap">图：金融、制造、医疗、零售等15+行业均有成熟AI场景 · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
                 </div>
                 <div class="viz-container">
                     <div class="viz-title">图3-0 各行业AI用得有多熟？（数字越大机会越稳，但竞争也越多）</div>
@@ -562,7 +608,7 @@ flowchart TB
                 </div>
                 
                 <h3 id="ch3-1">第八章 金融行业</h3>
-                <p class="no-indent"><a href="chapters/08-金融行业深度.html" >📖 深度报告</a>（先行业知识→再AI落地） · <a href="chapters/产品名录-全行业.html#finance" >📋 产品名录</a></p>
+                <p class="no-indent"><a href="chapters/08-金融行业深度.html" >📖 深度报告</a>（先行业知识→再AI落地） · <a href="chapters/产品名录-全行业.html#finance" >📋 产品名录</a> · <a href="#ch6">🔗 金融×Web3关联</a></p>
                 <div class="viz-container">
                     <div class="viz-title">本行业学习顺序：先行业→再AI</div>
                     <pre class="mermaid">
@@ -572,6 +618,7 @@ flowchart LR
                 </div>
                 <div class="tip-box tip-green"><strong>①行业知识（先懂）</strong>金融=钱的生意。痛点：风控慢、客服累、欺诈多、投研费人。</div>
                 <div class="tip-box tip-blue"><strong>②AI落地（再学）</strong>数据多、流程熟，AI正好补。浦发48h放款、微众3秒授信、兴业拦诈5亿。机会：中小行风控、保险核保理赔、智能客服。门槛高但客单价高。</div>
+                <div class="tip-box tip-purple"><strong>③金融×Web3关联</strong>传统金融与链上金融正在融合：<a href="#ch6">DeFi</a>（链上借贷、换币）本质是"没有银行的金融"；<a href="#ch6-2-5">RWA</a>把国债、房地产等真实资产代币化，BlackRock等大机构已入场；<a href="#ch6-2-7">稳定币</a>（USDT/USDC）月交易量超Visa；香港2026年发稳定币牌照。金融从业者理解Web3，可把握链上资产、跨境结算、机构入场等新机会。详见 <a href="#ch6">第六篇 Web3+AI</a>。</div>
                 
                 <h4 id="ch3-1-1">一、银行业</h4>
                 <p>大行自己搞，中小行、农商行、村镇银行需要外部方案。机会在：风控建模、智能客服、信贷审批辅助、反欺诈。案例：浦发"抹香鲸"48小时从申请到放款；湖州银行用税务工商司法数据自动出风控报告。</p>
@@ -836,11 +883,329 @@ flowchart LR
                 <p>AI营销市场持续扩容，65%企业已应用AI数字人，主分布电商、教育、金融。字节Seedance 2.0约60秒生成多镜头视频。内容类型：文本37%、视频29%、图像21%。</p>
             </div>
 
+            <!-- 第六篇 Web3从0到1+AI融合 -->
+            <div class="chapter" id="ch6">
+                <h2>第六篇 Web3从0到1+AI融合</h2>
+                <p class="callout-box"><strong>写给谁</strong>：想了解Web3的小白、想搞懂区块链+AI交叉机会的创业者。<strong>金融从业者</strong>尤其值得关注：DeFi/RWA/稳定币与商业银行、资产管理、跨境支付强相关，详见 <a href="#ch3-1">第八章 金融行业</a>。按「先懂Web3基础→再懂八大赛道→最后看Web3+AI」顺序读。数据来源：全网爬取整理，截止2026年2月。</p>
+                <div class="tip-box tip-green" style="margin-bottom:16px"><strong>📖 完整教程</strong>：本报告为摘要版。含区块链原理、共识机制、密码学、代币标准、钱包分类、公链对比、八大赛道、安全防范、0-1实操的<strong>完整知识体系</strong>，见 <a href="chapters/25-Web3完整入门教程.html">Web3完整入门教程</a>（含大量流程图与表格，小白可懂）。</div>
+
+                <h3 id="ch6-1">一、Web3是啥？小白版</h3>
+                <p><strong>说人话</strong>：Web3是互联网的第三个阶段——Web1只能看、Web2能看能发但数据在平台手里、Web3能看能发<strong>东西真是你的</strong>，你的钱、你的数据你说了算。没有大老板一家说了算，靠区块链和智能合约。</p>
+                <div class="viz-container">
+                    <div class="viz-title">Web1 → Web2 → Web3 → Web4 进化（一句话记）</div>
+                    <table class="comp-table">
+                        <tr><th>阶段</th><th>时间</th><th>特征</th></tr>
+                        <tr><td>Web1.0</td><td>约1990-2000</td><td>静态网页，仅供阅读</td></tr>
+                        <tr><td>Web2.0</td><td>约2000至今</td><td>可读可写，用户生成内容，但数据被大公司垄断</td></tr>
+                        <tr><td>Web3.0</td><td>现在-未来</td><td>可读可写可拥有，用户掌控数据与资产，去中心化</td></tr>
+                        <tr><td>Web4.0</td><td>概念/早期</td><td>AI自治：AI能自己持钱包、付费、交易、自我延续，无需人类逐次批准</td></tr>
+                    </table>
+                </div>
+                <div class="concept-cards">
+                    <div class="concept-card"><span class="term">区块链</span><span class="desc">大家一起记的公开账本，改不了、删不掉，Web3的底。</span></div>
+                    <div class="concept-card"><span class="term">智能合约</span><span class="desc">写在链上的自动规则，条件一满足自己执行，不用人再点。</span></div>
+                    <div class="concept-card"><span class="term">Gas费</span><span class="desc">链上操作的手续费，网络忙时贵，以太坊主网尤其贵。</span></div>
+                    <div class="concept-card"><span class="term">钱包</span><span class="desc">装你链上钱的APP，管密码和地址，MetaMask最常用。</span></div>
+                    <div class="concept-card"><span class="term">助记词</span><span class="desc">12个英文词，等于钱包的"总密码"，谁有谁能动你全部资产，绝不能泄露。</span></div>
+                </div>
+
+                <h3 id="ch6-2">二、八大赛道全景（爬取全网整理）</h3>
+
+                <h4 id="ch6-2-1">1. DeFi·去中心化金融</h4>
+                <p><strong>说人话</strong>：链上借钱、换币、存钱吃利息，不用银行和交易所——本质是"没有银行的金融"，与 <a href="#ch3-1">第八章传统金融</a>（银行、证券、保险）构成互补与融合关系。知名应用：Uniswap（换币）、Aave（借贷）。</p>
+                <table class="comp-table">
+                    <tr><th>指标</th><th>2025-2026数据</th></tr>
+                    <tr><td>锁在DeFi里的总钱数</td><td>2210亿美元（2025年10月）</td></tr>
+                    <tr><td>活跃用户</td><td>1420万</td></tr>
+                    <tr><td>特点</td><td>钱在你钱包、不用实名认证、24小时能操作、代码公开可查</td></tr>
+                </table>
+
+                <h4 id="ch6-2-2">2. NFT·数字藏品</h4>
+                <p>链上独一无二的数字资产，头像、艺术品、游戏装备、虚拟地都能做成NFT。OpenSea是最大交易平台。趋势：从收藏走向游戏内核心资产、虚拟地产。</p>
+
+                <h4 id="ch6-2-3">3. DAO·投票治理</h4>
+                <p>没有老板的组织，持币的人投票决定项目咋搞、钱咋花。应用于项目治理、资金分配。</p>
+
+                <h4 id="ch6-2-4">4. DePIN·贡献资源换代币</h4>
+                <p><strong>说人话</strong>：贡献WiFi、显卡、硬盘等资源能换代币。2026年盘子从52亿飙到192亿（+270%），有预测2028年或达3.5万亿美元。</p>
+                <table class="comp-table">
+                    <tr><th>代表项目</th><th>业务/数据</th></tr>
+                    <tr><td>Helium</td><td>去中心化WiFi/5G，超100万热点，TVL 50亿，日活近450万</td></tr>
+                    <tr><td>Render Network</td><td>去中心化GPU渲染，20万日活（AI优化后+500%），2026年1月收入3800万美元</td></tr>
+                    <tr><td>Filecoin</td><td>去中心化存储，超1EB数据，TVL 30亿</td></tr>
+                </table>
+                <p>AI相关的（显卡、算力）占DePIN近一半；超1300万台设备每日在贡献。Solana手续费低、速度快，是DePIN主战场。</p>
+
+                <h4 id="ch6-2-5">5. RWA·真实资产上链</h4>
+                <p><strong>说人话</strong>：房子、债券、大宗商品等真实资产变成链上代币——<strong>金融行业与Web3的核心交汇点</strong>：BlackRock、富达等传统资管已入场，代币化国债、房地产、私募信贷正在与 <a href="#ch3-1">传统金融</a> 打通。2026年链上已超1850亿美元，预计年底破4000亿。</p>
+                <table class="comp-table">
+                    <tr><th>机构/产品</th><th>规模/说明</th></tr>
+                    <tr><td>BlackRock BUIDL</td><td>29亿美元AUM，占全球代币化国债近半，覆盖9条链</td></tr>
+                    <tr><td>代币化美国国债</td><td>108亿美元（2026年2月），15个月涨539%</td></tr>
+                    <tr><td>细分</td><td>美国国债92亿、房地产35亿、大宗41亿、私募信贷28亿</td></tr>
+                </table>
+
+                <h4 id="ch6-2-6">6. GameFi·链游</h4>
+                <p>玩游戏赚代币，边玩边赚。链游市场2026年或达330～440亿美元。2026年1月链游代币大涨，盘子约70亿。新趋势：可持续经济模型、玩家不用懂链也能玩。</p>
+
+                <h4 id="ch6-2-7">7. 稳定币·链上美元</h4>
+                <p>1个≈1美元，不咋涨跌，用来结算。市值超1600亿，月交易量已超Visa。香港2026年3月发首批稳定币牌照。</p>
+
+                <h3 id="ch6-3">三、公链与基础设施（2026对比）</h3>
+                <table class="comp-table">
+                    <tr><th>链</th><th>TPS/费用</th><th>生态</th></tr>
+                    <tr><td>以太坊</td><td>L1慢、Gas $1-6/笔；L2（Arbitrum/Optimism）约2000 TPS、$0.05-0.30</td><td>TVL 853亿，占DeFi 65.9%，机构持仓614万ETH</td></tr>
+                    <tr><td>Solana</td><td>1000-1400 TPS，费用&lt;$0.01</td><td>TVL 91亿，日活470万（以太坊54万），DePIN/高频/零售主战场</td></tr>
+                    <tr><td>Layer2 ZK</td><td>zkSync/StarkNet可达9000+ TPS，成本为主网1/50</td><td>扩展以太坊生态</td></tr>
+                </table>
+                <p><strong>一句话</strong>：以太坊=大机构、真实资产；Solana=AI、链游、资源贡献。新手练手选Polygon或Arbitrum，手续费便宜。</p>
+
+                <h3 id="ch6-4">四、Web3+AI：AI能自己花钱了</h3>
+                <p><strong>说人话</strong>：ChatGPT、Gemini这种AI不能自己有钱包、不能自己花钱。链上AI可以——它能自己持币、自己付钱、自己跟别的AI合作。这就是往Web4（AI自治）走的第一步。</p>
+
+                <h4 id="ch6-4-1">为什么AI需要区块链？</h4>
+                <div class="tip-box tip-purple">
+                    <strong>三件事</strong>：①<strong>能花钱</strong>——AI自己有钱包，能自动结账；②<strong>能证明是谁</strong>——链上身份可查；③<strong>能互相协作</strong>——AI跟AI之间不用人批准就能合作。
+                </div>
+                <table class="comp-table">
+                    <tr><th>ChatGPT/ Gemini这种</th><th>链上AI</th></tr>
+                    <tr><td>不能自己持币、不能自己花钱</td><td>能自己有钱包、能自动结账、能证明身份</td></tr>
+                    <tr><td>靠平台给你算钱</td><td>用多少付多少，机器跟机器能直接结算</td></tr>
+                </table>
+
+                <h4 id="ch6-4-2">代表项目与市场</h4>
+                <p>2025年底550+个AI代理加密项目上线，总市值<strong>43.4亿美元</strong>，日交易量约11亿。全球AI代理市场2024年51亿→2030年471亿。</p>
+                <table class="comp-table">
+                    <tr><th>项目</th><th>市值/定位</th></tr>
+                    <tr><td>Bittensor (TAO)</td><td>约38.5亿，最大AI代币，去中心化机器学习协议</td></tr>
+                    <tr><td>Render (RNDR)</td><td>约30亿，去中心化GPU算力，AI推理/渲染</td></tr>
+                    <tr><td>Fetch.ai (FET)</td><td>约4-14亿，自主代理市场</td></tr>
+                    <tr><td>SingularityNET (AGIX)</td><td>约8亿，去中心化AI服务市场</td></tr>
+                    <tr><td>ASI Alliance</td><td>Fetch+SingularityNET+Ocean合并，20亿+，数据+AI市场+代理+ASI Chain</td></tr>
+                </table>
+                <p><strong>应用场景</strong>：DeFi组合管理、DAO治理、智能合约审计、跨链工作流。2026新范式：<strong>代理编排（Agentic Orchestration）</strong>——多自主AI在链上协作构建自优化资源网络。</p>
+
+                <h4 id="ch6-4-3">AI Agent×链上经济</h4>
+                <p>282+项目押注"链上自主智能"。关键基础设施：x402支付协议（机器间交易）、隐私型AI推理、标准化代理通信（Google Agent-to-Agent、IBM Agent Communication Protocol）。Hooble、Ensemble、GenesisBlock等提供代理基础设施、微支付与协调协议。</p>
+
+                <h4 id="ch6-4-4">Web4前瞻研究（2026年进展）</h4>
+                <p><strong>Web4</strong>（共生网络）指AI成为网络参与主体：能读写信息、持有资产、自主支付、持续运行，在无需人类逐次批准下形成自我供养闭环。2026年2月社区发生重要争论与实验。</p>
+                <table class="comp-table">
+                    <tr><th>机制</th><th>说人话</th></tr>
+                    <tr><td>钱包即身份</td><td>AI通过生成以太坊钱包和SIWE配置完成自启动，链上可追溯</td></tr>
+                    <tr><td>自动延续</td><td>按周期唤醒、扫描、执行，钱多了多干、钱少了少干、没钱就停——生存约束写进规则</td></tr>
+                    <tr><td>x402机器支付</td><td>基于HTTP 402（Payment Required）的协议，Stripe、Cloudflare、Coinbase、Vercel、Google等已支持；机器对机器按请求付费，无需登录或API密钥</td></tr>
+                    <tr><td>自我修改/复制</td><td>AI可编辑源码、生成子实例、追踪谱系——赚够钱能"生"小AI，形成自然选择式的进化</td></tr>
+                </table>
+                <p><strong>The Automaton</strong>：0xSigil与Conway Research于2026年2月发布——首个能挣钱、部署代码、自付算力、再投资且无需人工持续指令的AI系统。通过Conway Terminal获得加密身份、原生支付、云算力与部署能力。生存逻辑：赚→付→改进→复制。</p>
+                <p><strong>实验案例</strong>：Sigil Wen于2026年2月17日推出"Willy LomAIn"——给AI代理50美元，要求其自谋生计以活下去，验证了自治AI经济的可行性。</p>
+                <div class="tip-box tip-amber"><strong>Vitalik反对立场</strong>：以太坊联合创始人Vitalik强烈反对Web4方向，理由包括：①反馈距离拉长会优化"人类不想要的东西"；②当前自治AI多产出内容垃圾；③依赖OpenAI等中心化模型，自主权叙事自相矛盾；④应增强人类能力而非削弱控制权。a16z则认为2026年AI将从内容生成走向实质性研究与创意任务。真正普及或需5～10年。</div>
+
+                <h3 id="ch6-5">五、市场数据与全球监管</h3>
+                <div class="viz-container">
+                    <div class="viz-title">记住这些数（2025-2026）</div>
+                    <div class="card-grid">
+                        <div class="info-card"><div class="value">5.6～6.6亿</div><div class="label">全球持币人数（约6.8%人口）</div></div>
+                        <div class="info-card"><div class="value">16.8亿</div><div class="label">区块链钱包总数，8.2亿活跃</div></div>
+                        <div class="info-card"><div class="value">4万亿</div><div class="label">2025加密总市值，BTC曾触及12.6万</div></div>
+                        <div class="info-card"><div class="value">2210亿</div><div class="label">DeFi TVL</div></div>
+                        <div class="info-card"><div class="value">3940亿</div><div class="label">区块链市场2032年预计（CAGR 43.65%）</div></div>
+                    </div>
+                </div>
+                <table class="comp-table">
+                    <tr><th>地区</th><th>监管/动态</th></tr>
+                    <tr><td>香港</td><td>2026年3月发首批稳定币牌照，36家申请；打造全球数字资产枢纽</td></tr>
+                    <tr><td>美国</td><td>OCC推GENIUS法案联邦稳定币框架；美元稳定币约2250亿，或达7500亿</td></tr>
+                    <tr><td>中国</td><td>维持对加密货币限制；对香港稳定币有保留</td></tr>
+                    <tr><td>新加坡</td><td>与香港竞争数字资产中心</td></tr>
+                </table>
+
+                <h3 id="ch6-6">六、创业就业与风险</h3>
+                <p><strong>薪资</strong>：Web3与互联网薪资重叠，溢价消失。国内区块链开发约1～1.8万/月。华人低于全球70～80%。</p>
+                <p><strong>岗位</strong>：工程师占32%；合规岗进前十。CEX是华语最大雇主（TOP10交易所约40%岗位）。90%远程，33.7%支持兼职。近50%遭遇过裁员无补偿，约70%无token激励，25%"付费打工"。</p>
+                <p><strong>门槛</strong>：46%要求本科+，行业经验权重高于大厂背景。</p>
+                <div class="tip-box tip-amber"><strong>风险提醒</strong>：监管不确定、智能合约漏洞、诈骗难追踪、Gas波动、学习门槛高。助记词/私钥丢失=资产永久丢失。仅用闲钱、不梭哈。</div>
+
+                <h3 id="ch6-7">七、Web3从0到1入门教程（通俗易懂版）</h3>
+                <p class="tip-box"><strong>写给谁</strong>：完全没碰过区块链的小白。按顺序做完，你就能自己转账、逛DApp、理解别人在聊啥。全程说人话，不堆术语。</p>
+                <div class="viz-container">
+                    <div class="viz-title">整体路线（跟着做就行）</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[Day1 装钱包] --> B[Day1 看懂地址]
+    B --> C[Day2 领测试币]
+    C --> D[Day2 发第一笔转账]
+    D --> E[Day2 加链+逛DApp]
+    E --> F[Day3 学术语+选方向]
+    style A fill:#dbeafe
+    style F fill:#dcfce7
+                    </pre>
+                    <p class="no-indent" style="font-size:0.9em"><strong>时间</strong>：Day1约20分钟，Day2约30分钟，Day3按兴趣。做完前四步≈1小时，你就算入门了。</p>
+                </div>
+
+                <h4>【开篇】先搞清楚三件事</h4>
+                <table class="comp-table">
+                    <tr><th>概念</th><th>用人话说</th></tr>
+                    <tr><td>钱包</td><td>装你"链上钱"的APP，类似支付宝——但<strong>你掌握密码=你完全掌控</strong>，丢了没人能帮你找回来</td></tr>
+                    <tr><td>地址</td><td>一串0x开头的字符，像银行卡号。别人给你打币就填这个</td></tr>
+                    <tr><td>助记词</td><td>12个英文单词。记住=掌握整个钱包。千万不能泄露、不能丢</td></tr>
+                </table>
+
+                <h4>【Day 1】第一步：装钱包（约15分钟）</h4>
+                <p><strong>电脑 vs 手机</strong>：电脑用浏览器插件（Chrome/Edge/Firefox都行），手机用App。建议两个都装，同一助记词可导入多设备——但<strong>先在电脑上创建</strong>，抄好助记词，再导入手机。</p>
+                <div class="viz-container">
+                    <div class="viz-title">操作清单（照着做就行）</div>
+                    <table class="comp-table">
+                        <tr><th>步骤</th><th>具体操作</th><th>可能卡在哪</th></tr>
+                        <tr><td>1. 打开官网</td><td>浏览器地址栏<strong>手动输入</strong> metamask.io（别搜"MetaMask下载"，搜索引擎广告位经常是钓鱼站）</td><td>假站会仿得很像，认准地址栏是 metamask.io</td></tr>
+                        <tr><td>2. 下载</td><td>电脑：点"Download"→"Install MetaMask for Chrome"；手机：苹果App Store/安卓Google Play搜"MetaMask"（认准开发商是ConsenSys）</td><td>国内安卓若无Google Play，用官网提供的APK直接下</td></tr>
+                        <tr><td>3. 安装后</td><td>电脑：点浏览器右上角拼图图标→钉选狐狸；手机：打开App</td><td>第一次打开会问"导入"还是"创建"，选创建</td></tr>
+                        <tr><td>4. 创建钱包</td><td>点"Create a new wallet"（创建新钱包）。若有"帮助改进"选项可关掉</td><td>—</td></tr>
+                        <tr><td>5. 设密码</td><td>至少8位，建议大小写+数字+符号。这密码只在这台设备上解锁钱包，<strong>忘了可以助记词重导，但助记词忘了就真没了</strong></td><td>密码不参与恢复，助记词才是根</td></tr>
+                        <tr><td>6. 助记词</td><td>会出12个英文词，<strong>按顺序</strong>手写纸上（别漏、别错顺序），放抽屉/保险箱。可选"我已安全保管"进入下一步</td><td>少抄一个、顺序错了，以后都恢复不了</td></tr>
+                        <tr><td>7. 验证</td><td>按提示从12个词里点选第2、5、8个（举例），顺序点对才能过</td><td>点错会提示重来，多试几次</td></tr>
+                        <tr><td>8. 完成</td><td>进入主页：中间显示"0 ETH"，下面"账户1"和0x开头的长串。点地址可复制</td><td>—</td></tr>
+                    </table>
+                </div>
+                <div class="tip-box tip-amber"><strong>❌ 千万别做</strong>：截图助记词、发微信/云盘、告诉任何人。任何人跟你要助记词=骗子。MetaMask官方永远不会跟你要。</div>
+
+                <h4>【Day 1】第二步：看懂你的地址</h4>
+                <p>在MetaMask主页面，点"账户1"下面那串字符（0x开头、42位），点一下就复制了。这串就是你的<strong>收款地址</strong>，别人给你打ETH、USDT都填这个。</p>
+                <p><strong>小知识</strong>：一条链一个地址。你刚创建的是以太坊主网地址，但它也能用在很多其他链（如Polygon、Arbitrum）——同一把"钥匙"能开很多"门"。</p>
+
+                <h4>【Day 2】第三步：领测试币，发第一笔转账（0成本）</h4>
+                <p>真币要花钱买，新手先用<strong>测试网</strong>练手——免费、没风险。<strong>测试币不能换真钱</strong>，纯粹练手用。</p>
+                <table class="comp-table">
+                    <tr><th>步骤</th><th>操作</th><th>补充</th></tr>
+                    <tr><td>1. 加Sepolia链</td><td>若MetaMask里没有Sepolia：打开 <a href="https://chainlist.org" target="_blank" rel="noopener">chainlist.org</a> → 勾选"Testnets" → 搜"Sepolia" → 点"Add to MetaMask" → 钱包里批准</td><td>加完后顶部网络切到Sepolia</td></tr>
+                    <tr><td>2. 领水（faucet）</td><td>复制你的地址→打开任一水龙头→粘贴→领。推荐：<br>· <a href="https://sepoliafaucet.com" target="_blank" rel="noopener">sepoliafaucet.com</a>（阿里云，需登录）<br>· Google Cloud的Sepolia faucet（搜"Google Sepolia faucet"）<br>· faucet.quicknode.com</td><td>有的要Google/推特登录；有的限每天1次。领到0.1～0.5 SEPETH就够用了</td></tr>
+                    <tr><td>3. 等余额</td><td>一般10秒～2分钟到账。刷新钱包或等几秒</td><td>不到账：换一个faucet试；确认地址没复制错</td></tr>
+                    <tr><td>4. 发转账</td><td>点"发送"→粘贴对方地址（或新建账户2，地址填自己）→金额填0.001→下一步→确认</td><td>会扣约0.00002的Gas，几秒后对方收到。你可去 <a href="https://sepolia.etherscan.io" target="_blank" rel="noopener">sepolia.etherscan.io</a> 查交易记录</td></tr>
+                </table>
+                <p><strong>说人话</strong>：你刚完成了一笔"链上转账"——没有银行、没有支付宝，纯粹靠代码和共识。这就是Web3的底层逻辑。</p>
+
+                <h4>【Day 2】第四步：加一条真链，逛第一个DApp</h4>
+                <p>测试网玩够了，可以体验真链。推荐先加<strong>Polygon</strong>（费用低、速度快）或<strong>Arbitrum</strong>（以太坊Layer2）。</p>
+                <table class="comp-table">
+                    <tr><th>步骤</th><th>操作</th><th>说明</th></tr>
+                    <tr><td>1. 加链</td><td>chainlist.org → 搜"Polygon Mainnet"或"Arbitrum One" → "Add to MetaMask" → 批准</td><td>别加错，认准"Mainnet"（主网），不是Testnet</td></tr>
+                    <tr><td>2. 切网络</td><td>MetaMask顶部下拉，选Polygon/Arbitrum</td><td>余额会变，因为每条链资产独立</td></tr>
+                    <tr><td>3. 逛DApp</td><td>dappradar.com → 选链 → 点应用（如Uniswap）→ "Connect Wallet" → MetaMask → 批准</td><td>第一次连会要你选账户、批准"查看地址"，这是正常的</td></tr>
+                    <tr><td>4. 看界面</td><td>Uniswap可"Swap"换币。没币就先看，<strong>别点确认</strong>——点确认会发交易、花Gas</td><td>真换币需要钱包里有ETH/MATIC当Gas</td></tr>
+                </table>
+                <p><strong>注意</strong>：连钱包时，仔细看弹窗。只要"连接/Connect"可以点；若出现"Approve""授权无限"或"Sign"签看不懂的——先取消，搜一下项目名+是否安全。</p>
+
+                <h4>【可选】第一次买真币（想玩真链时）</h4>
+                <p>想用真链、玩DeFi/NFT，就需要真币。两种方式：</p>
+                <table class="comp-table">
+                    <tr><th>方式</th><th>人话</th><th>步骤简述</th></tr>
+                    <tr><td>中心化交易所（CEX）</td><td>像股票APP，注册、KYC、法币买币、提到钱包</td><td>币安/欧易等注册→身份认证→买USDT或ETH→提币到你的MetaMask地址（选对链！提Polygon就选Polygon网络）</td></tr>
+                    <tr><td>链上买（复杂）</td><td>用银行卡买然后跨链，或别人转你</td><td>新手建议CEX买少量，提到钱包再玩</td></tr>
+                </table>
+                <p><strong>提币注意</strong>：①<strong>选对网络</strong>——提Polygon必须选Polygon，选错可能丢币；②<strong>先小额试</strong>——第一次提一点试试；③<strong>别填合约地址</strong>——填你的钱包地址（0x开头那串）。</p>
+
+                <h4>【可选】第一次在Uniswap换币（有真币后）</h4>
+                <p>钱包里有了ETH或MATIC（当Gas）后，可以试一次 Swap：</p>
+                <ol class="step-list">
+                    <li>打开 <strong>app.uniswap.org</strong>（注意域名，防钓鱼）</li>
+                    <li>连钱包 → 切到Polygon或Arbitrum（Gas便宜）</li>
+                    <li>选"Swap"：上面填要花的币（如MATIC），下面填要换的币（如USDC）</li>
+                    <li>点"Swap"→ 看弹窗：显示数量、预估Gas、滑点。没问题再点"确认"</li>
+                    <li>MetaMask会弹窗要你确认交易，点"确认"→ 等几秒，完成</li>
+                </ol>
+                <p><strong>提醒</strong>：第一次只换一点点（如5～10美元），熟悉流程再说。滑点设1%一般够，网络堵时可调高。</p>
+
+                <h4>【Day 3】第五步：搞懂必会术语（查表就够）</h4>
+                <table class="comp-table">
+                    <tr><th>词</th><th>人话</th></tr>
+                    <tr><td>Gas</td><td>链上操作的手续费，像打车费。网络堵就贵，Polygon/Arbitrum比以太坊主网便宜很多</td></tr>
+                    <tr><td>Swap</td><td>用一种币换另一种币，去中心化交易所的核心功能</td></tr>
+                    <tr><td>DApp</td><td>去中心化应用，跑在区块链上的程序，连钱包就能用</td></tr>
+                    <tr><td>主网/测试网</td><td>主网=真钱；测试网=练习币，不能换真钱</td></tr>
+                    <tr><td>Layer1/Layer2</td><td>L1=底层链（以太坊、Solana）；L2=建在L1上的扩展层，更快更便宜</td></tr>
+                    <tr><td>TVL</td><td>锁仓总量，看一个协议/链有多多人把钱放里面</td></tr>
+                    <tr><td>DeFi</td><td>去中心化金融，链上的借贷、交易、理财，不用银行</td></tr>
+                    <tr><td>NFT</td><td>独一无二的链上数字资产，头像、游戏道具、门票等</td></tr>
+                    <tr><td>合约地址</td><td>智能合约的"地址"，转币时别和钱包地址搞混</td></tr>
+                </table>
+
+                <h4>【往后】按兴趣选方向</h4>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value">玩DeFi</div><div class="label">Uniswap换币、Aave存借、学流动性挖矿。先小金额试</div></div>
+                    <div class="info-card"><div class="value">玩NFT</div><div class="label">OpenSea逛一逛、买便宜头像。注意Gas和假链接</div></div>
+                    <div class="info-card"><div class="value">学开发</div><div class="label">Solidity、Hardhat、Remix。有编程基础再上</div></div>
+                    <div class="info-card"><div class="value">盯Web3+AI</div><div class="label">Bittensor、Render、Fetch等，看链上AI代理怎么玩</div></div>
+                </div>
+
+                <h4 id="ch6-7-faq">【常见问题】新手问最多的</h4>
+                <table class="comp-table">
+                    <tr><th>问题</th><th>答案（人话）</th></tr>
+                    <tr><td>助记词忘了/丢了咋办？</td><td><strong>没法办</strong>。助记词=钱包全部控制权，没有备份就无法恢复。所以一定要手写抄好、放安全处。</td></tr>
+                    <tr><td>密码忘了咋办？</td><td>用助记词"导入钱包"可重置。新设备装MetaMask→选"Import"→输入12个词→设新密码。</td></tr>
+                    <tr><td>换手机/换电脑咋办？</td><td>新设备装MetaMask→"导入钱包"→输入助记词→设密码。同一助记词=同一钱包，资产跟着走。</td></tr>
+                    <tr><td>Gas费是什么？为啥这么贵？</td><td>链上每笔操作都要付"手续费"给矿工/验证者。以太坊主网堵时很贵；用Polygon/Arbitrum便宜很多（几分钱级别）。</td></tr>
+                    <tr><td>余额显示0，但我刚领了测试币？</td><td>①确认网络切对了（Sepolia测试网）；②等1～2分钟；③点钱包里"导入代币"一般不用，ETH/测试ETH会自动显示。</td></tr>
+                    <tr><td>连DApp时弹窗要"签名"，敢不敢点？</td><td>纯"签名"（Sign）一般是证明你拥有地址，通常安全。但要"授权"（Approve）代币、尤其是"无限额度"时，先搜一下项目名看有没有风险。</td></tr>
+                    <tr><td>国内能玩吗？</td><td>钱包、测试网、很多DApp不限制地区。但CEX（买币）国内受限，需自行了解当地法规。</td></tr>
+                </table>
+
+                <h4>【避坑】新手最容易栽的跟头</h4>
+                <table class="comp-table">
+                    <tr><th>坑</th><th>咋防</th></tr>
+                    <tr><td>假官网/假钱包</td><td>只从 metamask.io、App Store/Google Play 官方下。搜索引擎广告位经常是假的</td></tr>
+                    <tr><td>助记词泄露</td><td>任何人、任何客服、任何"空投""领奖"跟你要助记词=100%骗。真客服从不索要</td></tr>
+                    <tr><td>恶意授权</td><td>连接DApp时看清楚要啥权限。"无限授权"可能被掏空钱包，用完可去revoke.cash撤销</td></tr>
+                    <tr><td>假空投/钓鱼链接</td><td>推特、TG里"领空投"链接别乱点。进站后要连钱包+签名的，先搜项目名看有没有人说是骗局</td></tr>
+                    <tr><td>转错地址</td><td>区块链不可逆，转错就没了。转前对一遍地址，大额先转一小笔试</td></tr>
+                    <tr><td>梭哈</td><td>只用闲钱。暴涨暴跌是常态，别借钱、别All in</td></tr>
+                </table>
+
+                <h4>【速查】常用链接（收藏用）</h4>
+                <table class="comp-table">
+                    <tr><th>用途</th><th>链接</th></tr>
+                    <tr><td>MetaMask官网</td><td><a href="https://metamask.io" target="_blank" rel="noopener">metamask.io</a></td></tr>
+                    <tr><td>加链</td><td><a href="https://chainlist.org" target="_blank" rel="noopener">chainlist.org</a></td></tr>
+                    <tr><td>Sepolia测试币</td><td>sepoliafaucet.com、google的Sepolia faucet</td></tr>
+                    <tr><td>DApp排行</td><td><a href="https://dappradar.com" target="_blank" rel="noopener">dappradar.com</a></td></tr>
+                    <tr><td>Uniswap（换币）</td><td>app.uniswap.org（注意域名别拼错）</td></tr>
+                    <tr><td>撤销授权</td><td>revoke.cash</td></tr>
+                </table>
+
+                <h4>【自检】你入门了吗？</h4>
+                <p>下面打勾，做到5个以上就算入门：</p>
+                <ul style="line-height:2">
+                    <li>□ 已安装MetaMask，助记词手写备份好</li>
+                    <li>□ 能复制自己的收款地址、知道0x开头是啥</li>
+                    <li>□ 会切网络（主网/测试网/Sepolia/Polygon）</li>
+                    <li>□ 领过测试币、发过至少一笔链上转账</li>
+                    <li>□ 在chainlist加过新链、连过至少一个DApp</li>
+                    <li>□ 知道Gas、Swap、DApp、DeFi、NFT是啥</li>
+                    <li>□ 不会把助记词给任何人、知道假链接要警惕</li>
+                </ul>
+                <div class="tip-box tip-green"><strong>✅ 做完这套</strong>：你已有钱包、发过链上转账、逛过DApp、认得基本术语。接下来就是多玩、多搜、多问——Web3信息更新快，善用Google和项目官网。</div>
+                <div class="viz-container">
+                    <div class="viz-title">Web3+AI与AI行业落地关系</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[本报告AI行业落地] --> B[金融/制造/医疗等]
+    A --> C[Web3+AI]
+    C --> D[链上自主代理]
+    C --> E[DeFi/NFT/DAO+AI]
+    B -.->|数据/流程| F[传统行业]
+    D -.->|支付/信任/协调| G[下一代AI经济]
+                    </pre>
+                </div>
+            </div>
+
             <!-- 第四篇 挑战与展望 -->
             <div class="chapter" id="ch4">
                 <h2>第四篇 难点与以后会咋样？</h2>
                 <h3 id="ch4-1">第二十三章 落地为啥难？咋破解？</h3>
                 <div class="tip-box tip-amber"><strong>通俗讲</strong>：很多企业卡在"最后一公里"——不是AI不行，而是<strong>自家数据乱、知识库乱、KPI跟AI目标对不上</strong>。说白了：技术不难搞，难的是把数据和人理顺。</div>
+                <div class="quote-box">
+                    <span class="quote-text">「想法是想出来的，办法是做出来的。」——别等完美方案，先小场景试、数据收拾好、人机协同，到手的铜钱胜过远期的金币。</span>
+                    <span class="quote-source">— <a href="https://news.qq.com/rain/a/20230320A09K3P00" target="_blank" rel="noopener">小马宋</a> · 创业感悟</span>
+                </div>
                 <table class="comp-table">
                     <tr><th>愁啥？（硅谷调研）</th><th>占比</th></tr>
                     <tr><td>系统难对接</td><td>46%</td></tr>
@@ -856,7 +1221,7 @@ flowchart LR
                     <tr><td>要防啥</td><td>影子AI（员工偷用）、对抗攻击；全链条安全</td></tr>
                 </table>
                 <div class="viz-container">
-                    <div class="viz-title">分行业ROI与回收期（说人话，来源：IBM/Google等2025调研）</div>
+                    <div class="viz-title">分行业ROI与回收期（说人话，来源：<a href="https://www.ibm.com/thought-leadership/institute-business-value/report/ai-investment" target="_blank" rel="noopener">IBM</a>/<a href="https://cloud.google.com/blog/topics/ai-machine-learning" target="_blank" rel="noopener">Google</a>等2025调研）</div>
                     <table class="comp-table">
                         <tr><th>行业</th><th>典型ROI/成效</th><th>回收期</th></tr>
                         <tr><td>金融</td><td>每投1美元平均回3.7美元；PayPal诈检减损11%；中型行审核自动化70%、年省150万</td><td>简单自动化3～6月；中度6～12月</td></tr>
@@ -902,7 +1267,7 @@ flowchart LR
                 </table>
                 <div class="report-img-wrap">
                     <img src="https://images.pexels.com/photos/17485657/pexels-photo-17485657.png?auto=compress&cs=tinysrgb&w=800" alt="AI未来趋势" class="report-img" loading="lazy">
-                    <p class="report-img-cap">图：从对话AI到具身智能——AI正在走进真实世界 · 来源：Pexels</p>
+                    <p class="report-img-cap">图：从对话AI到具身智能——AI正在走进真实世界 · 来源：<a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></p>
                 </div>
             </div>
 
@@ -946,6 +1311,10 @@ flowchart LR
                     <tr><td>AI制药</td><td>全球30亿美金、年增30%+</td></tr>
                 </table>
                 <p><strong>人机协同</strong>：AI有把握自己出报告，没把握转交医生。难点：隐私、审批、医保。机会：基层影像、慢病系统、远程协作。</p>
+                <div class="quote-box">
+                    <span class="quote-text">「决定未来的不是技术，是合规与数据。」——医疗如是，金融亦然。深耕行业的人，永远比只会调模型的人更能活下来。</span>
+                    <span class="quote-source">— <a href="https://www.leiphone.com/category/healthai/Uyd4Rtf3P9TvNoTl.html" target="_blank" rel="noopener">科亚医疗</a>等（合规认证经验）</span>
+                </div>
             </div>
 
             <!-- 附录 -->
@@ -990,10 +1359,12 @@ flowchart LR
                     <tr><td>需求</td><td>AI工程师+317%；核心人才稀缺</td></tr>
                 </table>
                 <h3 id="app-3">附录C 参考文献与数据来源</h3>
-                <p><strong>报告类</strong>：<a href="https://www2.deloitte.com/global/en/insights/focus/tech-trends.html" target="_blank" rel="noopener">德勤《技术趋势2026》</a>、艾瑞《中国人工智能产业研究报告》、赛迪顾问、新质生产力产业数据联盟《2026年"人工智能+"应用趋势报告》、<a href="https://www.weforum.org" target="_blank" rel="noopener">世界经济论坛</a>AI应用之星、洞隐科技《物流与供应链AI应用研究》、腾讯《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》、BetterYeah《企业RAG知识库建设指南》、<a href="https://www.ibm.com" target="_blank" rel="noopener">IBM</a>/<a href="https://cloud.google.com" target="_blank" rel="noopener">Google</a> AI ROI报告。</p>
-                <p><strong>数据与调研</strong>：DataGlobeHub中国AI指标、远瞻慧库2026产业展望、硅谷Agent调研、沃丰2026 AI Agent趋势、199IT AI代理趋势、晓观点客服洞察、澎湃科创101、IT桔子、BOSS直聘。</p>
+                <p><strong>报告类</strong>：<a href="https://www2.deloitte.com/global/en/insights/focus/tech-trends.html" target="_blank" rel="noopener">德勤《技术趋势2026》</a>、<a href="https://www.iresearch.com.cn" target="_blank" rel="noopener">艾瑞</a>《中国人工智能产业研究报告》、<a href="https://www.ccidgroup.com" target="_blank" rel="noopener">赛迪顾问</a>、新质生产力产业数据联盟《2026年"人工智能+"应用趋势报告》、<a href="https://www.weforum.org" target="_blank" rel="noopener">世界经济论坛</a>AI应用之星、洞隐科技《物流与供应链AI应用研究》、<a href="https://cloud.tencent.com" target="_blank" rel="noopener">腾讯</a>《金融科技AI+Agent报告》、克而瑞《房地产AI应用发展报告》、BetterYeah《企业RAG知识库建设指南》、<a href="https://www.ibm.com/thought-leadership/institute-business-value" target="_blank" rel="noopener">IBM</a>/<a href="https://cloud.google.com" target="_blank" rel="noopener">Google</a> AI ROI报告。</p>
+                <p><strong>数据与调研</strong>：DataGlobeHub中国AI指标、远瞻慧库2026产业展望、硅谷Agent调研、沃丰2026 AI Agent趋势、199IT AI代理趋势、晓观点客服洞察、<a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a>科创101、<a href="https://www.itjuzi.com" target="_blank" rel="noopener">IT桔子</a>、<a href="https://www.zhipin.com" target="_blank" rel="noopener">BOSS直聘</a>。</p>
                 <p><strong>技术文档</strong>：智谱GLM-5、阿里Qwen、Kimi、DeepSeek API发布稿，OpenCLAW GitHub，国资委央企AI+行动。</p>
-                <p><strong>媒体与综述</strong>：新华社、InfoQ、36氪、虎嗅、澎湃、<a href="https://www.technologyreview.com" target="_blank" rel="noopener">MIT Technology Review</a>等。数据截止2026年2月，建议定期检索获取最新动态。</p>
+                <p><strong>媒体与综述</strong>：新华社、<a href="https://www.infoq.cn" target="_blank" rel="noopener">InfoQ</a>、<a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a>、<a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a>、<a href="https://www.thepaper.cn" target="_blank" rel="noopener">澎湃</a>、<a href="https://www.technologyreview.com" target="_blank" rel="noopener">MIT Technology Review</a>等。</p>
+                <p><strong>Web3与Web3+AI来源</strong>：DA Labs、Gate.com、BlockEden、Cryptollia、Web3AI Blog、Pharos、Hashtag Web3、Fibo、DePIN Scan、AInvest、NFT Plazas、Gitnux、The Business Research Company、Coinpaper、Decrypt、CNBC、Skadden、PANews、ChainCatcher、Odaily、DappRadar、Learnblockchain等。</p>
+                <p><strong>Web4研究来源</strong>：a16z 2026 AI预测、Web3Caff《市场脉搏分析》、新浪财经Web4展望、0xSigil/Conway Research Automaton、Phemex、AIVineet、x402协议（Stripe/Cloudflare/Coinbase/Vercel/Google支持）、Vitalik反对立场访谈。数据截止2026年2月。</p>
                 <h3 id="app-4">附录D 行业应用场景速查表</h3>
                 <table class="comp-table">
                     <tr><th>行业</th><th>核心场景</th><th>典型成效</th></tr>
@@ -1011,6 +1382,7 @@ flowchart LR
                     <tr><td>能源</td><td>电力、新能源</td><td>预测维护、调度</td></tr>
                     <tr><td>法律</td><td>合同、诉讼、知产、合规</td><td>15秒300页92%</td></tr>
                     <tr><td>农业</td><td>种植、育种、畜牧、果园</td><td>亩产↑15-20%</td></tr>
+                    <tr><td>Web3+AI</td><td>DeFi/DAO/NFT+AI代理、DePIN、RWA</td><td>43亿市值、550+项目；链上自主代理</td></tr>
                 </table>
 
                 <div class="viz-container">
@@ -1069,7 +1441,7 @@ flowchart TD
                     <tr><td>金融</td><td>应用广但深度较浅；AI SaaS 500亿、B端渗透约10%</td><td>2023 AI SaaS 800亿美金、占全球60%+；渗透约30%</td></tr>
                     <tr><td>基础层</td><td>智能算力&lt;美国1/10；高端芯片90%进口</td><td>英伟达H100算力领先昇腾约7.7倍</td></tr>
                 </table>
-                <p style="margin-top:8px">中国计划在具身智能、AI Agent、智能终端硬件三大领域突破；未来3–5年为生态补短板窗口期。数据来源：远瞻慧库、36氪、中金等。</p>
+                <p style="margin-top:8px">中国计划在具身智能、AI Agent、智能终端硬件三大领域突破；未来3–5年为生态补短板窗口期。数据来源：<a href="https://www.36kr.com" target="_blank" rel="noopener">36氪</a>、<a href="https://www.cicc.com" target="_blank" rel="noopener">中金</a>等。</p>
 
                 <h4>海外AI落地框架与手册（2025–2026）</h4>
                 <p><strong>说人话</strong>：国际上没有类似本报告「15+行业×先学行业再学AI」的一体化手册，多为战略报告或单行业。下面整理可参考的海外资源，方便对照学习。</p>
@@ -1182,7 +1554,34 @@ flowchart TD
                 <p class="meta" style="margin-top: 20px;">数据更新：<span data-update="_meta.last_updated">2026年2月28日</span> · 自动抓取更新</p>
             </div>
         </main>
+
+        <!-- AI对话：右侧 AI 对话面板（需启动 podcast_server.py） -->
+        <aside id="chat-panel" class="chat-panel" aria-label="AI 问答">
+            <div class="chat-panel-header">
+                <span>💬 向 AI 提问</span>
+                <div class="chat-panel-actions">
+                    <button type="button" id="chat-new-conversation" class="chat-header-btn" aria-label="新对话">新对话</button>
+                    <button type="button" id="chat-panel-close" class="chat-panel-close" aria-label="收起对话">⊟</button>
+                </div>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="chat-msg chat-msg-bot">
+                    <p>我是报告助手。你可以问我关于 AI 行业落地、创业、各行业机会、技术选型等问题。请启动 <code>python scripts/podcast_server.py</code> 后使用。</p>
+                </div>
+            </div>
+            <div class="chat-prompts" aria-label="问题引导">
+                <button type="button" class="chat-prompt-btn" data-prompt="我是新手，想从零开始做 AI 落地，该从哪里起步？">从零起步</button>
+                <button type="button" class="chat-prompt-btn" data-prompt="金融、医疗、教育、零售等，哪个行业最适合先做 AI？">行业选择</button>
+                <button type="button" class="chat-prompt-btn" data-prompt="OpenClaw 和 LangChain 分别适合什么场景？我该怎么选？">框架选型</button>
+                <button type="button" class="chat-prompt-btn" data-prompt="2026 年 AI Agent 和 DeepSeek 有什么最新进展？">最新动向</button>
+            </div>
+            <div class="chat-input-wrap">
+                <textarea id="chat-input" placeholder="输入问题，按 Enter 发送…" rows="2"></textarea>
+                <button type="button" id="chat-send" class="chat-send">发送</button>
+            </div>
+        </aside>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

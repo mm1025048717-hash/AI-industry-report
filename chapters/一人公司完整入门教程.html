@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一人公司完整入门教程：从0到1（通俗易懂·国内国际·含流程图与数据）</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-title">一人公司完整教程</div>
+            <div class="sidebar-nav-label">阶段一：建立认知</div>
+            <a href="#intro" class="toc-item level1">0. 开篇：怎么用本教程</a>
+            <a href="#ch1" class="toc-item level1">1. 一人公司是什么</a>
+            <a href="#ch1-def" class="toc-item level2">定义·OPC vs 超级个体</a>
+            <a href="#ch1-model" class="toc-item level2">核心模式：人+AI分工</a>
+            <a href="#ch2" class="toc-item level1">2. 全球数据与趋势</a>
+            <a href="#ch2-cn" class="toc-item level2">国内数据</a>
+            <a href="#ch2-global" class="toc-item level2">海外数据</a>
+            <a href="#ch3" class="toc-item level1">3. 从0到1：启动流程</a>
+            <a href="#ch3-flow" class="toc-item level2">完整流程图</a>
+            <a href="#ch3-reg" class="toc-item level2">注册要点（中国）</a>
+            <a href="#ch4" class="toc-item level1">4. 赛道选择与机会</a>
+            <a href="#ch4-tracks" class="toc-item level2">五大推荐赛道</a>
+            <a href="#ch4-tools" class="toc-item level2">启动成本与工具</a>
+            <div class="sidebar-nav-label">阶段二：实践与避坑</div>
+            <a href="#ch5" class="toc-item level1">5. AI工具栈（国内外）</a>
+            <a href="#ch6" class="toc-item level1">6. 真实案例拆解</a>
+            <a href="#ch6-cn" class="toc-item level2">国内·张三/武先生</a>
+            <a href="#ch6-global" class="toc-item level2">海外·Pieter/Dan Koe</a>
+            <a href="#ch7" class="toc-item level1">7. 失败教训与避坑</a>
+            <a href="#ch8" class="toc-item level1">8. 生存法则</a>
+            <div class="sidebar-nav-label">阶段三：延伸</div>
+            <a href="#ch9" class="toc-item level1">9. 资源与链接</a>
+            <div class="sidebar-nav-label">快速导航</div>
+            <a href="../AI行业落地分析报告.html" class="toc-item level1">← 主报告</a>
+            <a href="99c-一人公司与避坑深度.html" class="toc-item level2">避坑深度</a>
+            <a href="00-小白总指南.html" class="toc-item level2">小白总指南</a>
+        </aside>
+        <main class="main">
+            <div class="cover">
+                <h1>一人公司完整入门教程</h1>
+                <p class="subtitle">从0到1 · 通俗易懂 · 国内国际资料整合 · 含流程图与数据可视化</p>
+                <p class="meta">OPC · 超级个体 · AI创业 · 2026年2月 · 数据来源：<a href="https://www.itjuzi.com" target="_blank" rel="noopener">IT桔子</a>、<a href="https://solobusinesshub.com" target="_blank" rel="noopener">Solobusinesshub</a>、<a href="https://www.indiehackers.com" target="_blank" rel="noopener">Indie Hackers</a>、<a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a>、<a href="https://www.36kr.com" target="_blank" rel="noopener">36Kr</a>、<a href="https://www.sohu.com" target="_blank" rel="noopener">搜狐</a>、<a href="https://www.mckinsey.com" target="_blank" rel="noopener">麦肯锡</a>等</p>
+                <div class="tip-box" style="margin-top:16px">
+                    <strong>本教程特点</strong>：① 覆盖国内+国外一手数据；② 大量流程图、层级图、表格；③ 真实案例与失败教训；④ 含注册、工具栈、生存法则；⑤ 通俗说人话。
+                </div>
+            </div>
+
+            <div class="chapter" id="intro">
+                <h2>0. 开篇：怎么用本教程</h2>
+                <p><strong>写给谁</strong>：想一个人创业的、想搞懂OPC/超级个体咋回事的、想用AI放大个人能力的。</p>
+                <div class="viz-container">
+                    <div class="viz-title">学习路线（建议按顺序）</div>
+                    <pre class="mermaid">
+flowchart TB
+    A[阶段一：建立认知] --> B[阶段二：实践与避坑]
+    B --> C[阶段三：延伸]
+    A --> A1[一人公司是啥]
+    A --> A2[全球数据趋势]
+    A --> A3[从0到1流程]
+    A --> A4[赛道选择]
+    B --> B1[AI工具栈]
+    B --> B2[真实案例]
+    B --> B3[失败教训]
+    B --> B4[生存法则]
+                    </pre>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch1">
+                <h2>1. 一人公司是什么</h2>
+
+                <h3 id="ch1-def">1.1 定义·OPC vs 超级个体</h3>
+                <table class="comp-table">
+                    <tr><th>概念</th><th>说人话</th></tr>
+                    <tr><td>一人公司（OPC）</td><td>One-Person Company。法律上：单一自然人或法人出资的有限责任公司。中国2024年《公司法》已取消数量限制，一人可设多家。</td></tr>
+                    <tr><td>超级个体</td><td>个人+工具（含AI）能完成传统团队的工作，不雇人或极少雇人。</td></tr>
+                    <tr><td>Solopreneur（海外）</td><td>单人创业者，无雇员。美国约2980万，贡献1.7万亿美元（6.8% GDP）。</td></tr>
+                </table>
+
+                <h3 id="ch1-model">1.2 核心模式：碳基+硅基分工</h3>
+                <p><strong>通俗讲</strong>：一人公司的本质是<strong>人（碳基）管战略与创意，AI（硅基）干标准化执行</strong>——一人+AI集群=传统团队的全链路能力。</p>
+                <div class="viz-container">
+                    <div class="viz-title">人+AI 分工模型</div>
+                    <pre class="mermaid">
+flowchart LR
+    subgraph 人
+        H1[定方向]
+        H2[做决策]
+        H3[跟人打交道]
+    end
+    subgraph AI
+        A1[写代码/文案]
+        A2[数据分析]
+        A3[多语言/投放]
+    end
+    人 --> AI
+    AI --> 人
+                    </pre>
+                </div>
+                <div class="tip-box tip-amber"><strong>局限</strong>：AI能执行，不能替你决策。2～3人小团队成功率比单人高163%。"人+AI+小团队"3～5人往往是最优配置。</div>
+                <div class="quote-box">
+                    <span class="quote-text">「不要把公司做太大，把利润做起来。」——现金流是血液。别迷恋没有利润的流水，到手的铜钱胜过远期的金币。</span>
+                    <span class="quote-source">— <a href="https://finance.sina.cn/chanjing/gsxw/2025-07-29/detail-infiazpy0862792.d.html" target="_blank" rel="noopener">周鸿祎</a> · 白手起家八条</span>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch2">
+                <h2>2. 全球数据与趋势</h2>
+                <div class="viz-container">
+                    <div class="viz-title">一人公司 vs 传统创业 对比</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 传统创业
+        T1[招人] --> T2[租办公室]
+        T2 --> T3[烧钱验证]
+    end
+    subgraph 一人公司
+        O1[一人+电脑] --> O2[AI工具]
+        O2 --> O3[零成本试错]
+    end
+                    </pre>
+                </div>
+
+                <h3 id="ch2-cn">2.1 国内数据（2025-2026）</h3>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value"><span data-update="opc.single_founder_2025">36.3%</span></div><div class="label">单人当老板占比（2019年23.7%→2025年，+53%）</div></div>
+                    <div class="info-card"><div class="value">1200万+</div><div class="label">全国OPC模式创业者，2025上半年新注册同比+47%</div></div>
+                    <div class="info-card"><div class="value"><span data-update="opc.ai_death_total">675</span>家</div><div class="label">AI死亡公墓；日均<span data-update="opc.ai_death_daily">1+</span>项目终结</div></div>
+                    <div class="info-card"><div class="value"><span data-update="opc.ai_new_reg">23.7万</span></div><div class="label">ChatGPT大火后新注册AI企业；同期倒闭<span data-update="opc.ai_bankrupt">8万</span>+</div></div>
+                </div>
+                <div class="viz-container">
+                    <div class="viz-title">国内一人公司增长（2019→2025）</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[2019 23.7%] --> B[2022 ~28%] --> C[2025 36.3%]
+    style A fill:#fef3c7
+    style C fill:#dcfce7
+                    </pre>
+                </div>
+
+                <h3 id="ch2-global">2.2 海外数据（美国·2026）</h3>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value">2980万</div><div class="label">美国Solopreneur数量</div></div>
+                    <div class="info-card"><div class="value">1.7万亿$</div><div class="label">贡献GDP 6.8%</div></div>
+                    <div class="info-card"><div class="value">74%</div><div class="label">Solopreneur已用AI工具</div></div>
+                    <div class="info-card"><div class="value">50%+</div><div class="label">美国企业为一人运营</div></div>
+                </div>
+                <table class="comp-table">
+                    <tr><th>指标</th><th>数据</th></tr>
+                    <tr><td>平均年收入</td><td>约3.9万美元；中位数5～7.5万</td></tr>
+                    <tr><td>月入超8.3万$</td><td>仅3.6%；36%低于2.5万/年</td></tr>
+                    <tr><td>女性占比</td><td>54.4%</td></tr>
+                    <tr><td>AI节省时间</td><td>每周20+小时；内容创作提速40～60%</td></tr>
+                </table>
+                <div class="viz-container">
+                    <div class="viz-title">海外Solopreneur AI采用率与收益</div>
+                    <div class="viz-wrapper" style="height:220px"><canvas id="chartOPC"></canvas></div>
+                    <p class="no-indent" style="font-size:0.85em;margin-top:8px">数据：Solobusinesshub、Codridge等；74%已用AI，73%新创业者每日使用</p>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch3">
+                <h2>3. 从0到1：启动流程</h2>
+
+                <h3 id="ch3-flow">3.1 完整流程图</h3>
+                <div class="viz-container">
+                    <div class="viz-title">一人公司从0到1（照着做）</div>
+                    <pre class="mermaid">
+flowchart TB
+    A[① 想清楚：给谁解决啥麻烦？] --> B[② 选赛道·小切口验证]
+    B --> C[③ 零预算起手·用免费AI]
+    C --> D[④ 先卖后做·有人付费再开发]
+    D --> E[⑤ 快速试错·失败果断砍]
+    E --> F[⑥ 需法人则注册·5年实缴]
+    F --> G[⑦ 目标现实：1万付费×20$/月]
+    style A fill:#dbeafe
+    style G fill:#dcfce7
+                    </pre>
+                </div>
+
+                <h3 id="ch3-reg">3.2 注册要点（中国·2024新公司法）</h3>
+                <table class="comp-table">
+                    <tr><th>事项</th><th>说明</th></tr>
+                    <tr><td>主体</td><td>一人有限责任公司</td></tr>
+                    <tr><td>数量</td><td>已取消限制，一人可设多家</td></tr>
+                    <tr><td>监事</td><td>必须另设1名监事（不可为股东本人）</td></tr>
+                    <tr><td>注册资本</td><td>5年内实缴，建议10～50万</td></tr>
+                    <tr><td>风险</td><td>保留完整财务凭证，防范法人人格混同</td></tr>
+                </table>
+                <p><strong>政策利好</strong>：深圳最高60万贷款、1000万训力券；杭州数谷免费工位、AGI需求清单。</p>
+            </div>
+
+            <div class="chapter" id="ch4">
+                <h2>4. 赛道选择与机会</h2>
+
+                <h3 id="ch4-tracks">4.1 五大推荐赛道（2026）</h3>
+                <div class="viz-container">
+                    <div class="viz-title">赛道层级与门槛</div>
+                    <pre class="mermaid">
+flowchart TB
+    subgraph 低门槛
+        T1[AI短视频脚本]
+        T2[本地商家AI优化]
+    end
+    subgraph 中门槛
+        T3[垂直Agent代搭建]
+        T4[AI数字资产创作]
+    end
+    subgraph 需技术
+        T5[零代码智能应用开发]
+    end
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>赛道</th><th>初期投入</th><th>收费/利润率</th></tr>
+                    <tr><td>AI短视频脚本服务</td><td>约1000元</td><td>脚本50～800元/份，利润率超80%</td></tr>
+                    <tr><td>本地商家AI信任优化</td><td>低</td><td>月费1000～3000元</td></tr>
+                    <tr><td>垂直领域Agent代搭建</td><td>低代码平台</td><td>按项目或年费</td></tr>
+                    <tr><td>AI数字资产创作</td><td>低</td><td>模板/绘本一次创作多次销售</td></tr>
+                    <tr><td>零代码智能应用开发</td><td>工具订阅</td><td>为商家开发无编程应用</td></tr>
+                </table>
+
+                <h3 id="ch4-tools">4.2 启动成本与工具</h3>
+                <div class="card-grid">
+                    <div class="info-card"><div class="value">90%</div><div class="label">创业者启动资金&lt;500美元（约3600元）</div></div>
+                    <div class="info-card"><div class="value">150元/月</div><div class="label">进阶工具月成本；免费AI已达2024付费水平</div></div>
+                    <div class="info-card"><div class="value">$59～115/月</div><div class="label">海外推荐AI栈，可替代3000$/月团队</div></div>
+                </div>
+            </div>
+
+            <div class="chapter" id="ch5">
+                <h2>5. AI工具栈（国内外）</h2>
+                <div class="viz-container">
+                    <div class="viz-title">一人公司AI工具四支柱</div>
+                    <pre class="mermaid">
+flowchart LR
+    M[营销增长] --> D[开发]
+    D --> S[策略思考]
+    S --> U[设计UI]
+    M -.-> C[Claude/扣子]
+    D -.-> X[Cursor/Bolt]
+    S -.-> G[ChatGPT]
+    U -.-> V[v0/Canva]
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>用途</th><th>国内</th><th>国外</th></tr>
+                    <tr><td>写作/策划</td><td>通义、Kimi、豆包、扣子</td><td>ChatGPT、Claude</td></tr>
+                    <tr><td>编程</td><td>通义灵码、Comate</td><td>Cursor、GitHub Copilot、Bolt.new</td></tr>
+                    <tr><td>设计</td><td>即梦、可灵</td><td>Canva、v0、Figma</td></tr>
+                    <tr><td>自动化</td><td>扣子、Dify</td><td>n8n、Zapier</td></tr>
+                </table>
+                <p><strong>5天MVP流程</strong>：Day0-1 定规格+上线落地页 → Day2-3 Bolt/v0出雏形 → Day3-4 n8n自动化+测试 → Day5 打磨UX+上线。</p>
+            </div>
+
+            <div class="chapter" id="ch6">
+                <h2>6. 真实案例拆解</h2>
+
+                <h3 id="ch6-cn">6.1 国内：杭州张三、武先生</h3>
+                <p><strong>杭州张三</strong>（97年、职高）：5个月120+App，90%上线即有付费。用AI扫各国公开数据找"有人要、没人做"的缺口；医院蹲3天定需求，AI编码一晚出——<strong>值钱的是决策和行业积累</strong>。</p>
+                <p><strong>杭州武先生</strong>：月入200万、成本3000。海外营销全交AI，自己只决策指挥。记住：<strong>幸存者偏差</strong>，多数月入几万。</p>
+
+                <h3 id="ch6-global">6.2 海外：Pieter Levels、Dan Koe</h3>
+                <p><strong>Pieter Levels</strong>：Photo AI 月入约10.5万$、Remote OK 3.5万、Interior AI 3万。3小时用AI做飞行游戏，17天营收100万$。之前<strong>失败70+次</strong>。打法：先卖后做、Build in Public、自动化+按需外包。</p>
+                <p><strong>Dan Koe</strong>：年收入500万$、利润率98%，个人品牌+数字产品变现。佛山服装店OPC用AI脚本6个月复购82%；深圳3C配件OPC用AI分析单款月销超10万件。</p>
+            </div>
+
+            <div class="chapter" id="ch7">
+                <h2>7. 失败教训与避坑</h2>
+                <table class="comp-table">
+                    <tr><th>公司</th><th>干啥</th><th>为啥死</th></tr>
+                    <tr><td>澜码科技</td><td>AI Agent</td><td>全押金融，大厂碾压；欠薪800万+</td></tr>
+                    <tr><td>Builder.ai</td><td>低代码/英国</td><td>号称AI开发，实际700印度人写代码；破产</td></tr>
+                    <tr><td>Robin AI</td><td>法律科技</td><td>年亏1100万英镑，扩张太快</td></tr>
+                    <tr><td>波形智能</td><td>AI写作</td><td>30万用户仍被收购，势头没续上</td></tr>
+                </table>
+                <div class="viz-container">
+                    <div class="viz-title">三大致命坑</div>
+                    <pre class="mermaid">
+flowchart LR
+    A[数据不足] --> B[场景不清晰] --> C[模型错配]
+    A -.-> A1[无闭环调不动]
+    B -.-> B1[月活&lt;1千]
+    C -.-> C1[又慢又卡弃用]
+                    </pre>
+                </div>
+                <table class="comp-table">
+                    <tr><th>坑</th><th>说人话</th></tr>
+                    <tr><td>数据不足</td><td>没真实数据闭环，模型调不动；医院数据脱敏严，半年只搞定一家</td></tr>
+                    <tr><td>场景不清晰</td><td>功能没错但没人用；60% AI文档助手月活&lt;1千</td></tr>
+                    <tr><td>模型错配</td><td>盲目上大模型，又慢又卡，用户直接弃用</td></tr>
+                </table>
+                <div class="tip-box tip-amber"><strong>一人公司真相</strong>：数量增长部分来自经济下行、空壳公司。AI能补短板带不来竞争优势，最后拼的是"这一个人"的差异化。警惕"日入二十万"类宣传。</div>
+            </div>
+
+            <div class="chapter" id="ch8">
+                <h2>8. 生存法则</h2>
+                <div class="viz-container">
+                    <div class="viz-title">五条铁律（流程图）</div>
+                    <pre class="mermaid">
+flowchart TB
+    R1[用户驱动·小切口] --> R2[零预算起手]
+    R2 --> R3[目标现实·1万×20$]
+    R3 --> R4[创业三问]
+    R4 --> R5[找无人战场]
+                    </pre>
+                </div>
+                <ol class="step-list">
+                        <li><strong>用户驱动</strong>：从小切口做起，浏览器插件→完整产品。玉伯调研800多人发现要的是"某环节"不是"一键全解"。</li>
+                        <li><strong>零预算起手</strong>：Z.ai半年涨100倍，靠自动化邮件+AI爬联系方式，没烧钱。</li>
+                        <li><strong>目标别瞎定</strong>：1万留存付费×20$/月，先活下来再想做大。</li>
+                        <li><strong>创业三问</strong>：愿不愿、能不能、值不值。</li>
+                        <li><strong>找无人战场</strong>：大厂看不上的"最后一公里"才是机会。</li>
+                    </ol>
+                <p><strong><a href="https://www.huxiu.com" target="_blank" rel="noopener">虎嗅</a></strong>：扣子+多维表格大厂已覆盖80%场景。创业公司只能退守"最后一公里"——<strong>我给谁解决了什么麻烦？</strong> 答案不是"技术牛逼"。</p>
+            </div>
+
+            <div class="chapter" id="ch9">
+                <h2>9. 资源与链接</h2>
+                <p><strong>国内</strong>：Indie Hackers中文、one-person-company.com、知乎·一人公司、36Kr·超级个体</p>
+                <p><strong>海外</strong>：Indie Hackers、Solobusinesshub、BuiltThisWeek</p>
+                <p><strong>数据来源</strong>：IT桔子、Solobusinesshub、麦肯锡、虎嗅、搜狐、新浪、中华网、Codridge、ANIMA等。数据截止2026年2月。</p>
+            </div>
+
+            <p class="meta" style="margin-top:24px">— 教程完 —</p>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+    <script>
+        if (typeof mermaid !== 'undefined') mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+        (function() {
+            var c = document.getElementById('chartOPC');
+            if (c && typeof Chart !== 'undefined') {
+                new Chart(c, {
+                    type: 'bar',
+                    data: {
+                        labels: ['AI采用率', '新创业者每日用AI', '内容创作提速%', '任务自动化%'],
+                        datasets: [{
+                            label: '比例(%)',
+                            data: [74, 73, 50, 10],
+                            backgroundColor: ['#2563eb','#1e40af','#374151','#4b5563']
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        plugins: { legend: { display: false } },
+                        scales: { x: { max: 100 } }
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

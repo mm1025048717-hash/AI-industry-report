@@ -56,6 +56,13 @@ rss:
   enabled: false
   feeds: []
 
+# DeepSeek 智能提炼（可选）：对 assembly/supplements 的 snippet 生成「说人话」摘要
+# 需在 .env 配置 DEEPSEEK_API_KEY；会增加抓取时间与 API 消耗
+deepseek:
+  enabled: false
+  # 每条限 1 句摘要；每批最多处理条数
+  max_items_per_list: 5
+
 # 占位符映射：HTML 中的 {{DATA.xxx}} 对应 report-data.json 的路径
 placeholders:
   - DATA.market.core_2026

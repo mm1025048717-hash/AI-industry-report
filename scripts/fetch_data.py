@@ -2,15 +2,17 @@
 """
 抓取外部数据并更新 data/report-data.json
 数据源：GitHub API（免费）、Serper 搜索（需 API Key，可选）
+可选：DeepSeek 对 assembly/supplements 生成「说人话」摘要
 """
 import json
 import os
 import sys
+import time
 
 from datetime import datetime
 from pathlib import Path
 
-# 可选：从 .env 加载 SERPER_API_KEY（本地开发）
+# 可选：从 .env 加载 SERPER_API_KEY、DEEPSEEK_API_KEY（本地开发）
 try:
     from dotenv import load_dotenv
     load_dotenv(Path(__file__).resolve().parent.parent / ".env")
@@ -58,6 +60,32 @@ def fetch_github_stars(owner: str, repo: str) -> int:
     except Exception as e:
         print(f"  GitHub {owner}/{repo} 失败: {e}", file=sys.stderr)
     return 0
+
+
+def summarize_with_deepseek(text: str, api_key: str) -> str:
+    """使用 DeepSeek 生成 1 句通俗摘要"""
+    if not api_key or not text:
+        return ""
+    text = (text or "")[:800]
+    prompt = f"请用1句话概括以下内容，通俗易懂、说人话。只输出摘要：\n\n{text}"
+    try:
+        r = requests.post(
+            "https://api.deepseek.com/chat/completions",
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            json={
+                "model": "deepseek-chat",
+                "messages": [{"role": "user", "content": prompt}],
+                "stream": False,
+                "temperature": 0.3,
+            },
+            timeout=30,
+        )
+        if r.status_code == 200:
+            content = r.json().get("choices", [{}])[0].get("message", {}).get("content", "")
+            return (content or "").strip()[:200]
+    except Exception as e:
+        print(f"  DeepSeek 摘要失败: {e}", file=sys.stderr)
+    return ""
 
 
 def fetch_serper(query: str, api_key: str) -> list:
@@ -116,6 +144,22 @@ def main():
                 item["query"] = q
                 assembly["intl"].append(item)
         if assembly["cn"] or assembly["intl"]:
+            # 可选：DeepSeek 对每条生成「说人话」摘要
+            dk = os.environ.get("DEEPSEEK_API_KEY", "")
+            ds_cfg = config.get("deepseek", {})
+            if ds_cfg.get("enabled") and dk:
+                max_n = ds_cfg.get("max_items_per_list", 5)
+                for lst_name in ("cn", "intl"):
+                    for i, item in enumerate(assembly.get(lst_name, [])):
+                        if i >= max_n:
+                            break
+                        snip = item.get("snippet", "")
+                        if snip:
+                            summary = summarize_with_deepseek(snip, dk)
+                            if summary:
+                                item["summary_ai"] = summary
+                            time.sleep(0.5)  # 节流
+                print("  DeepSeek 已提炼 assembly 摘要")
             data["assembly"] = assembly
             print(f"  国内抓取: {len(assembly['cn'])} 条 | 国外抓取: {len(assembly['intl'])} 条")
 

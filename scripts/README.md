@@ -85,6 +85,14 @@ python scripts/fetch_data.py
 
 未启动服务时，自动降级为浏览器原生朗读。
 
+### DeepSeek 在报告中的其他用途
+
+| 功能 | 说明 | 用法 |
+|------|------|------|
+| **AI 对话** | 顶部「AI 助手」按钮 | **顶级执行型 Agent**：支持 **web_search 联网搜索**（需 SERPER_API_KEY）、open_link、search_report、load_skill，可联网查最新动态并回答，输出可点击超链接 |
+| **fetch_data 提炼** | 对 assembly 爬取结果生成「说人话」摘要 | 在 `config.yaml` 设置 `deepseek.enabled: true`，运行 `fetch_data.py` 时自动提炼 |
+| **播客改写** | 正文 → 口语化脚本 | 右上角「转为播客」时调用 |
+
 ## 新增可更新字段
 
 1. 在 `data/report-data.json` 添加对应键值

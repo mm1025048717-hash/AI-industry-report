@@ -62,8 +62,10 @@ python -m http.server 8000
 
 ### 在线阅读（GitHub Pages）
 
-- 打开仓库 → **Settings** → **Pages** → Source 选 **main** 分支
-- 几分钟后访问：`https://mm1025048717-hash.github.io/AI-industry-report/`
+- 打开仓库 → **Settings** → **Pages** → Source 选 **main** 分支（或 gh-pages）
+- 几分钟后访问：[https://mm1025048717-hash.github.io/AI-industry-report/](https://mm1025048717-hash.github.io/AI-industry-report/)
+- 直接访问主报告：[AI行业落地分析报告.html](https://mm1025048717-hash.github.io/AI-industry-report/AI%E8%A1%8C%E4%B8%9A%E8%90%BD%E5%9C%B0%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A.html)
+- **说明**：在线版可完整阅读报告；AI 对话需本地运行 `podcast_server.py` 后使用
 
 ### 部署到 [GitHub](https://github.com/mm1025048717-hash)
 
