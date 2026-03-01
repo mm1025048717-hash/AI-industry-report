@@ -1,12 +1,14 @@
 # AI行业落地报告 - 自动抓取与即时更新
-# 触发：① 手动 Run workflow  ② 每周一 00:00 UTC（北京 08:00）  ③ push 到 main 时
+# 触发：① 手动 Run workflow  ② 每周一 00:00 UTC（北京 08:00）  ③ 每日 08:00 UTC（北京 16:00）  ④ push 到 main 时
 # Serper：在 Settings → Secrets 添加 SERPER_API_KEY 后，自动爬取国内+国外关键词，写入 report-data.json
+# 主报告顶部「最新动态与创业机会」区块自动展示 latest_updates
 name: 报告自动更新
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * 1'   # 每周一 00:00 UTC = 北京 08:00
+    - cron: '0 8 * * *'   # 每日 08:00 UTC = 北京 16:00
   push:
     branches: [main]
     paths:

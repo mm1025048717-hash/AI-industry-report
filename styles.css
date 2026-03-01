@@ -409,6 +409,34 @@ body {
     text-align: center;
 }
 
+.hidden { display: none !important; }
+
+/* 最新动态与创业机会 */
+.latest-updates-box { border-left: 4px solid var(--blue); }
+.latest-updates-hint { font-size: 0.88em; color: var(--gray-600); margin-bottom: 12px; }
+.latest-updates-list { list-style: none; padding: 0; margin: 0; }
+.latest-updates-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+.latest-updates-item:last-child { border-bottom: none; }
+.latest-updates-topic {
+    display: inline-block;
+    font-size: 0.75em;
+    color: var(--blue);
+    background: rgba(37, 99, 235, 0.08);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+.latest-updates-link {
+    font-weight: 500;
+    color: var(--gray-900);
+    text-decoration: none;
+}
+.latest-updates-link:hover { color: var(--blue); text-decoration: underline; }
+.latest-updates-snippet { font-size: 0.85em; color: var(--gray-600); margin: 4px 0 0; line-height: 1.5; }
+
 .viz-wrapper {
     display: flex;
     justify-content: center;

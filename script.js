@@ -60,6 +60,34 @@
       var val = get(data, path);
       if (val != null) node.textContent = val;
     });
+    renderLatestUpdates(data);
+  }
+  function renderLatestUpdates(data) {
+    var container = document.getElementById('latest-updates-feed');
+    var listEl = document.getElementById('latest-updates-list');
+    if (!container || !listEl) return;
+    if (!data || !Array.isArray(data.latest_updates) || data.latest_updates.length === 0) {
+      container.classList.add('hidden');
+      return;
+    }
+    var items = data.latest_updates;
+    var html = '<ul class="latest-updates-list">';
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      var title = (it.title || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      var snippet = (it.snippet || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      var link = (it.link || '#');
+      var topic = (it.topic || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      var ext = link.indexOf('http') === 0 ? ' target="_blank" rel="noopener noreferrer"' : '';
+      html += '<li class="latest-updates-item">';
+      html += '<span class="latest-updates-topic">' + topic + '</span> ';
+      html += '<a href="' + link + '" class="latest-updates-link"' + ext + '>' + title + '</a>';
+      if (snippet) html += '<p class="latest-updates-snippet">' + snippet + '</p>';
+      html += '</li>';
+    }
+    html += '</ul>';
+    listEl.innerHTML = html;
+    container.classList.remove('hidden');
   }
   function showError() {
     var el = document.querySelector('[data-update]');

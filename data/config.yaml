@@ -1,5 +1,6 @@
 # AI行业落地报告 - 自动更新配置
 # 用于 scripts/fetch_data.py，报告通过 script.js 客户端加载 data/report-data.json
+# 主报告顶部「🆕 最新动态与创业机会」由 assembly + supplements 自动聚合为 latest_updates
 
 # 数据源配置
 sources:

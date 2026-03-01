@@ -195,6 +195,39 @@ def main():
             data["supplements"] = supplements
             print(f"  补充搜索: {len(supplements)} 个主题")
 
+    # 4. 生成「最新动态」供报告顶部更新提示展示（固定信息源聚合）
+    latest = []
+    max_latest = 8
+    if data.get("assembly"):
+        for item in (data["assembly"].get("cn") or [])[:4]:
+            latest.append({
+                "title": (item.get("title") or "").strip() or "AI创业机会",
+                "snippet": (item.get("snippet") or "")[:120] + ("…" if len(item.get("snippet") or "") > 120 else ""),
+                "link": (item.get("link") or "").strip(),
+                "topic": (item.get("query") or "创业机会"),
+            })
+        for item in (data["assembly"].get("intl") or [])[:2]:
+            latest.append({
+                "title": (item.get("title") or "").strip() or "AI Startup",
+                "snippet": (item.get("snippet") or "")[:120] + ("…" if len(item.get("snippet") or "") > 120 else ""),
+                "link": (item.get("link") or "").strip(),
+                "topic": "海外机会",
+            })
+    if data.get("supplements") and len(latest) < max_latest:
+        for key, sup in list(data["supplements"].items())[:max_latest - len(latest)]:
+            items = sup.get("items") or []
+            if items:
+                item = items[0]
+                latest.append({
+                    "title": (item.get("title") or "").strip() or sup.get("topic", key),
+                    "snippet": (item.get("snippet") or "")[:100] + ("…" if len(item.get("snippet") or "") > 100 else ""),
+                    "link": (item.get("link") or "").strip(),
+                    "topic": sup.get("topic", key),
+                })
+    data["latest_updates"] = latest[:max_latest]
+    if latest:
+        print(f"  最新动态: {len(latest)} 条")
+
     save_data(data)
     print("数据抓取完成:", data["_meta"]["last_updated"])
 
