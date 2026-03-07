@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "last_updated": "2026年03月06日",
-    "last_fetch": "2026-03-06 08:22 UTC",
+    "last_updated": "2026年03月07日",
+    "last_fetch": "2026-03-07 08:15 UTC",
     "sources": [
       "manual",
       "github_api"
@@ -23,9 +23,9 @@
     "patents": "157.6万项"
   },
   "github": {
-    "langchain_stars": 128418,
-    "dify_stars": 131401,
-    "openclaw_stars": 267872,
+    "langchain_stars": 128505,
+    "dify_stars": 131510,
+    "openclaw_stars": 272840,
     "coze_repo_stars": 0
   },
   "news": {
